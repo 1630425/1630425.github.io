@@ -1,0 +1,2935 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Kevin">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Kevin">
+    
+    <meta name="keywords" content="Kevin,Kevin-theme,Kevin-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="spring boot配置https，访问报错 报错日志如下： 1234567891011121314151617181920212223242526java.io.IOException: Invalid keystore format	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:650)	at sun.s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="请求https报java.io.IOException Invalid keystore format">
+<meta property="og:url" content="https://chengtong.me/posts/3584df24.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="spring boot配置https，访问报错 报错日志如下： 1234567891011121314151617181920212223242526java.io.IOException: Invalid keystore format	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:650)	at sun.s">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="data:image/md;base64,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">
+<meta property="og:updated_time" content="2020-05-23T12:43:24.081Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="请求https报java.io.IOException Invalid keystore format">
+<meta name="twitter:description" content="spring boot配置https，访问报错 报错日志如下： 1234567891011121314151617181920212223242526java.io.IOException: Invalid keystore format	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:650)	at sun.s">
+<meta name="twitter:image" content="data:image/md;base64,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">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="alternate" href="/atom.xml" title="Kevin&#39;s Blog" type="application/atom+xml">
+    
+    <title>请求https报java.io.IOException Invalid keystore format · Kevin&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?832c28180f9c6911634deedc6254b910";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Kevin&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">请求https报java.io.IOException Invalid keystore format</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Kevin's Blog</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            请求https报java.io.IOException Invalid keystore format
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">751</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/05/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>spring boot配置https，访问报错</p>
+<p>报错日志如下：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">java<span class="variable">.io</span><span class="variable">.IOException</span>: Invalid keystore format</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.provider</span><span class="variable">.JavaKeyStore</span><span class="variable">.engineLoad</span>(JavaKeyStore<span class="variable">.java</span>:<span class="number">650</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.provider</span><span class="variable">.JavaKeyStore</span>$JKS<span class="variable">.engineLoad</span>(JavaKeyStore<span class="variable">.java</span>:<span class="number">55</span>)</span><br><span class="line">	at java<span class="variable">.security</span><span class="variable">.KeyStore</span><span class="variable">.load</span>(KeyStore<span class="variable">.java</span>:<span class="number">1445</span>)</span><br><span class="line">	at cfca<span class="variable">.httpclient</span><span class="variable">.connector</span><span class="variable">.HttpClient</span><span class="variable">.initSSL</span>(HttpClient<span class="variable">.java</span>:<span class="number">77</span>)</span><br><span class="line">	at cfca<span class="variable">.httpclient</span><span class="variable">.connector</span><span class="variable">.HttpConnector</span><span class="variable">.init</span>(HttpConnector<span class="variable">.java</span>:<span class="number">31</span>)</span><br><span class="line">qtp418304857-<span class="number">24</span>, handling exception: javax<span class="variable">.net</span><span class="variable">.ssl</span><span class="variable">.SSLHandshakeException</span>: sun<span class="variable">.security</span><span class="variable">.validator</span><span class="variable">.ValidatorException</span>: PKIX path building failed: sun<span class="variable">.security</span><span class="variable">.provider</span><span class="variable">.certpath</span><span class="variable">.SunCertPathBuilderException</span>: unable to find valid certification path to requested target</span><br><span class="line">javax<span class="variable">.net</span><span class="variable">.ssl</span><span class="variable">.SSLHandshakeException</span>: sun<span class="variable">.security</span><span class="variable">.validator</span><span class="variable">.ValidatorException</span>: PKIX path building failed: sun<span class="variable">.security</span><span class="variable">.provider</span><span class="variable">.certpath</span><span class="variable">.SunCertPathBuilderException</span>: unable to find valid certification path to requested target</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.Alerts</span><span class="variable">.getSSLException</span>(Alerts<span class="variable">.java</span>:<span class="number">192</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.SSLSocketImpl</span><span class="variable">.fatal</span>(SSLSocketImpl<span class="variable">.java</span>:<span class="number">1937</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.Handshaker</span><span class="variable">.fatalSE</span>(Handshaker<span class="variable">.java</span>:<span class="number">302</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.Handshaker</span><span class="variable">.fatalSE</span>(Handshaker<span class="variable">.java</span>:<span class="number">296</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.ClientHandshaker</span><span class="variable">.serverCertificate</span>(ClientHandshaker<span class="variable">.java</span>:<span class="number">1478</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.ClientHandshaker</span><span class="variable">.processMessage</span>(ClientHandshaker<span class="variable">.java</span>:<span class="number">212</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.Handshaker</span><span class="variable">.processLoop</span>(Handshaker<span class="variable">.java</span>:<span class="number">979</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.Handshaker</span><span class="variable">.process_record</span>(Handshaker<span class="variable">.java</span>:<span class="number">914</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.SSLSocketImpl</span><span class="variable">.readRecord</span>(SSLSocketImpl<span class="variable">.java</span>:<span class="number">1050</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.SSLSocketImpl</span><span class="variable">.performInitialHandshake</span>(SSLSocketImpl<span class="variable">.java</span>:<span class="number">1363</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.SSLSocketImpl</span><span class="variable">.startHandshake</span>(SSLSocketImpl<span class="variable">.java</span>:<span class="number">1391</span>)</span><br><span class="line">	at sun<span class="variable">.security</span><span class="variable">.ssl</span><span class="variable">.SSLSocketImpl</span><span class="variable">.startHandshake</span>(SSLSocketImpl<span class="variable">.java</span>:<span class="number">1375</span>)</span><br><span class="line">	at sun<span class="variable">.net</span><span class="variable">.www</span><span class="variable">.protocol</span><span class="variable">.https</span><span class="variable">.HttpsClient</span><span class="variable">.afterConnect</span>(HttpsClient<span class="variable">.java</span>:<span class="number">563</span>)</span><br><span class="line">	at sun<span class="variable">.net</span><span class="variable">.www</span><span class="variable">.protocol</span><span class="variable">.https</span><span class="variable">.AbstractDelegateHttpsURLConnection</span><span class="variable">.connect</span>(AbstractDelegateHttpsURLConnection<span class="variable">.java</span>:<span class="number">185</span>)</span><br><span class="line">	at sun<span class="variable">.net</span><span class="variable">.www</span><span class="variable">.protocol</span><span class="variable">.https</span><span class="variable">.HttpsURLConnectionImpl</span><span class="variable">.connect</span>(HttpsURLConnectionImpl<span class="variable">.java</span>:<span class="number">153</span>)</span><br><span class="line">	at cfca<span class="variable">.httpclient</span><span class="variable">.connector</span><span class="variable">.HttpClient</span><span class="variable">.send</span>(HttpClient<span class="variable">.java</span>:<span class="number">152</span>)</span><br><span class="line">	at cfca<span class="variable">.httpclient</span><span class="variable">.connector</span><span class="variable">.HttpConnector</span><span class="variable">.deal</span>(HttpConnector<span class="variable">.java</span>:<span class="number">74</span>)</span><br><span class="line">	at cfca<span class="variable">.httpclient</span><span class="variable">.connector</span><span class="variable">.HttpConnector</span><span class="variable">.post</span>(HttpConnector<span class="variable">.java</span>:<span class="number">47</span>)</span><br></pre></td></tr></table></figure>
+<p>在网上看到一些处理办法，说是maven-resources-plugin 在拷贝resources 文件时进行 encoding  会“误伤二进制文件”导致拷贝到classes下的文件发生了变化.</p>
+<p><img src="data:image/md;base64,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" alt=""></p>
+<p>我对比了一下，果不其然，对比了下src/main/resources下的jks 文件和生产运行的classes下的文件大小不一致，classes目录下的文件大了一圈. 嗯，看看别人的处理办法， filtering=false</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>赶紧去修改自己的pom.xml，打开自己的pom要修改的时候看到代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources/certificate<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>filtering已经是false了，没毛病,但是还是不行，这是为啥？（certificate目录下是.jks文件），看到个别有的文章说配置了filtering=false 没效，估计跟我这配置应该是差不多的，参考下面的方法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">excludes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclude</span>&gt;</span>**/*.jks<span class="tag">&lt;/<span class="name">exclude</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">excludes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.jks<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再用maven构建，构建后的.jks文件大小正常，没有再变大了！项目部署后，请求https地址也能正常返回了。。。</p>
+<p>另外一种配置方式：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-resources-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>                </span><br><span class="line">      <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">nonFilteredFileExtensions</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!--这里是文件后缀--&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">nonFilteredFileExtension</span>&gt;</span>jks<span class="tag">&lt;/<span class="name">nonFilteredFileExtension</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">nonFilteredFileExtensions</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://chengtong.me">Kevin</a>
+            </p><p>原文链接：<a href="https://chengtong.me/posts/3584df24.html">https://chengtong.me/posts/3584df24.html</a>
+            </p><p>发表日期：<a href="https://chengtong.me/posts/3584df24.html">May 25th 2018, 3:55:01 pm</a>
+            </p><p>更新日期：<a href="https://chengtong.me/posts/3584df24.html">May 23rd 2020, 8:43:24 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/359a2f9d.html" title="SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS">
+                    <div class="nextTitle">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/323926de.html" title="Mac使用技巧|iPic图床设置-Markdown写作必备">
+                    <div class="prevTitle">Mac使用技巧|iPic图床设置-Markdown写作必备</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1630425@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span></span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 97
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/posts/5f695ca8.html">Spring boot设置JWT CORS跨域请求的方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href="/posts/7c16aee4.html">harbor切换主机的ip地址</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/ed397403.html">小程序接口无法传递session校验验证码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/a5ca03ae.html">Java后台获得微信小程序(getUnlimited)生成的二维码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/7a1938ca.html">Docker CE 19.03正式发布,无需root权限</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/posts/76169928.html">Linux根目录爆满解决方案</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/10</span><a class="archive-post-title" href="/posts/ef0397e9.html">git忽略文件配置.gitignore</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href="/posts/c65b3c3e.html">java.lang.NoSuchMethodError</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/80dd260f.html">配置Spring-boot的main方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/e2686736.html">openldap密码加密算法及原理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/posts/e6c03d98.html">安装Centos7.2详细教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/posts/94480529.html">Windows下安装Docker的步骤</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href="/posts/bd13fdcc.html">MQTT入门介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href="/posts/a169a1fd.html">PowerDesigner16.5汉化破解版安装教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/21</span><a class="archive-post-title" href="/posts/fbd35054.html">为什么说GraphQL可以取代REST API</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/f1766b5e.html">浅谈三种API设计风格RPC、REST、GraphQL</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/3d17837d.html">ADS RDS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/posts/3f943cf8.html">Flume修改SQLSource以针对时间戳增量数据传输</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/posts/68ef0897.html">为什么不用原生Spring-Cloud-Config</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/posts/97614a38.html">Centos7配置阿里云yum镜像</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span><a class="archive-post-title" href="/posts/13874da1.html">Rust语言开发工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/posts/271b275c.html">Rust语言环境安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href="/posts/7774b55a.html">Https之postman请求失败</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/f78c14dc.html">Spring data Jpa自动更新实体创建时间和修改时间</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/7a45e1a3.html">什么是产品的痛点、爽点、痒点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/posts/c1ba8626.html">关于SpringJpa中getOne方法遇到延迟加载报错no Session的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href="/posts/7e91ff56.html">Java中List,Set,数组的互相转换</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href="/posts/f82ccd38.html">git版本控制如何恢复误删除的本地文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span><a class="archive-post-title" href="/posts/92eadbe.html">Kudu设计原理初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span><a class="archive-post-title" href="/posts/8920857f.html">Kudu介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href="/posts/21e5a7a5.html">HBase对比HDFS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span><a class="archive-post-title" href="/posts/9db5de4.html">Java常见的线程安全的类</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href="/posts/b02d4ba7.html">windows自启动脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href="/posts/10802a0a.html">Windows系统下.sh文件的运行</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span><a class="archive-post-title" href="/posts/9f424809.html">如何使用Lsyncd复制并实时同步到远程服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/a2a9a394.html">CentOS7配置Rsync数据文件同步服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/posts/3871497a.html">Rsync文件同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/776caf5a.html">Gogs灾备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/posts/5db798e8.html">Centos RSync+Shell实现数据定时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href="/posts/ff3ad289.html">CentOS7 MySQL自动备份shell脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/4874470d.html">Could not create connection to database server</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/205f180b.html">Dubbo和Spring Cloud微服务架构比较</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href="/posts/323926de.html">Mac使用技巧|iPic图床设置-Markdown写作必备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/f44f6d37.html">BaiduPCS-Go | 百度网盘命令行工具（基于 Go）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/2ef33b20.html">MarkDown添加图片的三种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/e94c3a32.html">拦截器（Interceptor）和过滤器（Filter）的执行顺序和区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/27ec56c.html">eclipse-idea</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/24d6d861.html">nginx设置X-Frame-Options的两种方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href="/posts/a2547652.html">用IDEA反向生成javabean</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/posts/ef57a426.html">Seafile和Nextcloud相比较哪个好用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/ef7a7f28.html">centos7仅安装mysql客户端</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/a9414c3.html">CentOS7.4使用yum源安装MySQL 5.7.20</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href="/posts/17657829.html">Shell在文本第一行和最后一行添加字符串</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href="/posts/6ca1c9fd.html">iPic-Markdown Mac图床、文件上传工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href="/posts/7fb66013.html">基于docker-compose搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/posts/4d1930e3.html">基于Docker搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/f66662b8.html">安装Python及环境变量配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/6a3c93e4.html">支付宝红包码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href="/posts/7109808e.html">WebP在减少图片体积和流量上的效果如何？MIP技术实践分享</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href="/posts/f65d6fec.html">Centos7/Ubuntu初始化硬盘分区、挂载</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/posts/d2a1fddb.html">Mysql8.0&Mysql5.7&Mysql5.6&Mysql5.5特性对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/ff0a6fc5.html">Tomcat的Https设置及Http自动跳转Https</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/238477f1.html">Jenkins2插件Pipeline+BlueOcean实现持续交付的初次演练</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/4f466ef0.html">Jenkins2实现持续交付初次演练(MultiJob，Pipeline，Blue Ocean)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/posts/65bb19af.html">Git问题Everything up-to-date解决</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/2fc0e0a3.html">解除360doc网页防复制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href="/posts/1c334725.html">git add -A 和 git add . 的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/12</span><a class="archive-post-title" href="/posts/b12943d1.html">IntelliJ使用pipeline文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/3d12f64a.html">数据库存时间戳的好处</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span><a class="archive-post-title" href="/posts/f62f0412.html">让putty支持标签tabs功能</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/87d9b46d.html">5W,5W1H,5W2H,5W2H1E</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/aa7c6b3f.html">mysql启动时，提示/etc/my.cnf 被忽略的问题处理</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2013 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href="/posts/4a17b156.html">Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href="/posts/2379f3d9.html">shell脚本中的“请按任意键继续”</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2011 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/25</span><a class="archive-post-title" href="/posts/44771869.html">SOA、ERP、SAP和SaaS四者的区别</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2010 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/727549f.html">MySQL连接&备份&导入数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/f02121e8.html">MySQL循环批量插入数据</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/fd4a1da4.html">MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
+    
+        <span class="sidebar-tag-name" data-tags="flume-ng-sql-source"><span class="iconfont-archer">&#xe606;</span>flume-ng-sql-source</span>
+    
+        <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
+    
+        <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
+    
+        <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
+    
+        <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
+    
+        <span class="sidebar-category-name" data-categories="图床"><span class="iconfont-archer">&#xe60a;</span>图床</span>
+    
+        <span class="sidebar-category-name" data-categories="图片格式"><span class="iconfont-archer">&#xe60a;</span>图片格式</span>
+    
+        <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Kevin"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
