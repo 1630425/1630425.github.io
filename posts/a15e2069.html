@@ -1,0 +1,2993 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Kevin">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Kevin">
+    
+    <meta name="keywords" content="Kevin,Kevin-theme,Kevin-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="一、为什么要用Rsync+sersync架构? sersync是基于Inotify开发的，类似于Inotify-tools的工具 sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。  二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？">
+<meta name="keywords" content="CentOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7下Rsync+sersync实现数据实时同步">
+<meta property="og:url" content="https://chengtong.me/posts/a15e2069.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、为什么要用Rsync+sersync架构? sersync是基于Inotify开发的，类似于Inotify-tools的工具 sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。  二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-23T12:43:24.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS7下Rsync+sersync实现数据实时同步">
+<meta name="twitter:description" content="一、为什么要用Rsync+sersync架构? sersync是基于Inotify开发的，类似于Inotify-tools的工具 sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。  二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="alternate" href="/atom.xml" title="Kevin&#39;s Blog" type="application/atom+xml">
+    
+    <title>CentOS7下Rsync+sersync实现数据实时同步 · Kevin&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?832c28180f9c6911634deedc6254b910";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Kevin&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">CentOS7下Rsync+sersync实现数据实时同步</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Kevin's Blog</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            CentOS7下Rsync+sersync实现数据实时同步
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">4.3k</span>阅读时长: <span class="post-count reading-time">18 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/06/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="一、为什么要用Rsync-sersync架构"><a href="#一、为什么要用Rsync-sersync架构" class="headerlink" title="一、为什么要用Rsync+sersync架构?"></a>一、为什么要用Rsync+sersync架构?</h2><ol>
+<li>sersync是基于Inotify开发的，类似于Inotify-tools的工具</li>
+<li>sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。</li>
+</ol>
+<h2 id="二、Rsync-Inotify-tools与Rsync-sersync这两种架构有什么区别？"><a href="#二、Rsync-Inotify-tools与Rsync-sersync这两种架构有什么区别？" class="headerlink" title="二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？"></a>二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？</h2><ol>
+<li>Rsync+Inotify-tools<br> （1）Inotify-tools只能记录下被监听的目录发生了变化（包括增加、删除、修改），并没有把具体是哪个文件或者哪个目录发生了变化记录下来；<br> （2）rsync在同步的时候，并不知道具体是哪个文件或者哪个目录发生了变化，每次都是对整个目录进行同步，当数据量很大时，整个目录同步非常耗时（rsync要对整个目录遍历查找对比文件），因此，效率很低。</li>
+<li>Rsync+sersync<br> （1）sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字；<br> （2）rsync在同步的时候，只同步发生变化的这个文件或者这个目录（每次发生变化的数据相对整个同步目录数据来说是很小的，rsync在遍历查找比对文件时，速度很快），因此，效率很高。<br> 小结：当同步的目录数据量不大时，建议使用Rsync+Inotify-tools；当数据量很大（几百G甚至1T以上）、文件很多时，建议使用Rsync+sersync。</li>
+</ol>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>操作系统：CentOS 7.0</li>
+<li>源服务器：10.100.1.145  （Sersync+web）（Master 作为主发布服务器）</li>
+<li>目标服务器： 10.100.1.96、10.100.1.99(Rsync+web)(此处可逐步增加集群的slave)</li>
+</ul>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
+<li>把源服务器上/home/Sync目录实时同步到目标服务器的/home/Sync下</li>
+</ul>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="第一部分：分别在两台目标服务器10-100-1-96上操作"><a href="#第一部分：分别在两台目标服务器10-100-1-96上操作" class="headerlink" title="第一部分：分别在两台目标服务器10.100.1.96上操作"></a>第一部分：分别在两台目标服务器10.100.1.96上操作</h3><h4 id="在在目标服务器安装Rsync服务端"><a href="#在在目标服务器安装Rsync服务端" class="headerlink" title="在在目标服务器安装Rsync服务端"></a>在在目标服务器安装Rsync服务端</h4><p>1、关闭SELINUX</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/selinux/config #编辑防火墙配置文件</span><br><span class="line">#SELINUX=enforcing#注释掉</span><br><span class="line">#SELINUXTYPE=targeted#注释掉</span><br><span class="line">SELINUX=disabled#增加</span><br><span class="line">:wq! #保存，退出</span><br><span class="line">setenforce 0 #立即生效</span><br></pre></td></tr></table></figure>
+<p>2、开启防火墙tcp 873端口（Rsync默认端口）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/sysconfig/iptables #编辑防火墙配置文件</span><br><span class="line">-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -ptcp --dport 873 -j ACCEPT</span><br><span class="line">:wq! #保存退出</span><br><span class="line"></span><br><span class="line">#systemctl restart firewalld.service #最后重启防火墙使配置生效</span><br></pre></td></tr></table></figure>
+<p>3、安装Rsync服务端软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># yum install rsync xinetd #安装</span><br><span class="line"># vi /etc/rc.d/rc.local      #设置开机启动</span><br><span class="line">/usr/bin/rsync --daemon --config=/etc/rsyncd.conf  #同时在服务器上执行此命令</span><br><span class="line">:wq! #保存退出</span><br><span class="line"># chmod +x /etc/rc.d/rc.local  #否则重启不执行</span><br><span class="line"> </span><br><span class="line"># systemctl start xinetd #启动（CentOS中是以xinetd来管理Rsync服务的）</span><br></pre></td></tr></table></figure>
+<p>4、创建rsyncd.conf配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/rsyncd.conf #创建配置文件，添加以下代码</span><br><span class="line">log file =/var/log/rsyncd.log #日志文件位置，启动rsync后自动产生这个文件，无需提前创建</span><br><span class="line">pidfile =/var/run/rsyncd.pid #pid文件的存放位置</span><br><span class="line">lock file =/var/run/rsync.lock #支持max connections参数的锁文件</span><br><span class="line">secretsfile = /etc/rsync.pass  #用户认证配置文件，里面保存用户名称和密码，后面会创建这个文件</span><br><span class="line">motd file =/etc/rsyncd.Motd #rsync启动时欢迎信息页面文件位置（文件内容自定义）</span><br><span class="line">[Sync] #自定义名称</span><br><span class="line">path = /home/Sync/#rsync服务端数据目录路径</span><br><span class="line">comment = Sync#模块名称与[md]自定义名称相同</span><br><span class="line">uid = root #设置rsync运行权限为root</span><br><span class="line">gid = root #设置rsync运行权限为root</span><br><span class="line">port=873  #默认端口</span><br><span class="line">use chroot= no #默认为true，修改为no，增加对目录文件软连接的备份</span><br><span class="line">read only =no  #设置rsync服务端文件为读写权限</span><br><span class="line">list = no #不显示rsync服务端资源列表</span><br><span class="line">maxconnections = 200 #最大连接数</span><br><span class="line">timeout =600  #设置超时时间</span><br><span class="line">auth users= Sync #执行数据同步的用户名，可以设置多个，用英文状态下逗号隔开</span><br><span class="line">hosts allow= 10.100.1.145  #允许进行数据同步的客户端IP地址，可以设置多个，用英文状态下逗号隔开</span><br><span class="line">hosts deny= 192.168.21.254 #禁止数据同步的客户端IP地址，可以设置多个，用英文状态下逗号隔开</span><br><span class="line">:wq!  #保存,退出（贴进配置文件将中文去掉，否则可能造成无法识别模块）</span><br></pre></td></tr></table></figure>
+<p>5、创建用户认证文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/rsync.pass #配置文件，添加以下内容，添加允许传输用户和密码</span><br><span class="line">root:123456  #格式，用户名:密码，可以设置多个，每行一个用户名:密码</span><br><span class="line">:wq!  #保存退出</span><br></pre></td></tr></table></figure>
+<p>6、设置文件权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#chmod 600 /etc/rsyncd.conf  #设置文件所有者读取、写入权限</span><br><span class="line">#chmod 600 /etc/rsync.pass  #设置文件所有者读取、写入权限</span><br></pre></td></tr></table></figure>
+<p>7、启动rsync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># systemctl start xinetd  #启动</span><br><span class="line"># systemctl stop xinetd  #停止</span><br><span class="line"># systemctl restart xinetd  #重新启动</span><br></pre></td></tr></table></figure>
+<h3 id="第二部分：在源服务器10-100-1-145上操作"><a href="#第二部分：在源服务器10-100-1-145上操作" class="headerlink" title="第二部分：在源服务器10.100.1.145上操作"></a>第二部分：在源服务器10.100.1.145上操作</h3><h4 id="一、安装Rsync客户端"><a href="#一、安装Rsync客户端" class="headerlink" title="一、安装Rsync客户端"></a>一、安装Rsync客户端</h4><p>1、关闭SELINUX</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/selinux/config  #编辑防火墙配置文件</span><br><span class="line">#SELINUX=enforcing  #注释掉</span><br><span class="line">#SELINUXTYPE=targeted #注释掉</span><br><span class="line">SELINUX=disabled  #增加</span><br><span class="line">:wq!  #保存退出</span><br><span class="line">#setenforce 0   #立即生效</span><br></pre></td></tr></table></figure>
+<p>2、开启防火墙tcp 873端口（Rsync默认端口，做为客户端的Rsync可以不用开启873端口）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/sysconfig/iptables  #编辑防火墙配置文件</span><br><span class="line">-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -ptcp --dport 873 -j ACCEPT</span><br><span class="line">:wq! #保存退出</span><br><span class="line"># systemctl restart firewalld.service #最后重启防火墙使配置生效</span><br></pre></td></tr></table></figure>
+<p>3、安装Rsync客户端端软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#whereis rsync  #查看系统是否已安装rsync,出现下面的提示，说明已经安装</span><br><span class="line">rsync:/usr/bin/rsync /usr/share/man/man1/rsync.1.gz</span><br><span class="line">#yum install  xinetd  #只安装xinetd即可，CentOS中是以xinetd来管理rsync服务的</span><br><span class="line">#yum install rsync xinetd #如果默认没有rsync，运行此命令进行安装rsync和xinetd</span><br><span class="line"># vi /etc/rc.local      #设置开机启动</span><br><span class="line">/usr/bin/rsync --daemon    #同时在服务器上启动此服务(运行此命令)</span><br><span class="line"># chmod +x /etc/rc.d/rc.local  #否则重启不执行</span><br><span class="line"># vi /etc/rsyncd.conf</span><br><span class="line">log file = /var/log/rsyncd.log</span><br><span class="line">pidfile = /var/run/rsyncd.pid</span><br><span class="line">lock file = /var/run/rsync.lock</span><br><span class="line">motd file = /etc/rsyncd.Motd</span><br><span class="line">[Sync]</span><br><span class="line">comment=Sync</span><br><span class="line">uid=root</span><br><span class="line">gid=root</span><br><span class="line">port=873</span><br><span class="line">path=/home/fastdfs/path0</span><br><span class="line">read only=no</span><br><span class="line">write only=yes</span><br><span class="line">list=no</span><br><span class="line">auth_uses=root</span><br><span class="line">secrets file=/etc/passwd.txt</span><br><span class="line">:wq退出</span><br><span class="line">#systemctl start xinetd  #启动（CentOS中是以xinetd来管理rsync服务的）</span><br></pre></td></tr></table></figure>
+<p>4、创建认证密码文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/passwd.txt  #编辑文件，添加以下内容，该密码应与目标服务器中的/etc/rsync.pass中的密码一致，</span><br><span class="line">123456 #密码</span><br><span class="line">:wq! #保存退出</span><br><span class="line">#chmod 600 /etc/passwd.txt #设置文件权限，只设置文件所有者具有读取、写入权限即可</span><br></pre></td></tr></table></figure>
+<p>5、测试源服务器10.100.1.145到目标服务器 10.100.1.96之间的数据同步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#mkdir -p /home/Sync/ceshi  #在源服务器上创建测试文件夹，然后在源服务器运行下面1行命令</span><br><span class="line">rsync -avH --port=873 --progress --delete /home/test/ root@10.100.1.145::Sync --password-file=/etc/passwd.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行完成后，分别在目标服务器10.100.1.96上查看，在/home/Sync/目录下有ceshi文件夹，说明数据同步成功，命令中目录可以随意目录，传输到目标服务器目录时文件（或目录）均放到/etc/rsyncd.conf配置的服务器目录路径，如果源目录改变了，那么传输时两个目录将进行目录匹配，会有增删动作，因此需要注意。</li>
+</ul>
+<h4 id="二、安装sersync工具，实时触发rsync进行同步"><a href="#二、安装sersync工具，实时触发rsync进行同步" class="headerlink" title="二、安装sersync工具，实时触发rsync进行同步"></a>二、安装sersync工具，实时触发rsync进行同步</h4><p>1、查看服务器内核是否支持inotify</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ll /proc/sys/fs/inotify  #列出文件目录，出现下面的内容，说明服务器内核支持inotify</span><br><span class="line">-rw-r--r-- 1 root root 0 Mar  7 02:17 max_queued_events</span><br><span class="line">-rw-r--r-- 1 root root 0 Mar  7 02:17 max_user_instances</span><br><span class="line">-rw-r--r-- 1 root root 0 Mar  7 02:17 max_user_watches</span><br></pre></td></tr></table></figure>
+<ul>
+<li>备注：Linux下支持inotify的内核最小为2.6.13，可以输入命令：#uname -a查看内核<br> CentOS 7.0内核为3.10.0，默认已经支持inotify</li>
+</ul>
+<p>2、修改inotify默认参数（inotify默认内核参数值太小）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">查看系统默认参数值：</span><br><span class="line">sysctl -a | grep max_queued_events</span><br><span class="line">结果是：fs.inotify.max_queued_events= 16384</span><br><span class="line">sysctl -a | grep max_user_watches</span><br><span class="line">结果是：fs.inotify.max_user_watches= 8192</span><br><span class="line">sysctl -a | grep max_user_instances</span><br><span class="line">结果是：fs.inotify.max_user_instances= 128</span><br><span class="line">修改参数：</span><br><span class="line">#sysctl -w fs.inotify.max_queued_events=&quot;99999999&quot;</span><br><span class="line">#sysctl -w fs.inotify.max_user_watches=&quot;99999999&quot;</span><br><span class="line">#sysctl -w fs.inotify.max_user_instances=&quot;65535&quot;</span><br><span class="line">#vi /etc/sysctl.conf #添加以下代码</span><br><span class="line">fs.inotify.max_queued_events=99999999</span><br><span class="line">fs.inotify.max_user_watches=99999999</span><br><span class="line">fs.inotify.max_user_instances=65535</span><br><span class="line">:wq! #保存退出</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数说明：<br> max_queued_events：<br> inotify队列最大长度，如果值太小，会出现”<strong> Event QueueOverflow </strong>“错误，导致监控文件不准确<br> max_user_watches：<br> 要同步的文件包含多少目录，可以用：find /home/Sync-type d | wc -l 统计，必须保证max_user_watches值大于统计结果（这里/home/Sync为同步文件目录）<br> max_user_instances：<br> 每个用户创建inotify实例最大值</li>
+</ul>
+<p>3、安装sersync</p>
+<ul>
+<li>sersync下载地址：<a href="https://sersync.googlecode.com/files/sersync2.5.4_64bit_binary_stable_final.tar.gz" target="_blank" rel="noopener">https://sersync.googlecode.com/files/sersync2.5.4_64bit_binary_stable_final.tar.gz</a><br> 上传sersync2.5.4_64bit_binary_stable_final.tar.gz到/usr/local/src目录下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#cd /usr/local/src</span><br><span class="line">#tar -zxvf sersync2.5.4_64bit_binary_stable_final.tar.gz  #解压</span><br><span class="line">#mv GNU-Linux-x86  /usr/local/sersync  #移动目录到/usr/local/sersync</span><br></pre></td></tr></table></figure>
+<p>4、配置sersync</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#cd  /usr/local/sersync #进入sersync安装目录</span><br><span class="line">#cp confxml.xml confxml.xml-bak  #备份原文件</span><br><span class="line">#vi confxml.xml  #编辑，修改下面的代码</span><br><span class="line">&lt;?xmlversion=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span><br><span class="line">&lt;headversion=&quot;2.5&quot;&gt;</span><br><span class="line">&lt;host hostip=&quot;localhost&quot;port=&quot;8008&quot;&gt;&lt;/host&gt;</span><br><span class="line">&lt;debugstart=&quot;false&quot;/&gt;</span><br><span class="line">&lt;fileSystemxfs=&quot;false&quot;/&gt;</span><br><span class="line">&lt;filterstart=&quot;false&quot;&gt;</span><br><span class="line">&lt;excludeexpression=&quot;(.*)\.svn&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;excludeexpression=&quot;(.*)\.gz&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;excludeexpression=&quot;^info/*&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;exclude expression=&quot;^static/*&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;inotify&gt;</span><br><span class="line">&lt;deletestart=&quot;true&quot;/&gt;</span><br><span class="line">&lt;createFolderstart=&quot;true&quot;/&gt;</span><br><span class="line">&lt;createFilestart=&quot;false&quot;/&gt;</span><br><span class="line">&lt;closeWritestart=&quot;true&quot;/&gt;</span><br><span class="line">&lt;moveFromstart=&quot;true&quot;/&gt;</span><br><span class="line">&lt;moveTostart=&quot;true&quot;/&gt;</span><br><span class="line">&lt;attribstart=&quot;false&quot;/&gt;</span><br><span class="line">&lt;modifystart=&quot;false&quot;/&gt;</span><br><span class="line">&lt;/inotify&gt;</span><br><span class="line">&lt;sersync&gt;</span><br><span class="line">&lt;localpath watch=&quot;***/home/Sync***&quot;&gt;</span><br><span class="line">&lt;remote ip=&quot;***10.100.1.96***&quot; name=&quot;***Sync***&quot;/&gt;</span><br><span class="line">&lt;!--&lt;remoteip=&quot;192.168.8.40&quot; name=&quot;tongbu&quot;/&gt;--&gt;</span><br><span class="line">&lt;!--&lt;remoteip=&quot;192.168.8.40&quot; name=&quot;tongbu&quot;/&gt;--&gt;</span><br><span class="line">&lt;/localpath&gt;</span><br><span class="line">&lt;rsync&gt;</span><br><span class="line">&lt;commonParams params=&quot;-artuz&quot;/&gt;</span><br><span class="line">&lt;auth start=&quot;true&quot; users=&quot;***root***&quot; passwordfile=&quot;***/etc/passwd.txt***&quot;/&gt;</span><br><span class="line">&lt;userDefinedPortstart=&quot;false&quot; port=&quot;874&quot;/&gt;&lt;!-- port=874 --&gt;</span><br><span class="line">&lt;timeoutstart=&quot;false&quot; time=&quot;100&quot;/&gt;&lt;!-- timeout=100 --&gt;</span><br><span class="line">&lt;sshstart=&quot;false&quot;/&gt;</span><br><span class="line">&lt;/rsync&gt;</span><br><span class="line">&lt;failLogpath=&quot;/tmp/rsync_fail_log.sh&quot; timeToExecute=&quot;60&quot;/&gt;&lt;!--defaultevery 60mins execute once--&gt;</span><br><span class="line">&lt;crontab start=&quot;***true***&quot; schedule=&quot;***600***&quot;&gt;&lt;!--600mins--&gt;</span><br><span class="line">&lt;crontabfilterstart=&quot;false&quot;&gt;</span><br><span class="line">&lt;excludeexpression=&quot;*.php&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;excludeexpression=&quot;info/*&quot;&gt;&lt;/exclude&gt;</span><br><span class="line">&lt;/crontabfilter&gt;</span><br><span class="line">&lt;/crontab&gt;</span><br><span class="line">&lt;plugin start=&quot;false&quot;name=&quot;command&quot;/&gt;</span><br><span class="line">&lt;/sersync&gt;</span><br><span class="line">&lt;pluginname=&quot;command&quot;&gt;</span><br><span class="line">&lt;paramprefix=&quot;/bin/sh&quot; suffix=&quot;&quot;ignoreError=&quot;true&quot;/&gt; &lt;!--prefix /opt/tongbu/mmm.sh suffix--&gt;</span><br><span class="line">&lt;filterstart=&quot;false&quot;&gt;</span><br><span class="line">&lt;includeexpression=&quot;(.*)\.php&quot;/&gt;</span><br><span class="line">&lt;includeexpression=&quot;(.*)\.sh&quot;/&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br><span class="line">&lt;pluginname=&quot;socket&quot;&gt;</span><br><span class="line">&lt;localpathwatch=&quot;/opt/tongbu&quot;&gt;</span><br><span class="line">&lt;deshostip=&quot;192.168.138.20&quot; port=&quot;8009&quot;/&gt;</span><br><span class="line">&lt;/localpath&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br><span class="line">&lt;pluginname=&quot;refreshCDN&quot;&gt;</span><br><span class="line">&lt;localpathwatch=&quot;/data0/htdocs/cms.xoyo.com/site/&quot;&gt;</span><br><span class="line">&lt;cdninfodomainname=&quot;ccms.chinacache.com&quot; port=&quot;80&quot;username=&quot;xxxx&quot; passwd=&quot;xxxx&quot;/&gt;</span><br><span class="line">&lt;sendurlbase=&quot;http://pic.xoyo.com/cms&quot;/&gt;</span><br><span class="line">&lt;regexurlregex=&quot;false&quot;match=&quot;cms.xoyo.com/site([/a-zA-Z0-9]*).xoyo.com/images&quot;/&gt;</span><br><span class="line">&lt;/localpath&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">:wq!  #保存退出</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数说明：<br> localpath watch=”/home/Sync”：#源服务器同步目录<br> 10.100.1.96：#目标服务器IP地址<br> name=”Sync”： #目标服务器rsync同步目录模块名称<br> users=”Sync”： #目标服务器rsync同步用户名<br> passwordfile=”/etc/passwd.pass”： #目标服务器rsync同步用户的密码在源服务器的存放路径<br> remote ip=”10.100.1.96”: #目标服务器ip，每行一个<br> failLogpath=”/tmp/rsync_fail_log.sh” #脚本运行失败日志记录<br> start=”true”  #设置为true，每隔600分钟执行一次全盘同步</li>
+</ul>
+<p>5、设置sersync监控开机自动执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#vi /etc/rc.d/rc.local  #编辑，在最后添加一行</span><br><span class="line">/usr/local/sersync/sersync2 -d -r -o  /usr/local/sersync/confxml.xml ＃设置开机自动运行脚本</span><br><span class="line">:wq!  #保存退出</span><br><span class="line"># chmod +x /etc/rc.d/rc.local   #否则重启不执行</span><br></pre></td></tr></table></figure>
+<p>6、添加脚本监控sersync是否正常运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#mkdir  /home/crontab</span><br><span class="line">#vi  /home/crontab/check_sersync.sh  #编辑，添加以下代码</span><br><span class="line">#!/bin/sh</span><br><span class="line">sersync=&quot;/usr/local/sersync/sersync2&quot;</span><br><span class="line">confxml=&quot;/usr/local/sersync/confxml.xml&quot;</span><br><span class="line">status=$(ps aux |grep &apos;sersync2&apos;|grep -v &apos;grep&apos;|wc -l)</span><br><span class="line">if [ $status -eq 0 ];</span><br><span class="line">then</span><br><span class="line">$sersync -d -r -o $confxml &amp;</span><br><span class="line">else</span><br><span class="line">exit 0;</span><br><span class="line">fi</span><br><span class="line">:wq!  #保存退出</span><br><span class="line">#chmod +x /home/crontab/check_sersync.sh#添加脚本执行权限</span><br><span class="line">#vi /etc/crontab #编辑，在最后添加下面一行</span><br><span class="line">*/5 * * * * root /home/crontab/check_sersync.sh &gt;/dev/null 2&gt;&amp;1  #每隔5分钟执行一次脚本</span><br><span class="line">*/1 * * * * root /home/crontab/check_sersync.sh &gt;/dev/null 2&gt;&amp;1</span><br><span class="line">#重新加载服务</span><br><span class="line">#systemctl restart crond.service</span><br></pre></td></tr></table></figure>
+<p>6、测试sersync实时触发rsync同步脚本是否正常运行<br>   在源服务器10.100.1.145上创建文件inotify_rsync_ceshi</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /home/Sync/inotify_rsync_ceshi</span><br></pre></td></tr></table></figure>
+<p>  重新启动源服务器：10.100.1.145<br>   等系统启动之后，查看两台目标服务器 10.100.1.96，10.100.1.99的/home/Sync下是否有inotify_rsync_ceshi文件夹<br>   然后再在源服务器10.100.1.145创建文件夹inotify_rsync_ceshi_new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /home/Sync/inotify_rsync_ceshi_new</span><br></pre></td></tr></table></figure>
+<p>  继续查看两台目标服务器 10.100.1.96，10.100.1.99的//home/Sync下是否有inotify_rsync_ceshi_new文件夹<br>   如果以上测试都通过，说明inotify实时触发rsync同步脚本运行正常。<br>   至此，Linux下Rsync+sersync实现数据实时同步完成。</p>
+<ul>
+<li>扩展阅读：<br> rsync参数<br> -v, –verbose 详细模式输出<br> -q, –quiet 精简输出模式<br> -c, –checksum 打开校验开关，强制对文件传输进行校验<br> -a, –archive 归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD<br> -r, –recursive 对子目录以递归模式处理<br> -R, –relative 使用相对路径信息<br> -b, –backup 创建备份，也就是对于目的已经存在有同样的文件名时，将老的文件重新命名为~filename。可以使用–suffix选项来指定不同的备份文件前缀。<br> –backup-dir 将备份文件(如~filename)存放在在目录下。<br> -suffix=SUFFIX 定义备份文件前缀<br> -u, –update 仅仅进行更新，也就是跳过所有已经存在于DST，并且文件时间晚于要备份的文件。(不覆盖更新的文件)<br> -l, –links 保留软链结<br> -L, –copy-links 想对待常规文件一样处理软链结<br> –copy-unsafe-links 仅仅拷贝指向SRC路径目录树以外的链结<br> –safe-links 忽略指向SRC路径目录树以外的链结<br> -H, –hard-links 保留硬链结<br> -p, –perms 保持文件权限<br> -o, –owner 保持文件属主信息<br> -g, –group 保持文件属组信息<br> -D, –devices 保持设备文件信息<br> -t, –times 保持文件时间信息<br> -S, –sparse 对稀疏文件进行特殊处理以节省DST的空间<br> -n, –dry-run现实哪些文件将被传输<br> -W, –whole-file 拷贝文件，不进行增量检测<br> -x, –one-file-system 不要跨越文件系统边界<br> -B, –block-size=SIZE 检验算法使用的块尺寸，默认是700字节<br> -e, –rsh=COMMAND 指定使用rsh、ssh方式进行数据同步<br> –rsync-path=PATH 指定远程服务器上的rsync命令所在路径信息<br> -C, –cvs-exclude 使用和CVS一样的方法自动忽略文件，用来排除那些不希望传输的文件<br> –existing 仅仅更新那些已经存在于DST的文件，而不备份那些新创建的文件<br> –delete 删除那些DST中SRC没有的文件<br> –delete-excluded 同样删除接收端那些被该选项指定排除的文件<br> –delete-after 传输结束以后再删除<br> –ignore-errors 及时出现IO错误也进行删除<br> –max-delete=NUM 最多删除NUM个文件<br> –partial 保留那些因故没有完全传输的文件，以是加快随后的再次传输<br> –force 强制删除目录，即使不为空<br> –numeric-ids 不将数字的用户和组ID匹配为用户名和组名<br> –timeout=TIME IP超时时间，单位为秒<br> -I, –ignore-times 不跳过那些有同样的时间和长度的文件<br> –size-only 当决定是否要备份文件时，仅仅察看文件大小而不考虑文件时间<br> –modify-window=NUM 决定文件是否时间相同时使用的时间戳窗口，默认为0<br> -T –temp-dir=DIR 在DIR中创建临时文件<br> –compare-dest=DIR 同样比较DIR中的文件来决定是否需要备份<br> -P 等同于 –partial<br> –progress 显示备份过程<br> -z, –compress 对备份的文件在传输时进行压缩处理<br> –exclude=PATTERN 指定排除不需要传输的文件模式<br> –include=PATTERN 指定不排除而需要传输的文件模式<br> –exclude-from=FILE 排除FILE中指定模式的文件<br> –include-from=FILE 不排除FILE指定模式匹配的文件<br> –version 打印版本信息<br> –address 绑定到特定的地址<br> –config=FILE 指定其他的配置文件，不使用默认的rsyncd.conf文件<br> –port=PORT 指定其他的rsync服务端口<br> –blocking-io 对远程shell使用阻塞IO<br> -stats 给出某些文件的传输状态<br> –progress 在传输时现实传输过程<br> –log-format=formAT 指定日志文件格式<br> –password-file=FILE 从FILE中得到密码<br> –bwlimit=KBPS 限制I/O带宽，KBytes per second<br> -h, –help 显示帮助信息</li>
+</ul>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://chengtong.me">Kevin</a>
+            </p><p>原文链接：<a href="https://chengtong.me/posts/a15e2069.html">https://chengtong.me/posts/a15e2069.html</a>
+            </p><p>发表日期：<a href="https://chengtong.me/posts/a15e2069.html">June 8th 2018, 11:30:00 pm</a>
+            </p><p>更新日期：<a href="https://chengtong.me/posts/a15e2069.html">May 23rd 2020, 8:43:24 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/10802a0a.html" title="Windows系统下.sh文件的运行">
+                    <div class="nextTitle">Windows系统下.sh文件的运行</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/9f424809.html" title="如何使用Lsyncd复制并实时同步到远程服务器">
+                    <div class="prevTitle">如何使用Lsyncd复制并实时同步到远程服务器</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1630425@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span></span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、为什么要用Rsync-sersync架构"><span class="toc-number">1.</span> <span class="toc-text">一、为什么要用Rsync+sersync架构?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Rsync-Inotify-tools与Rsync-sersync这两种架构有什么区别？"><span class="toc-number">2.</span> <span class="toc-text">二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">3.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目的"><span class="toc-number">4.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体操作"><span class="toc-number">5.</span> <span class="toc-text">具体操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一部分：分别在两台目标服务器10-100-1-96上操作"><span class="toc-number">5.1.</span> <span class="toc-text">第一部分：分别在两台目标服务器10.100.1.96上操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在在目标服务器安装Rsync服务端"><span class="toc-number">5.1.1.</span> <span class="toc-text">在在目标服务器安装Rsync服务端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二部分：在源服务器10-100-1-145上操作"><span class="toc-number">5.2.</span> <span class="toc-text">第二部分：在源服务器10.100.1.145上操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、安装Rsync客户端"><span class="toc-number">5.2.1.</span> <span class="toc-text">一、安装Rsync客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、安装sersync工具，实时触发rsync进行同步"><span class="toc-number">5.2.2.</span> <span class="toc-text">二、安装sersync工具，实时触发rsync进行同步</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 97
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/posts/5f695ca8.html">Spring boot设置JWT CORS跨域请求的方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href="/posts/7c16aee4.html">harbor切换主机的ip地址</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/ed397403.html">小程序接口无法传递session校验验证码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/a5ca03ae.html">Java后台获得微信小程序(getUnlimited)生成的二维码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/7a1938ca.html">Docker CE 19.03正式发布,无需root权限</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/posts/76169928.html">Linux根目录爆满解决方案</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/10</span><a class="archive-post-title" href="/posts/ef0397e9.html">git忽略文件配置.gitignore</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href="/posts/c65b3c3e.html">java.lang.NoSuchMethodError</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/80dd260f.html">配置Spring-boot的main方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/e2686736.html">openldap密码加密算法及原理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/posts/e6c03d98.html">安装Centos7.2详细教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/posts/94480529.html">Windows下安装Docker的步骤</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href="/posts/bd13fdcc.html">MQTT入门介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href="/posts/a169a1fd.html">PowerDesigner16.5汉化破解版安装教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/21</span><a class="archive-post-title" href="/posts/fbd35054.html">为什么说GraphQL可以取代REST API</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/f1766b5e.html">浅谈三种API设计风格RPC、REST、GraphQL</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/3d17837d.html">ADS RDS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/posts/3f943cf8.html">Flume修改SQLSource以针对时间戳增量数据传输</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/posts/68ef0897.html">为什么不用原生Spring-Cloud-Config</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/posts/97614a38.html">Centos7配置阿里云yum镜像</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span><a class="archive-post-title" href="/posts/13874da1.html">Rust语言开发工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/posts/271b275c.html">Rust语言环境安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href="/posts/7774b55a.html">Https之postman请求失败</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/f78c14dc.html">Spring data Jpa自动更新实体创建时间和修改时间</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/7a45e1a3.html">什么是产品的痛点、爽点、痒点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/posts/c1ba8626.html">关于SpringJpa中getOne方法遇到延迟加载报错no Session的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href="/posts/7e91ff56.html">Java中List,Set,数组的互相转换</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href="/posts/f82ccd38.html">git版本控制如何恢复误删除的本地文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span><a class="archive-post-title" href="/posts/92eadbe.html">Kudu设计原理初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span><a class="archive-post-title" href="/posts/8920857f.html">Kudu介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href="/posts/21e5a7a5.html">HBase对比HDFS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span><a class="archive-post-title" href="/posts/9db5de4.html">Java常见的线程安全的类</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href="/posts/b02d4ba7.html">windows自启动脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href="/posts/10802a0a.html">Windows系统下.sh文件的运行</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span><a class="archive-post-title" href="/posts/9f424809.html">如何使用Lsyncd复制并实时同步到远程服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/a2a9a394.html">CentOS7配置Rsync数据文件同步服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/posts/3871497a.html">Rsync文件同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/776caf5a.html">Gogs灾备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/posts/5db798e8.html">Centos RSync+Shell实现数据定时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href="/posts/ff3ad289.html">CentOS7 MySQL自动备份shell脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/4874470d.html">Could not create connection to database server</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/205f180b.html">Dubbo和Spring Cloud微服务架构比较</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href="/posts/323926de.html">Mac使用技巧|iPic图床设置-Markdown写作必备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/f44f6d37.html">BaiduPCS-Go | 百度网盘命令行工具（基于 Go）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/2ef33b20.html">MarkDown添加图片的三种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/e94c3a32.html">拦截器（Interceptor）和过滤器（Filter）的执行顺序和区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/27ec56c.html">eclipse-idea</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/24d6d861.html">nginx设置X-Frame-Options的两种方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href="/posts/a2547652.html">用IDEA反向生成javabean</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/posts/ef57a426.html">Seafile和Nextcloud相比较哪个好用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/ef7a7f28.html">centos7仅安装mysql客户端</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/a9414c3.html">CentOS7.4使用yum源安装MySQL 5.7.20</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href="/posts/17657829.html">Shell在文本第一行和最后一行添加字符串</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href="/posts/6ca1c9fd.html">iPic-Markdown Mac图床、文件上传工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href="/posts/7fb66013.html">基于docker-compose搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/posts/4d1930e3.html">基于Docker搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/f66662b8.html">安装Python及环境变量配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/6a3c93e4.html">支付宝红包码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href="/posts/7109808e.html">WebP在减少图片体积和流量上的效果如何？MIP技术实践分享</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href="/posts/f65d6fec.html">Centos7/Ubuntu初始化硬盘分区、挂载</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/posts/d2a1fddb.html">Mysql8.0&Mysql5.7&Mysql5.6&Mysql5.5特性对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/ff0a6fc5.html">Tomcat的Https设置及Http自动跳转Https</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/238477f1.html">Jenkins2插件Pipeline+BlueOcean实现持续交付的初次演练</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/4f466ef0.html">Jenkins2实现持续交付初次演练(MultiJob，Pipeline，Blue Ocean)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/posts/65bb19af.html">Git问题Everything up-to-date解决</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/2fc0e0a3.html">解除360doc网页防复制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href="/posts/1c334725.html">git add -A 和 git add . 的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/12</span><a class="archive-post-title" href="/posts/b12943d1.html">IntelliJ使用pipeline文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/3d12f64a.html">数据库存时间戳的好处</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span><a class="archive-post-title" href="/posts/f62f0412.html">让putty支持标签tabs功能</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/87d9b46d.html">5W,5W1H,5W2H,5W2H1E</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/aa7c6b3f.html">mysql启动时，提示/etc/my.cnf 被忽略的问题处理</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2013 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href="/posts/4a17b156.html">Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href="/posts/2379f3d9.html">shell脚本中的“请按任意键继续”</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2011 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/25</span><a class="archive-post-title" href="/posts/44771869.html">SOA、ERP、SAP和SaaS四者的区别</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2010 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/727549f.html">MySQL连接&备份&导入数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/f02121e8.html">MySQL循环批量插入数据</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/fd4a1da4.html">MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
+    
+        <span class="sidebar-tag-name" data-tags="flume-ng-sql-source"><span class="iconfont-archer">&#xe606;</span>flume-ng-sql-source</span>
+    
+        <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
+    
+        <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
+    
+        <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
+    
+        <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
+    
+        <span class="sidebar-category-name" data-categories="图床"><span class="iconfont-archer">&#xe60a;</span>图床</span>
+    
+        <span class="sidebar-category-name" data-categories="图片格式"><span class="iconfont-archer">&#xe60a;</span>图片格式</span>
+    
+        <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Kevin"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
