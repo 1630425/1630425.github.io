@@ -379,6 +379,119 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/b12943d1.html">
+            
+                <span>IntelliJ使用pipeline文件</span>
+        </a>
+        <div class="abstract-content">
+            使用idea格式化pipeline文件
+新建项目Groovy项目新建.gdsl 文件
+在当前项目中/src/main/groovy新建.gdsl 文件
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/08/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/3d12f64a.html">
+            
+                <span>数据库存时间戳的好处</span>
+        </a>
+        <div class="abstract-content">
+            不管做什么项目，必须都得接触的东西就是时间类型。现在用时间戳存储日期数据（整型存储）已经是业界很平常的的事情，网上各大游戏公司，各大开源都是采取整型时间戳存储。整数存日期好处很多，程序判断直读，扩展性好，随意可转换xml,json等格式。不过有一个最大的缺点就是查数据库不直观，也就是说我们用管理工具打开数据库的时候，看到的是一堆数字，维护数据不方便。为了解决这一缺陷，我找到一方法，先上代码：
+1SELECT *,FROM_UNIXTIME(created_time, &apos;%Y-%m-%d %H:%i:%s&apos;) as created_time_ref FROM `user...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f62f0412.html">
+            
+                <span>让putty支持标签tabs功能</span>
+        </a>
+        <div class="abstract-content">
+            putty一个我们常用的管理和连接linux的工具，小而功能够用，使用下来不足的就是不支持像类似chrome浏览器一样的tabs标签。
+google了一把，找到了方法，下载一个ttyplus的工具安装后再启动就会让putty支持多标签方式浏览。
+官网下载地址：http://www.ttyplus.com/downloads.html其他下载地址：http://wangpant.cn/resource/view/hat9slegj0pa.html
+运行后如图：
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/04/18</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/87d9b46d.html">
+            
+                <span>5W,5W1H,5W2H,5W2H1E</span>
+        </a>
+        <div class="abstract-content">
+            5W理论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;美国学者H·拉斯维尔于1948年在《传播在社会中的结构与功能》一篇论文中，首次提出了构成传播过程的五种基本要素，并按照一定结构顺序将它们排列，形成了后来人们称之“五W模式”或“拉斯维尔程式”的过程模式。这五个W分别是英语中五个疑问代词的第一个字母，即：
+Who （谁）
+Says What （说了什么）
+In Which Channal （通过什么渠道）
+To Whom （向谁说）
+With What Effect （有什么效果）
+
+5W1H分析法也称六何分析法&nbsp;&nbsp;&...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2015/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/aa7c6b3f.html">
             
                 <span>mysql启动时，提示/etc/my.cnf 被忽略的问题处理</span>
@@ -551,43 +664,10 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/fd4a1da4.html">
-            
-                <span>MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</span>
-        </a>
-        <div class="abstract-content">
-            程度从强到弱drop table tbdrop将表格直接删除，没有办法找回
-truncate (table) tb删除表中的所有数据，不能与where一起使用
-delete from tb (where)删除表中的数据(可制定某一行)
-区别：truncate和delete的区别1、事务：truncate是不可以rollback的，但是delete是可以rollback的；
-   原因：truncate删除整表数据(ddl语句,隐式提交)，delete是一行一行的删除，可以rollback，效率上truncate比delete快，但truncate删除后不记录mysql日志，不可以恢复数据...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/9/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+        <a class="extend prev" rel="prev" href="/page/9/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">NEXT ></a>
     </nav>
     
 </main>
@@ -2531,51 +2611,9 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2585,6 +2623,25 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -2770,22 +2827,22 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2885,12 +2942,22 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/posts/420296e9.html">apiDoc的maven插件自动生成apidoc.json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/posts/6cb9a624.html">apiDoc使用指南</a>
         </li>
     
     
@@ -2915,12 +2982,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3146,9 +3213,9 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
-    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     

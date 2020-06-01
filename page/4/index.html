@@ -379,6 +379,66 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/f78c14dc.html">
+            
+                <span>Spring data Jpa自动更新实体创建时间和修改时间</span>
+        </a>
+        <div class="abstract-content">
+            1.实体类加注解
+1234567891011121314/** * 创建时间 */@CreatedDate@Column(name = "create_time")private Date createTime;/** * 修改时间 */@LastModifiedDate@Column(name = "modify_time")private Date modifyTime;12345678910111213
+2.实体类头加注解
+1@EntityListeners(AuditingEntityListener.class)
+3.SpringBoot启动类加注解
+1@EnableJpaAu...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/c398b326.html">
+            
+                <span>创建时间和修改时间(更新时间)</span>
+        </a>
+        <div class="abstract-content">
+            123ALTER TABLE xxx ADD created_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;创建时间&apos;;ALTER TABLE xxx ADD modified_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;更新时间&apos;;
+而在界面的mysql工具里,创建时间仅设置为:而修改时间(更新时间)需要设置为:
+实体类：
+1234567891011/** * 创...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/61334b74.html">
             
                 <span>Git修改已提交的commit注释</span>
@@ -497,6 +557,34 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
+            
+                <span>Docker配置私有仓库</span>
+        </a>
+        <div class="abstract-content">
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/1c4fca.html">
             
                 <span>Windows10自动更新无法关闭的解决方法</span>
@@ -539,67 +627,6 @@ Windows10
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
-            
-                <span>Git远程仓库地址变更本地如何修改</span>
-        </a>
-        <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c4bccc0e.html">
-            
-                <span>Docker配置私有仓库</span>
-        </a>
-        <div class="abstract-content">
-            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
-2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
-Window系统配置Docker
-Apply即可
-3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
-12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/5f9b9ec2.html">
             
                 <span>springboot部署测试环境和生产环境</span>
@@ -629,22 +656,21 @@ IDEA Maven
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/f82ccd38.html">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
             
-                <span>git版本控制如何恢复误删除的本地文件</span>
+                <span>Git远程仓库地址变更本地如何修改</span>
         </a>
         <div class="abstract-content">
-            
-使用git status查看，是否已删除
-使用命令git reset HEAD 文件名 找回来此文件
-最后使用git checkout 文件名，文件就重新找回来了！
-
-
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/06</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
             </div>
             <!-- tags  -->
             
@@ -657,42 +683,10 @@ IDEA Maven
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/92eadbe.html">
-            
-                <span>Kudu设计原理初探</span>
-        </a>
-        <div class="abstract-content">
-            如何在一个系统中融合OLTP型随机读写能力与OLAP型分析能力，Kudu提供了优秀的设计思路。本文主要从Kudu的设计论文着手，结合与HBase的对比分析，来初步揭示Kudu的设计原理，部分设计在最新的Kudu版本中可能已经过时，但最初的设计思想依然值得借鉴。
-Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现存系统针对结构化数据存储与查询的一些痛点问题，结构化数据的存储，通常包含如下两种方式：
-
-静态数据通常以Parquet/Carbon/Avro形式直接存放在HDFS中，对于分析场景，这种存储通常是更加适合的。但无论以哪种方式存在于HDFS中，都难以支持单条记录级别的更...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Kudu">Kudu</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/3/">< PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/page/3/">< PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">NEXT ></a>
     </nav>
     
 </main>
@@ -2636,51 +2630,9 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2690,6 +2642,25 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -2875,22 +2846,22 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2990,12 +2961,22 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/posts/420296e9.html">apiDoc的maven插件自动生成apidoc.json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/posts/6cb9a624.html">apiDoc使用指南</a>
         </li>
     
     
@@ -3020,12 +3001,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3251,9 +3232,9 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
-    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     

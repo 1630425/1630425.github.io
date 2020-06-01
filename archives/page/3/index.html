@@ -366,6 +366,64 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/fbd35054.html">
+            
+                <span>为什么说GraphQL可以取代REST API</span>
+        </a>
+        <div class="abstract-content">
+            作者：Azat Mardan
+几年前，我在 DocuSign 带领了一个开发团队，任务是重写一个有数千万个用户在使用的 Web 应用程序。当时还没有可以支持前端的 API，因为从一开始，Web 应用程序就是一个.NET 大单体。西雅图的 API 团队在将拆分单体，并逐步暴露出 RESTful API。这个 API 团队由两名工程师组成，发布周期为一个月，而我们在旧金山的前端团队每周都会发布新版本。
+API 团队的发布周期太长，因为很多（几乎所有）功能都必须进行手动测试，这是可以理解的。它毕竟是一个单体，而且没有适当的自动化测试——如果他们修改了一个地方，不知道在应用程序的其他地方会出现什...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f1766b5e.html">
+            
+                <span>浅谈三种API设计风格RPC、REST、GraphQL</span>
+        </a>
+        <div class="abstract-content">
+            前言Web API设计其实是一个挺重要的设计话题，许多公司都会有公司层面的Web API设计规范，几乎所有的项目在详细设计阶段都会进行API设计，项目开发后都会有一份API文档供测试和联调。本文尝试根据自己的理解总结一下目前常见的四种API设计风格以及设计考虑点。
+
+正文
+RPC
+
+这是最常见的方式，RPC说的是本地调用远程的方法，面向的是过程。
+
+RPC形式的API组织形态是类和方法，或者说领域和行为。
+因此API的命名往往是一个动词，比如GetUserInfo和CreateUser。
+因为URI会非常多而且往往没有一些约定规范，所以需要有详细的文档。
+也是因为无拘无束，HTTP方法基...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/3d17837d.html">
             
                 <span>ADS RDS</span>
@@ -612,70 +670,10 @@ Windows 注意事项在 Windows 上， Ru...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f78c14dc.html">
-            
-                <span>Spring data Jpa自动更新实体创建时间和修改时间</span>
-        </a>
-        <div class="abstract-content">
-            1.实体类加注解
-1234567891011121314/** * 创建时间 */@CreatedDate@Column(name = "create_time")private Date createTime;/** * 修改时间 */@LastModifiedDate@Column(name = "modify_time")private Date modifyTime;12345678910111213
-2.实体类头加注解
-1@EntityListeners(AuditingEntityListener.class)
-3.SpringBoot启动类加注解
-1@EnableJpaAu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c398b326.html">
-            
-                <span>创建时间和修改时间(更新时间)</span>
-        </a>
-        <div class="abstract-content">
-            123ALTER TABLE xxx ADD created_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;创建时间&apos;;ALTER TABLE xxx ADD modified_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;更新时间&apos;;
-而在界面的mysql工具里,创建时间仅设置为:而修改时间(更新时间)需要设置为:
-实体类：
-1234567891011/** * 创...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/2/">< PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/archives/page/2/">< PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT ></a>
     </nav>
     
 </main>
@@ -2520,51 +2518,9 @@ Windows 注意事项在 Windows 上， Ru...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2574,6 +2530,25 @@ Windows 注意事项在 Windows 上， Ru...
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -2759,22 +2734,22 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2874,12 +2849,22 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/posts/420296e9.html">apiDoc的maven插件自动生成apidoc.json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/posts/6cb9a624.html">apiDoc使用指南</a>
         </li>
     
     
@@ -2904,12 +2889,12 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3135,9 +3120,9 @@ Windows 注意事项在 Windows 上， Ru...
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
-    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     

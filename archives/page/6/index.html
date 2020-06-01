@@ -366,6 +366,73 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/9f424809.html">
+            
+                <span>如何使用Lsyncd复制并实时同步到远程服务器</span>
+        </a>
+        <div class="abstract-content">
+            何为Lsyncd？
+Lsyncd 官网 https://axkibe.github.io/
+Lsyncd监视本地目录树事件监视器接口(inotify或fsevents)。它聚合并将事件组合在一起几秒钟，然后生成一个(或多个)进程来同步这些更改。默认情况下，由rsync实现同步。因此，Lsyncd是一种轻量级的实时镜像解决方案，相对容易安装，不需要新的文件系统或块设备，也不会妨碍本地文件系统的性能。
+Rsync+ssh是一种高级操作配置，它使用ssh来执行文件和目录直接在目标上移动，而不是在线路上重新传输移动目标。细粒度的定制可以通过配置文件实现。自定义动作configs甚至可以从头编写，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a2a9a394.html">
+            
+                <span>CentOS7配置Rsync数据文件同步服务器</span>
+        </a>
+        <div class="abstract-content">
+            何为Rsync？
+Rsync是一个非常灵活的命令行网络同步工具，由于它在Linux和类unix系统上的普及，使它被默认包含在大多数Linux发行版中。它在同步文件或文件夹的同时，可以保持原来文件的权限、时间、软硬链接等附加信息, 它可以快速安全的传输数据，并且支持增量更新，传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽，不仅如此它还是开源软件。
+环境：
+
+RenwoleServer：10.28.204.65 服务端RenwoleClient：10.28.204.66 客户端OS：CentOS Linux release 7.4.1708 (Core) x64
+
+1.分别...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/3871497a.html">
             
                 <span>Rsync文件同步</span>
@@ -624,71 +691,10 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/3584df24.html">
-            
-                <span>请求https报java.io.IOException Invalid keystore format</span>
-        </a>
-        <div class="abstract-content">
-            spring boot配置https，访问报错
-报错日志如下：
-1234567891011121314151617181920212223242526java.io.IOException: Invalid keystore format	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:650)	at sun.security.provider.JavaKeyStore$JKS.engineLoad(JavaKeyStore.java:55)	at java.security.KeyStore.load...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/323926de.html">
-            
-                <span>Mac使用技巧|iPic图床设置-Markdown写作必备</span>
-        </a>
-        <div class="abstract-content">
-            年少时，常闲逛于1024，看美图时，时常会碰到红××或？，着实扫兴啊。楼下就常有人喊道：图床挂啦，楼主换图床啦。虽游荡网络很多年，一直不知道图床是啥东东，真是那个啥……
- 
-前不久，跟着易仁永澄老师搭建知识主题网站，在MarkEditor插入图片同步Bitcron后分享，时常看不到图片，着实郁闷啊。只能通过简书的私密文件夹上传复制出链接才得以解决，着实麻烦，繁琐累人！
-为了便利性和储存的相对安全性，就考虑设置自己的图床了。图床是什么？
-折腾图床期间入了一些坑，下面做简单安装说明，给有需要的朋友
-环境说明
-系统：Mac OS
-软件：iPic（注：仅苹果OS系统可用）+ 阿里云 OSS（阿里...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="iPic">iPic</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/5/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/archives/page/5/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT ></a>
     </nav>
     
 </main>
@@ -2533,51 +2539,9 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 97
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2587,6 +2551,25 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -2772,22 +2755,22 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2887,12 +2870,22 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/posts/420296e9.html">apiDoc的maven插件自动生成apidoc.json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/posts/6cb9a624.html">apiDoc使用指南</a>
         </li>
     
     
@@ -2917,12 +2910,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3148,9 +3141,9 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
-    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
