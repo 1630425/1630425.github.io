@@ -366,6 +366,90 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/76169928.html">
+            
+                <span>Linux根目录爆满解决方案</span>
+        </a>
+        <div class="abstract-content">
+            Linux根目录爆满 解决(/dev/mapper/centos-root 100%问题)
+使用df -h命令查看,查看详情
+使用du -h -x –max-depth=1  查看哪个目录占用过高，对于过高目录中的内容适当删减腾出一些空间
+CentOS 7 调整 home分区扩大root分区
+总体过程：
+把/home内容备份，然后将/home文件系统所在的逻辑卷删除，扩大/root文件系统，新建/home ，恢复/home内容。
+ 将/home的硬盘空间根据实际需求分配即可；如果/home为600G
+重新分配，根路径为450G，实际在以前基础上进行叠加，150G分给/home
+1.查看分...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/ef0397e9.html">
+            
+                <span>git忽略文件配置.gitignore</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/c65b3c3e.html">
+            
+                <span>java.lang.NoSuchMethodError</span>
+        </a>
+        <div class="abstract-content">
+            java.lang.NoSuchMethodError: javax.persistence.spi.PersistenceUnitInfo.getValidationMode()的解决方法
+今天在搭建springboot（2.1.0.RELEASE）+spring data+jpa+maven时按照书上的说法进行配置，结果就报了这个错误。后来经过网上查询资料和自己一步一步尝试，发现原来是我在pom.xml文件中配置了tk.mybatis造成的（我先是搭建了springboot+mybatis+maven的项目，后来在此基础上进行修改，故pom.xml文件中的依赖没有删除掉），因为tk....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/78e760f3.html">
             
                 <span>微信未绑定企业号开发者</span>
@@ -390,6 +474,52 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/01</span>
             </div>
             <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/484f15fa.html">
+            
+                <span>Windows安装配置FFmpeg</span>
+        </a>
+        <div class="abstract-content">
+            ffmpeg是一个开源的音视频转码工具,它提供了录制、转换以及流化音视频的完整解决方案，可以转码、压制、提取、截取、合并、录屏等。
+一、下载FFmpeg
+下载地址：http://ffmpeg.zeranoe.com/builds/根据你的系统选择下载：
+
+解压到D:\Program Files
+将文件夹ffmpeg-20200315-c467328-win64-static重命名为ffmpeg
+配置环境变量
+此电脑-属性
+选择高级系统设置
+
+选择环境变量
+
+在用户环境变量双击path
+
+选择新建（注意不要更改其他环境变量）
+
+将刚才的bin路径粘贴进去
+记得点下方的确定，再关闭当前窗口再...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
+    
+</div>
             
         </div>
     </article>
@@ -528,149 +658,6 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/30</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/85af5292.html">
-            
-                <span>springboot jpa注解自动生成表及注释</span>
-        </a>
-        <div class="abstract-content">
-            springboot jpa注解自动生成修改表，添加索引、字段注释、字段长度、引擎等
-
-用jpa自动生成表，只用@Entity、@Table这两个注解生成的表：引擎是MyISAM、字段长度全是默认最大、字段没注释、没有添加索引
-
-
-先设置InnoDB引擎
-生成表注解，并制定唯一索引（索引名、字段、类型）
-
-1234@Entity@Table(name = "pmi_t_user_version",       indexes = &#123;@Index(name = "my_index_name",  columnList="user_id", unique = true)&#125;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/655a5d4b.html">
-            
-                <span>springboot jpa自动生成表指定引擎</span>
-        </a>
-        <div class="abstract-content">
-            
-springboot jpa自动生成表的引擎是MyISAM，这不是我们需要的，需要更换，在配置文件中进行配置
-
-   配置默认引擎InnoDB
-application.properties
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
-application.yml
-spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-示例：
-123456789101112131415161718sprin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a169a1fd.html">
-            
-                <span>PowerDesigner16.5汉化破解版安装教程</span>
-        </a>
-        <div class="abstract-content">
-            一、软件下载1.下载地址http://wangpant.cn/resource/view/w64ae25r4fzq.html
-2.失效请留言，会及时补上
-二、软件安装1.下载安装包（包含安装文件、汉化包、破解文件）
-2.下载后文件内容如下
-
-3.进入安装文件中双击安装文件等待初始化完成后选择next
-
-4.继续下一步
-
-5.选择People R…China(PRC)，然后选择我同意协议
-
-6.更改安装路径
-
-7.根据自己需要选择，也可以全选
-
-8.根据自己需要选择，这里选择全选
-
-9.直接下一步
-
-10.继续下一步
-
-11.等待安装结束
-
-12.安装完成选择finish
-
-三、软件破解1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/30026bfd.html">
-            
-                <span>flume-ng-sql-source编译jar</span>
-        </a>
-        <div class="abstract-content">
-            编译项目地址：https://github.com/keedio/flume-ng-sql-sourceFlume-ng-sql-source 1.5.2下载地址：https://codeload.github.com/keedio/flume-ng-sql-source/tar.gz/v1.5.21234tar -xzvf flume-ng-sql-source-1.5.2.tar.gzcd flume-ng-sql-source-1.5.2/mvn install -DskipTests -Dtarcd target
-将flume-ng-sql-source-1.5.2.jar复制到...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Flume">Flume</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="flume-ng-sql-source">flume-ng-sql-source</a>
-    
-</div>
             
         </div>
     </article>
@@ -2523,9 +2510,407 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2541,12 +2926,27 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/posts/9ba6599e.html">SLB配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span><a class="archive-post-title" href="/posts/d649053f.html">Adobe Reader一打开就闪退</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/6c396ed4.html">下载工具Motrix</a>
         </li>
     
     
@@ -2601,6 +3001,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href="/posts/484f15fa.html">Windows安装配置FFmpeg</a>
         </li>
     
     
@@ -2699,6 +3104,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/85a085d9.html">CentOS7添加开机启动服务或脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
         </li>
     
@@ -2739,7 +3149,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href="/posts/102d67a.html">TS型网页视频下载方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2749,12 +3164,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -2789,7 +3204,17 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/d3c9e3a3.html">Maven插件Jib配合Harbor生成Docker镜像参考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/posts/692c43b7.html">Google正式开源Jib,帮助Java 应用快速容器化</a>
         </li>
     
     
@@ -2894,12 +3319,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3125,9 +3550,19 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jib"><span class="iconfont-archer">&#xe606;</span>Jib</span>
+    
+        <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
@@ -3135,15 +3570,13 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
-        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
-    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
-        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
         <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
@@ -3190,6 +3623,8 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
@@ -3198,11 +3633,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
     

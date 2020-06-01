@@ -366,6 +366,255 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/a44ad48d.html">
+            
+                <span>springboot过滤器禁止ip频繁访问</span>
+        </a>
+        <div class="abstract-content">
+            在 Web 中最经常发生的就是利用恶性 URL 访问刷爆服务器之类的攻击，建议对高频ip做限制，防止不法ip攻击，去网上看了很多方法，最多的就是自定义注解，然后定义一个注解的实现类利用aop去验证该限制接口的请求ip是否符合，但是缺点就是我们不可能每一个接口都要去加注解。还有一种方法就是利用过滤器去验证每一个请求的ip
+过滤器：统计用户访问次数，记录访问时间、封禁时间监听器：工程运行时初始化IP存储器（此处用的Map）
+编写一个过滤器：
+1234567891011121314151617181920212223242526272829303132333435363738394041424...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/9db5de4.html">
+            
+                <span>Java常见的线程安全的类</span>
+        </a>
+        <div class="abstract-content">
+            
+通过synchronized 关键字给方法加上内置锁来实现线程安全Timer，TimerTask，Vector，Stack，HashTable，StringBuffer
+
+原子类Atomicxxx—包装类的线程安全类如AtomicLong，AtomicInteger等等Atomicxxx 是通过Unsafe 类的native方法实现线程安全的
+
+BlockingQueue 和BlockingDequeBlockingDeque接口继承了BlockingQueue接口，BlockingQueue 接口的实现类有ArrayBlockingQueue ，LinkedBlockingQueue...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/d3c9e3a3.html">
+            
+                <span>Maven插件Jib配合Harbor生成Docker镜像参考</span>
+        </a>
+        <div class="abstract-content">
+            1 说明
+Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式访问Harbor私有仓库
+以下基于SpringBoot2.x进行配置
+
+2 Maven配置2.1 pom.xml中配置项目的pom.xml中添加以下属性和插件内容：
+12345&lt;properties&gt;    &lt;app.main.class&gt;cc.anxminise.spblearn.Application&lt;/app.main.class&gt;    &lt;docker.image.prefix&gt;192.168.1.112/library&lt;/docker.im...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Jib">Jib</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Harbor">Harbor</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/c6cc21ed.html">
+            
+                <span>选择Kong作为你的API网关</span>
+        </a>
+        <div class="abstract-content">
+            Kong（https://github.com/Kong/kong）是一个云原生，高效，可扩展的分布式API 网关。 自 2015 年在 github 开源后，广泛受到关注，目前已收获 1.68w+ 的 star，其核心价值在于高性能和可扩展性。
+为什么需要 API 网关 img
+在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权，限流，日志，监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Kong">Kong</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/692c43b7.html">
+            
+                <span>Google正式开源Jib,帮助Java 应用快速容器化</span>
+        </a>
+        <div class="abstract-content">
+            一、简介Google 宣布开源一款新的 Java 工具 Jib ，旨在让开发者使用他们熟悉的工具更轻松地将 Java 应用程序容器化。
+
+Google 软件工程师 Appu Goundan 和 Qingyang Chen 将 Jib 描述为一个容器镜像构建器，旨在处理将 Java 应用打包到容器中所涉及的所有步骤。
+容器的出现让Java开发人员比以往任何时候都更接近“编写一次，到处运行”的工作流程，但要对Java应用程序进行容器化并非易事：你必须编写Dockerfile，以root身份运行Docker守护进程，等待构建完成，最后将镜像推送到远程注册中心。但并非所有的Java开发人员都是容...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Jib">Jib</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/b02d4ba7.html">
+            
+                <span>windows自启动脚本</span>
+        </a>
+        <div class="abstract-content">
+            方法一1、
+例如我们要开机自启动一个脚本：C:\script\script.bat。 
+如果直接开机启动该脚本会弹出一个黑框，我们希望能后台执行它。 
+此时我们需要建一个.vbs脚本来后台执行该脚本，脚本内容为：复制代码代码如下:
+set ws=WScript.CreateObject(“WScript.Shell”)ws.Run “C:\script\script.bat /start”,0 
+然后将该文件保存为start_list.vbs，放入“开始 –&gt; 所有程序 –&gt; 启动”内即可。
+2、
+打开运行对话框（win键+R），输入命令
+shell:startup
+会直接弹...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/10802a0a.html">
+            
+                <span>Windows系统下.sh文件的运行</span>
+        </a>
+        <div class="abstract-content">
+            好多的python/JAVA项目是用Linux系统下写的，为了省事就尝试了再Windows系统下运行，以下是运行的过程：1，Git的安装，下载Git并安装，我是在360软件管家中直接下载安装的，速度还不错，安装时一直点next就ok。安装成功后要对环境变量进行设置，如下图 
+
+2，在/Git/bin文件夹中，有三个exe文件 
+使用sh.exe出现窗口 
+
+3，文件运行使用cd 加文件名到需要运行的文件目录下（尽量文件名是英文，我有中文加英文的文件名一直显示无法识别，…\scripts我的是然后输入`./pathfinder.sh concept_athletehomestadium或s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a15e2069.html">
+            
+                <span>CentOS7下Rsync+sersync实现数据实时同步</span>
+        </a>
+        <div class="abstract-content">
+            一、为什么要用Rsync+sersync架构?
+sersync是基于Inotify开发的，类似于Inotify-tools的工具
+sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。
+
+二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？
+Rsync+Inotify-tools （1）Inotify-tools只能记录下被监听的目录发生了变化（包括增加、删除、修改），并没有把具体是哪个文件或者哪个目录发生了变化记录下来； （2）r...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/9f424809.html">
             
                 <span>如何使用Lsyncd复制并实时同步到远程服务器</span>
@@ -423,270 +672,6 @@ RenwoleServer：10.28.204.65 服务端RenwoleClient：10.28.204.66 客户端OS�
         <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/3871497a.html">
-            
-                <span>Rsync文件同步</span>
-        </a>
-        <div class="abstract-content">
-            一、本章结构
-二、关于rsync1、介绍一款增量备份工具，remote sync,远程同步，支持本地复制或者与其他SSH、rsync主机同步，官方网站:http://rsync.samba.org/。
-Rsync（remote synchronize）是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件，也可以使用rsync同步本地硬盘中的不同目录。
-Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快，可以参考How Rsync A P...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/776caf5a.html">
-            
-                <span>Gogs灾备</span>
-        </a>
-        <div class="abstract-content">
-            　　在源代码版本管理工具的日常维护工作中，除了保证源代码仓库的正常运行以外，就是要对源代码进行备份，以免造成源代码的丢失，从而给企业带来重大经济损失。　　这里，我们讲解一种全量备份的方法，来实现定时备份并压缩，并且支持过期删除。
-备份：
-1、服务器备份（自备）；
-2、备份到另外一台服务器（远程备份）
-系统环境：CentOS7.2 64位Gogs
-原理与工具：
-putty工具
-shell脚本crontab命令
-服务器：
-Gogs服务(A主机)：10.2.12.32
-另外一台服务器(B主机)：10.2.12.31
-一、设置主机之间SSH免密登录。1、登录A主机，执行以下命令：ssh-keyg...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Gogs">Gogs</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5db798e8.html">
-            
-                <span>Centos RSync+Shell实现数据定时同步</span>
-        </a>
-        <div class="abstract-content">
-            我们前面介绍了几篇关于Centos相关服务安装及配置，今天我们主要介绍如何实现本地与远程计算机的数据目录同步，在我之前bolg中有一篇通过shell实现本地与远程计算机的数据同步的文章，通过shell同步实现指定目录的复制及覆盖操作不是那么的方便，因为复制目录及覆盖目录只会增量，不会减量，比如：原来的本地有一个目录下的abc.txt被同步到了远程计算机的指定目录后，当本地目录下的abc.txt文件删除后，远程计算机同步目录下的abc.txt依然存在，所以这样导致数据信息不准确，今天了我们为了解决这样的问题，我们准备使用rsync+shell脚本进行定期数据同步。说到Rsync相信大家已经...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/ff3ad289.html">
-            
-                <span>CentOS7 MySQL自动备份shell脚本</span>
-        </a>
-        <div class="abstract-content">
-            
- 　　在数据库的日常维护工作中，除了保证业务的正常运行以外，就是要对数据库进行备份，以免造成数据库的丢失，从而给企业带来重大经济损失。 　　通常备份可以按照备份时数据库状态分为热备和冷备，按照备份数据库文件的大小分为增量备份、差异备份和全量备份。 　　这里，我们讲解一种全量备份的方法，来实现定时备份数据到mysql脚本文件，并且支持过期删除。
-系统环境：CentOS7 64位 Minimal版（VMware）MySQL5.6
-原理与工具：shell脚本mysqldump程序crontab命令
-1、新建shell脚本1vi /opt/mysqlBackup.sh
-123456789101...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5e11aa60.html">
-            
-                <span>CentOS7修改时区</span>
-        </a>
-        <div class="abstract-content">
-            时钟概念
-（1）UTC 
-整个地球分为二十四时区，每个时区都有自己的本地时间。在国际无线电通信场合，为了统一起见，使用一个统一的时间，称为通用协调时(UTC,Universal Time Coordinated)。
-（2）GMT
-格林威治标准时间 (Greenwich Mean Time)指位于英国伦敦郊区的皇家格林尼治天文台的标准时间，因为本初子午线被定义在通过那里的经线。(UTC与GMT时间基本相同，本文中不做区分)
-（3）CST
-中国标准时间 (China Standard Time)【GMT + 8 = UTC + 8 = CST】
-（4）DST
-夏令时(Daylight Sav...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/4874470d.html">
-            
-                <span>Could not create connection to database server</span>
-        </a>
-        <div class="abstract-content">
-            MySQLNonTransientConnectionException: Could not create connection to database server.
-Spring整合mybatis并使用driud数据库连接池，启动测试类就报”MySQLNonTransientConnectionException: Could not create connection to database server.“，检查了一番配置文件没发现问题，而且我之前用过这些配置，按理说没问题。各种百度、谷歌没结果，想起来装了mysql 8.0，估计是这个问题。既然是这个问题，那么问题出在数据库连...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/205f180b.html">
-            
-                <span>Dubbo和Spring Cloud微服务架构比较</span>
-        </a>
-        <div class="abstract-content">
-            Dubbo 出生于阿里系，是阿里巴巴服务化治理的核心框架，并被广泛应用于中国各互联网公司；只需要通过 Spring 配置的方式即可完成服务化，对于应用无入侵，设计的目的还是服务于自身的业务为主。
-微服务架构是互联网很热门的话题，是互联网技术发展的必然结果。它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。
-虽然微服务架构没有公认的技术标准和规范或者草案，但业界已经有一些很有影响力的开源微服务架构框架提供了微服务的关键思路，例如 Dubbo 和 Spring Cloud。
-各大互联网公司也有自研的微服务框架，但其模式都与这二者相差不大。
-微服务主要的优...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/359a2f9d.html">
-            
-                <span>SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</span>
-        </a>
-        <div class="abstract-content">
-            1.证书生成如果对HTTPS不太了解，可以自行搜索资料，这里重点不在说https。
-使用SSL需要我们先生成一个证书，这个证书我们可以自己生成，也可以从SSL证书授权中心获得，自己生成的不被客户端认可，从授权中心获得的可以被客户端认可，提供SSL授权证书的服务商有很多，小伙伴们有兴趣可以自行查找，我这里以自己生成的证书为例。 
-生成方式也很简单，直接使用java自带的命令keytool来生成，生成命令如下：
-
--storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
-
-这里涉及到几...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2539,9 +2524,407 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2557,12 +2940,27 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/posts/9ba6599e.html">SLB配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span><a class="archive-post-title" href="/posts/d649053f.html">Adobe Reader一打开就闪退</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/6c396ed4.html">下载工具Motrix</a>
         </li>
     
     
@@ -2617,6 +3015,11 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href="/posts/484f15fa.html">Windows安装配置FFmpeg</a>
         </li>
     
     
@@ -2715,6 +3118,11 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/85a085d9.html">CentOS7添加开机启动服务或脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
         </li>
     
@@ -2755,7 +3163,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href="/posts/102d67a.html">TS型网页视频下载方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2765,12 +3178,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -2805,7 +3218,17 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/d3c9e3a3.html">Maven插件Jib配合Harbor生成Docker镜像参考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/posts/692c43b7.html">Google正式开源Jib,帮助Java 应用快速容器化</a>
         </li>
     
     
@@ -2910,12 +3333,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3141,9 +3564,19 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jib"><span class="iconfont-archer">&#xe606;</span>Jib</span>
+    
+        <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
@@ -3151,15 +3584,13 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
-        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
-    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
-        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
         <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
@@ -3206,6 +3637,8 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
@@ -3214,11 +3647,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
     

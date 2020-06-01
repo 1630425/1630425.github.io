@@ -366,6 +366,30 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c1ba8626.html">
+            
+                <span>关于SpringJpa中getOne方法遇到延迟加载报错no Session的问题</span>
+        </a>
+        <div class="abstract-content">
+            报错如下：123org.hibernate.LazyInitializationException: could not initialize proxy - no Session...
+看到报错信息推测如下：遇到延迟加载，session关闭了，导致不能得到有效信息。网上搜集了下资料，有关解释说，T getOne(ID id)依赖于EntityManager.getReference()执行实体延迟加载。https://stackoverflow.com/questions/24482117/when-use-getone-and-findone-methods-spring-data-...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7e91ff56.html">
             
                 <span>Java中List,Set,数组的互相转换</span>
@@ -392,24 +416,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/c4bccc0e.html">
+        <a class="abstract-title" href="/posts/102d67a.html">
             
-                <span>Docker配置私有仓库</span>
+                <span>TS型网页视频下载方法</span>
         </a>
         <div class="abstract-content">
-            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
-2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
-Window系统配置Docker
-Apply即可
-3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
-12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+            
+首先使用Chrome打开网页，单击F12打开开发者工具 开始视频播放，在F12出来的界面中单击Network 在Network中有文件列表，检查当中是否存在m3u8结尾的文件
+
+如果有m3u8结尾的文件，把它的源地址复制下来  源地址复制下来可能分两段（两个http），一段是跳转地址，一段是目标地址，将目标地址保留下来即可。
+正确的m3u8文件地址大概的样子在下面的命令示例中
+
+使用以下命令一键下载并自动合成、转码为mp4
+1ffmpeg -i http://xxx.com:8891/1231/index.m3u8 -c copy -bsf:a aac_adtstoasc output...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
+    
+</div>
             
         </div>
     </article>
@@ -462,6 +494,39 @@ Windows10
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
+            
+                <span>Git远程仓库地址变更本地如何修改</span>
+        </a>
+        <div class="abstract-content">
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/5f9b9ec2.html">
             
                 <span>springboot部署测试环境和生产环境</span>
@@ -491,16 +556,17 @@ IDEA Maven
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
             
-                <span>Git远程仓库地址变更本地如何修改</span>
+                <span>Docker配置私有仓库</span>
         </a>
         <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -508,12 +574,6 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
             </div>
             <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
             
         </div>
     </article>
@@ -618,68 +678,10 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/21e5a7a5.html">
-            
-                <span>HBase对比HDFS</span>
-        </a>
-        <div class="abstract-content">
-            什么是HDFS(Hadoop分布式文件系统)HDFS允许以分布式和冗余方式存储大量数据。HDFS组件• NameNode• DataNodeNameNode：NameNode可以被视为系统的管理者。它维护系统文件树以及系统中存在的所有文件和目录的元数据。其中“命名空间镜像(Namespace image)”和“编辑日志”用于存储元数据信息。 Namenode包含所有数据节点的数据块信息，但是，它不会持久存储数据节点数据块位置信息。系统启动时，每次从数据节点重建此信息。DataNode:是集群中的从属者，提供实际存储。它主要负责为客户提供读写请求服务。
-什么是HbaseHbase是一个可以...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HBase">HBase</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HDFS">HDFS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a44ad48d.html">
-            
-                <span>springboot过滤器禁止ip频繁访问</span>
-        </a>
-        <div class="abstract-content">
-            在 Web 中最经常发生的就是利用恶性 URL 访问刷爆服务器之类的攻击，建议对高频ip做限制，防止不法ip攻击，去网上看了很多方法，最多的就是自定义注解，然后定义一个注解的实现类利用aop去验证该限制接口的请求ip是否符合，但是缺点就是我们不可能每一个接口都要去加注解。还有一种方法就是利用过滤器去验证每一个请求的ip
-过滤器：统计用户访问次数，记录访问时间、封禁时间监听器：工程运行时初始化IP存储器（此处用的Map）
-编写一个过滤器：
-1234567891011121314151617181920212223242526272829303132333435363738394041424...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/">< PREV</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><a class="page-number" href="/archives/2018/page/5/">5</a><a class="extend next" rel="next" href="/archives/2018/page/3/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/archives/2018/">< PREV</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/6/">6</a><a class="extend next" rel="next" href="/archives/2018/page/3/">NEXT ></a>
     </nav>
     
 </main>
@@ -2524,9 +2526,407 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2542,12 +2942,27 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/posts/9ba6599e.html">SLB配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span><a class="archive-post-title" href="/posts/d649053f.html">Adobe Reader一打开就闪退</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/6c396ed4.html">下载工具Motrix</a>
         </li>
     
     
@@ -2602,6 +3017,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href="/posts/484f15fa.html">Windows安装配置FFmpeg</a>
         </li>
     
     
@@ -2700,6 +3120,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/85a085d9.html">CentOS7添加开机启动服务或脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
         </li>
     
@@ -2740,7 +3165,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href="/posts/102d67a.html">TS型网页视频下载方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2750,12 +3180,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -2790,7 +3220,17 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/d3c9e3a3.html">Maven插件Jib配合Harbor生成Docker镜像参考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/posts/692c43b7.html">Google正式开源Jib,帮助Java 应用快速容器化</a>
         </li>
     
     
@@ -2895,12 +3335,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3126,9 +3566,19 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jib"><span class="iconfont-archer">&#xe606;</span>Jib</span>
+    
+        <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
@@ -3136,15 +3586,13 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
-        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
-    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
-        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
         <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
@@ -3191,6 +3639,8 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
@@ -3199,11 +3649,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
     

@@ -1,0 +1,3805 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Kevin">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Kevin">
+    
+    <meta name="keywords" content="Kevin,Kevin-theme,Kevin-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="Moodle、Sakai、Blackboard对比    英文名称 Moodle Sakai Blackboard Learning System CE 6.1 Enterprise License     中文名称 Moodle（魔灯） Sakai 毕博   开发单位/开发者 Martin Dougiamas Sakai WebCT   国家 澳大利亚 美国 美国   版权类型 GPL 教育社区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moodle、Sakai、Blackboard对比">
+<meta property="og:url" content="https://chengtong.me/posts/b84480a5.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Moodle、Sakai、Blackboard对比    英文名称 Moodle Sakai Blackboard Learning System CE 6.1 Enterprise License     中文名称 Moodle（魔灯） Sakai 毕博   开发单位/开发者 Martin Dougiamas Sakai WebCT   国家 澳大利亚 美国 美国   版权类型 GPL 教育社区">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-01T07:55:36.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Moodle、Sakai、Blackboard对比">
+<meta name="twitter:description" content="Moodle、Sakai、Blackboard对比    英文名称 Moodle Sakai Blackboard Learning System CE 6.1 Enterprise License     中文名称 Moodle（魔灯） Sakai 毕博   开发单位/开发者 Martin Dougiamas Sakai WebCT   国家 澳大利亚 美国 美国   版权类型 GPL 教育社区">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="alternate" href="/atom.xml" title="Kevin&#39;s Blog" type="application/atom+xml">
+    
+    <title>Moodle、Sakai、Blackboard对比 · Kevin&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?832c28180f9c6911634deedc6254b910";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Kevin&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Moodle、Sakai、Blackboard对比</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Kevin's Blog</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Moodle、Sakai、Blackboard对比
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">5.2k</span>阅读时长: <span class="post-count reading-time">18 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/04/12</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>Moodle、Sakai、Blackboard对比</p>
+<table>
+<thead>
+<tr>
+<th>英文名称</th>
+<th>Moodle</th>
+<th>Sakai</th>
+<th>Blackboard Learning System CE 6.1 Enterprise License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中文名称</td>
+<td>Moodle（魔灯）</td>
+<td>Sakai</td>
+<td>毕博</td>
+</tr>
+<tr>
+<td>开发单位/开发者</td>
+<td>Martin Dougiamas</td>
+<td>Sakai</td>
+<td>WebCT</td>
+</tr>
+<tr>
+<td>国家</td>
+<td>澳大利亚</td>
+<td>美国</td>
+<td>美国</td>
+</tr>
+<tr>
+<td>版权类型</td>
+<td>GPL</td>
+<td>教育社区许可证(Educational Communtity License)</td>
+<td>商品软件</td>
+</tr>
+<tr>
+<td>版本更新时间</td>
+<td>2008年3月3日，Moodle 1.9</td>
+<td>2008年3月27日，Sakai 2.5</td>
+<td>2006年10月26日，Blackboard Learning System CE 6.1</td>
+</tr>
+<tr>
+<td><strong>交流工具</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>讨论区</td>
+<td>1.能够选择是否讨论的帖子发到学生电子邮箱中。2.学生能够通过电子邮件来浏览帖子，电子邮件呈现的内容包括以主题的每日摘要或帖子的全部内容两种方式。3.学生能够订阅讨论区的RSS种子。4.提供对学生和教师发表帖子内容的拼写检查。</td>
+<td>1.能够选择是否讨论的帖子发到学生电子邮箱中。2.学生能够通过电子邮件来浏览帖子，电子邮件呈现的内容包括以主题的每日摘要或帖子的全部内容两种方式。3.提供对学生和教师发表帖子内容的拼写检查。</td>
+<td>1.提供对学生和教师发表帖子内容的拼写检查。</td>
+</tr>
+<tr>
+<td>讨论区管理</td>
+<td>1.帖子能够被其他同学查看。2.教师能够查看有关参与者发表帖子的统计数据，这些统计数据能够帮助教师对参与者进行评价。</td>
+<td>教师在所有的帖子经过筛选过之后能够建立适当的讨论。</td>
+<td>1.帖子能够被其他同学查看。2.教师能够查看有关参与者发表帖子的统计数据，这些统计数据能够帮助教师对参与者进行评价。</td>
+</tr>
+<tr>
+<td>文件交换</td>
+<td>学生能够提交作业。</td>
+<td>学生能够提交作业。</td>
+<td>1.学生能够提交作业。2.管理者能够定义每名用户的磁盘空间大小。</td>
+</tr>
+<tr>
+<td>电子邮件</td>
+<td></td>
+<td>1.学生能够使用内嵌的电子邮件功能给个人或小组成员发邮件。2.教师能通过电子邮件地址或学习者别名对全班成员或个人发邮件。</td>
+<td>1.学生能够使用内嵌的电子邮件功能给个人或小组成员发邮件。2.学生能够使用地址搜索栏。3.教师能通过电子邮件地址或学习者别名对全班成员或个人发邮件。4.学生能够转发自己的邮件。</td>
+</tr>
+<tr>
+<td>在线日志/在线笔记</td>
+<td></td>
+<td></td>
+<td>1.学生能够在任意页上添加笔记。2.学生能够合并他们的<a href="http://www.aieln.com/course/" target="_blank" rel="noopener">课程</a>笔记，并可打印。</td>
+</tr>
+<tr>
+<td>实时聊天室</td>
+<td>1.支持实时的小组讨论。2.教师能控制聊天并控制聊天者的参与。3.系统为所有聊天室进行日志存档。</td>
+<td>1.支持实时的小组讨论。2.系统为所有聊天室进行日志存档。</td>
+<td>1.支持实时的小组讨论。2.教师能控制聊天并控制聊天者的参与。3.聊天工具支持学生提问，教师回答的方式。4.系统为所有聊天室进行日志存档。</td>
+</tr>
+<tr>
+<td>白板</td>
+<td></td>
+<td></td>
+<td>1.支持图片和ppt的上载。2.支持数学符号。3.通过软件能够记录会议内容，方便日后浏览。</td>
+</tr>
+<tr>
+<td><strong>工具</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>书签</td>
+<td></td>
+<td></td>
+<td>1.学习者能够分享自己的书签。2.学习者能够在自己的文件夹中建立书签。3.学生能够对课程中的任何内容材料建立书签。</td>
+</tr>
+<tr>
+<td>日历/事件提醒</td>
+<td>1.教师能够在课程通知界面中发布通知。2.学生在完成了作业后能浏览自己的成绩，并与班上的其他同学对比。</td>
+<td>1. 教师和学习者都能在课程日历上添加事件。2.教师能够在课程通知界面中发布通知。3.学生有自己的个人主页，这个主页中列出了所有学生能够选择的课程清单、新的电子邮件、所有课程，在个人日历上还列出了系统事件。</td>
+<td>1. 教师和学习者都能在课程日历上添加事件。2. 教师能够在课程通知界面中发布通知。3.学生有自己的个人主页，这个主页中列出了所有学生能够选择的课程清单、新的电子邮件、所有课程，在个人日历上还列出了系统事件。4.学生在完成了作业后能浏览自己的成绩，并与班上的其他同学对比。</td>
+</tr>
+<tr>
+<td>课程搜索</td>
+<td>学习者能够搜索所有讨论线程。</td>
+<td>1.学习者能够搜索所有课程内容。2.学习者能够搜索所有讨论线程。3.学习者能够搜索聊天室或虚拟教室的会议记录。</td>
+<td>1.学习者能够搜索所有课程内容。2.学习者能够搜索所有讨论线程。</td>
+</tr>
+<tr>
+<td>离线学习/同步学习</td>
+<td></td>
+<td></td>
+<td>1.学习者能够完成和下载整堂课的内容，这些课程内容都以能够存储在本机上或打印的格式保留下来。2.教师能够通过CD发布课程内容，这样便于学习者的离线学习。</td>
+</tr>
+<tr>
+<td>导航条/帮助</td>
+<td>1.学习者能够及时的得到任何工具的使用帮助。</td>
+<td>1. 学习者能够及时的得到任何工具的使用帮助。2.系统有帮助学习者如何使用系统的在线教程。</td>
+<td>1. 学习者能够及时的得到任何工具的使用帮助。2.系统有帮助学习者如何使用系统的在线教程。</td>
+</tr>
+<tr>
+<td><strong>学生互动工具</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>小组合作</td>
+<td>1.教师能够为学习者分组。2.每个小组能够有自己的讨论区。3.每个小组能够有自己的聊天室或互动白板。4.每个小组能够有小组特有的活动或作业。</td>
+<td>1.教师能够为学习者分组。2.每个小组能够有小组特有的活动或作业。3.小组能够自我管理或接受教师的监管。</td>
+<td>1.教师能够为学习者分组。2.系统能够根据特定的大小和规模随机分组。3.学习者能够自己分组。4.每个小组能够有自己的讨论区。5.每个小组能够有自己的聊天室或互动白板。6.每个小组能够有小组特有的活动或作业。7.小组能够自我管理或接受教师的监管。</td>
+</tr>
+<tr>
+<td>社会网络</td>
+<td></td>
+<td>学习者能够根据兴趣建立自己的在线俱乐部，能够在系统里的小组学习。</td>
+<td></td>
+</tr>
+<tr>
+<td>学习档案袋</td>
+<td></td>
+<td>开源电子档案袋是Sakai的备选工具。1、学习者可以收集、整理、反思自己在学习过程中完成的作业和作品。2、学习者可以设计、编排他们的作品，继而放到网上供老师、同学、家长浏览。3、教学者可以利用档案袋整理自己的教学资源。4、教学者可以回顾、反思自己的教学经历。5、教学者能够利用档案袋让学习者、家长和学校更好地了解自己的教学理念和教学状况。</td>
+<td>1.学习者能够为每门课程建立自己的主页。2.学习者能够使用他们自己的个人主页来选择性的显示自己的课程学习。3.学习者能够输出个人主页中的内容。</td>
+</tr>
+<tr>
+<td><strong>管理</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>验证</td>
+<td>1.管理者能够允许访客进入所有课程。2.系统能够验证外部的LDAP服务器。</td>
+<td>1.管理者能够允许访客进入所有课程。2.系统能够验证外部的LDAP服务器。3.系统能够通过Kerberos协议进行验证。4.系统支持Shibboleth。5.系统支持CAS。</td>
+<td>1.系统能够验证外部的LDAP服务器。2.系统能够通过Kerberos协议进行验证。3.系统支持Shibboleth。4.系统支持CAS。5.系统能够验证IMAP，POP3或安全NNTP。6.管理者能够建立对二级课程建立登录失败清单。7.系统能够支持多组织单元和符合服务期设置虚拟服务器。</td>
+</tr>
+<tr>
+<td>开设课程授权</td>
+<td>1.系统支持基于角色的开课授权，角色能定制服务提供者。2.教师和学习者在不同的课程中可以被赋予不同的角色。3. 可以设置不同类型的角色参与教学活动。</td>
+<td>1.系统支持基于角色的开课授权，角色能定制服务提供者。2.管理者能够建立一个不限用户组织单元数，以及为用户定义能够进入课程内容和工具的特定浏览权限。3.管理者能通过许可，为角色定义多重制度以及在课程中的角色。4.教师和学习者在不同的课程中可以被赋予不同的角色。</td>
+<td>1.系统支持基于角色的开课授权，角色能定制服务提供者。2.管理者能够建立一个不限用户组织单元数，以及为用户定义能够进入课程内容和工具的特定浏览权限。3.管理者能通过许可，为角色定义多重制度以及在课程中的角色。4.教师和学习者在不同的课程中可以被赋予不同的角色。</td>
+</tr>
+<tr>
+<td>注册</td>
+<td>1.教师能够为自己的课程增加学生，也允许学生自己提出申请。2.管理者能够通过一定的文本格式批量添加学生信息。3.管理者能够在系统和SIS之间转存学生信息。</td>
+<td>1.教师能够为自己的课程增加学生，也允许学生自己提出申请。2.管理者能够通过一定的文本格式批量添加学生信息。</td>
+<td>1.教师能够为自己的课程增加学生，也允许学生自己提出申请。2.管理者能够在系统和SIS之间转存学生信息。3.软件通过API事件驱动支持学生信息系统数据交换。4.软件支持SCT Banner，SCT Luminis，Datatel，PeopleSoft8或其他SIS或portal系统之间的整合。5.通过软件使用IMS企业版的学生数据。</td>
+</tr>
+<tr>
+<td>本机服务器</td>
+<td>从商业分支机构中得到主机和支持服务。</td>
+<td></td>
+<td>提供主机解决方法。</td>
+</tr>
+<tr>
+<td><strong>课程工具</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>测试类型</td>
+<td>1.多项选择2.多选答案题3.匹配题4.计算题5.数字题6.填空题7.完形填空8.描述9.问答题10.答案可以包含其他媒体元素(图片，视频，音频)</td>
+<td>1.多项选择2.多选答案题3.匹配题4.计算题5.填空题6.完形填空7.调查问卷题8.描述9.答案可以包含其他媒体元素(图片，视频，音频)</td>
+<td>1.多项选择2.多选答案题3.匹配题4.句子排序题5.计算题6.填空题7.完形填空题8.问卷调查题9.描述10.答案可以包含其他媒体元素(图片，视频，音频)</td>
+</tr>
+<tr>
+<td>自动测试管理</td>
+<td>1.系统能随机选择题目顺序和答案顺序。2.教师能建立自评。3.教师能限制测试时间。4.教师能允许学生重试。5.系统支持测试代理。</td>
+<td>1.系统能随机选择题目顺序和答案顺序。2.教师能建立自评。3.教师能限制测试时间。4.教师能允许学生重试。5.学生可以浏览已回答的问题。6.教师能设定对正确的答案给与特定的反馈信息。7.系统支持测试代理。</td>
+<td>1.系统能随机选择题目顺序和答案顺序。2.教师能建立自评。3.教师能限制测试时间。4.教师能允许学生重试。5.学生可以浏览已回答的问题。6.教师能设定对正确的答案给与特定的反馈信息。7.系统支持测试代理。</td>
+</tr>
+<tr>
+<td>自动测试支持</td>
+<td>1.教师能够建立个人测试题库。2.支持导入和导出试题库。</td>
+<td>1.教师能够建立个人测试题库。2.教师能够建立系统测试题库。3.能够导入测试，测试类型需符合QTI。4.系统提供测试分析数据。</td>
+<td>1.教师能够建立个人测试题库。2.能够导入测试，测试类型需符合QTI。3.系统提供测试分析数据。</td>
+</tr>
+<tr>
+<td>在线划线工具</td>
+<td>1.教师能够选择特定的学习者或者问题进行标记。2.教师能够使学习者对其他学习者进行评级、评论。</td>
+<td>1.教师能够选择特定的学习者或者问题进行标记。2.教师能够使学习者对其他学习者进行评级、评论。</td>
+<td>1.教师能够选择特定的学习者或者问题进行标记。2.教师能够匿名对学习者的回家进行评价。3.教师能够使学习者对其他学习者进行评级、评论。</td>
+</tr>
+<tr>
+<td>在线成绩簿</td>
+<td>1.当教师在课程中布置一次作业后，软件把其自动添加到成绩簿中。2.教师能对离线作业评分。3.教师能够以表格形式把成绩簿中的分数输出。4.教师能够建立课程评分维度，可以是百分比，等级制或是否通过。</td>
+<td>1.当教师在课程中布置一次作业后，软件把其自动添加到成绩簿中。2.教师能对离线作业评分。3.教师能够以表格形式把成绩簿中的分数输出。4.教师能够建立课程评分维度，可以是百分比，等级制或是否通过。</td>
+<td>1.当教师在课程中布置一次作业后，软件把其自动添加到成绩簿中。2.教师能对离线作业评分。3.教师能在特定的栏目中添加细节内容。4.教师能够以表格形式把成绩簿中的分数输出。5.教师能够建立课程评分维度，可以是百分比，等级制或是否通过。</td>
+</tr>
+<tr>
+<td>课程管理</td>
+<td>1.教师能够旋转性的发放作业、评价和课程的开始、结束时间。2.教师能基于小组成员的以个人身份进入课程内容。</td>
+<td>1.教师能够旋转性的发放作业、评价和课程的开始、结束时间。2.教师能基于小组成员的以个人身份进入课程内容。</td>
+<td>1.教师能够有选择性的发放作业、评价和基于特定的事件发布消息。2.教师能基于单独的内容(日期、等级等)发放材料，教师能够使用布尔数值来选择发放内容。3.教师能够建立课程内容，设定课程开始时间，以及学习者必须学习的完成的内容。4.教师能够把讨论区与日期和事件联系起来。5.教师能基于小组成员的以个人身份进入课程内容。6.教师能基于课程活动的以个人身份进入课程内容。7.教师基于学生成果以个人身份进入课程内容。</td>
+</tr>
+<tr>
+<td>学习追踪</td>
+<td>1.教师能够追踪到学习者进入课程学习的频率和持续时间。2.教师能以小组合计的方式显示时间、日期和频率信息。3.教师能对进入课程、讨论区、课程测试和作业的学习者的分别就进入次数，进入时间，日期，频率和IP地址进行记录，显示。</td>
+<td></td>
+<td>1.教师能够追踪到学习者进入课程学习的频率和持续时间。2.教师能以小组合计的方式显示时间、日期和频率信息。3.教师能对进入课程、讨论区、课程测试和作业的学习者的分别就进入次数，进入时间，日期，频率和IP地址进行记录，显示。4.教师能浏览每个学生的导航记录。5.使用数据能根据课程整合，也可根据教学整合。</td>
+</tr>
+<tr>
+<td><strong>内容开发工具</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>存储</td>
+<td>1.提供自我报告，软件需符合美国复原技术508部分。2.提供自我报告，软件需符合WAI WCAG1.0A级标准。</td>
+<td>1.提供自我报告，软件需符合美国复原技术508部分。2.提供自我报告，软件需符合WAI WCAG1.0A级标准。</td>
+<td>1.提供自我报告，软件需符合美国复原技术508部分。2.提供自我报告，软件需符合WAI WCAG1.0A级标准。</td>
+</tr>
+<tr>
+<td>内容分享/重用</td>
+<td>支持SCORM标准</td>
+<td>支持SCORM标准</td>
+<td>支持SCORM标准</td>
+</tr>
+<tr>
+<td>课程模板</td>
+<td>1.在课程建立的时候，软件提供模板支持。2.系统允许管理者把现有课程或预定义的课程模板作为新课程的默认模板。</td>
+<td>1.在课程建立的时候，软件提供模板支持。2.课程内容可以通过WebDAV上载。3.系统允许管理者把现有课程或预定义的课程模板作为新课程的默认模板。</td>
+<td>1.在课程建立的时候，软件提供模板支持。2.课程内容可以通过WebDAV上载。3.课程模板可能包括可选择性的使用标准和用户成绩薄栏目，这些内容可以在每个新的课程中出现。3.系统允许管理者把现有课程或预定义的课程模板作为新课程的默认模板。</td>
+</tr>
+<tr>
+<td>用户界面</td>
+<td>1.系统提供课程缺省界面。2.教师能够为每门课程改变导航图标和主题颜色。3.教师能够改变每门课程菜单项的名称和顺序。4.教师能够建立自己的界面模板，并使用在整个系统中，包括自己的教学图标，页眉和页脚。5.系统能够支持教学，部门，学校或其他组织单元同时装载在一个系统下，每个单元能够应用自己的界面和模板，包括图片，页眉和页脚。</td>
+<td>1.系统提供课程缺省界面。2.教师能够为每门课程改变导航图标和主题颜色。3.教师能够建立自己的界面模板，并使用在整个系统中，包括自己的教学图标，页眉和页脚。</td>
+<td>1.系统提供课程缺省界面。2.教师能够为每门课程改变导航图标和主题颜色。3.教师能够改变每门课程菜单项的名称和顺序。4.教师能够建立自己的界面模板，并使用在整个系统中，包括自己的教学图标，页眉和页脚。</td>
+</tr>
+<tr>
+<td>教学设计工具</td>
+<td>教师能够把课程作为模板重用在以后的课中。</td>
+<td>1.教师能够组织学习对象，课程工具和内容在教学过程中，这些东西是能够重用的。2.教师能够建立线性的学习过程组织，这种组织方式可以是课程，课和主题。3.教师能够把课程作为模板重用在以后的课中。</td>
+<td>1.教师能够组织学习对象，课程<a href="http://www.aieln.com/tool/" target="_blank" rel="noopener">工具</a>和内容在教学过程中，这些东西是能够重用的。2.教师能够建立线性的学习过程组织，这种组织方式可以是课程，课和主题。3.教师能够把<a href="http://www.aieln.com/course/" target="_blank" rel="noopener">课程</a>作为模板重用在以后的课中。</td>
+</tr>
+<tr>
+<td>教学标准兼容性</td>
+<td>1.SCORM1.22.SCORM1.33.SCORM2004</td>
+<td>1.IMS内容包1.1.32.IMS QTI1.2.13.SCORM1.2</td>
+<td>1.IMS内容包1.1.32.IMS QTI1.2.13.微软LRN4.SCORM1.2</td>
+</tr>
+<tr>
+<td><strong>硬件/软件环境</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>系统支持MySQL。</td>
+<td>1.系统支持Oracle。2.系统支持MySQL。3.应用仅仅需要一个数据库，并能与其他应用中的表格并存。</td>
+<td>1.系统支持Oracle。2.系统支持MySQL。</td>
+</tr>
+<tr>
+<td>UNIX服务器</td>
+<td>可用UNIX系统</td>
+<td>可用UNIX系统</td>
+<td>可用UNIX系统</td>
+</tr>
+<tr>
+<td>Windows服务器</td>
+<td>可用Windows系统</td>
+<td>可用Windows系统</td>
+<td>可用Windows系统</td>
+</tr>
+</tbody>
+</table>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://chengtong.me">Kevin</a>
+            </p><p>原文链接：<a href="https://chengtong.me/posts/b84480a5.html">https://chengtong.me/posts/b84480a5.html</a>
+            </p><p>发表日期：<a href="https://chengtong.me/posts/b84480a5.html">April 12th 2020, 9:21:53 pm</a>
+            </p><p>更新日期：<a href="https://chengtong.me/posts/b84480a5.html">June 1st 2020, 3:55:36 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/f2a408f6.html" title="Docker-Compose安装Wordpress博客">
+                    <div class="nextTitle">Docker-Compose安装Wordpress博客</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/9ba6599e.html" title="SLB配置">
+                    <div class="prevTitle">SLB配置</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1630425@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span></span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 109
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/posts/9ba6599e.html">SLB配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span><a class="archive-post-title" href="/posts/d649053f.html">Adobe Reader一打开就闪退</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/6c396ed4.html">下载工具Motrix</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/posts/5f695ca8.html">Spring boot设置JWT CORS跨域请求的方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href="/posts/7c16aee4.html">harbor切换主机的ip地址</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/ed397403.html">小程序接口无法传递session校验验证码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/a5ca03ae.html">Java后台获得微信小程序(getUnlimited)生成的二维码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href="/posts/7a1938ca.html">Docker CE 19.03正式发布,无需root权限</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/22</span><a class="archive-post-title" href="/posts/76169928.html">Linux根目录爆满解决方案</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/10</span><a class="archive-post-title" href="/posts/ef0397e9.html">git忽略文件配置.gitignore</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href="/posts/c65b3c3e.html">java.lang.NoSuchMethodError</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href="/posts/484f15fa.html">Windows安装配置FFmpeg</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/80dd260f.html">配置Spring-boot的main方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/e2686736.html">openldap密码加密算法及原理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/posts/e6c03d98.html">安装Centos7.2详细教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/posts/94480529.html">Windows下安装Docker的步骤</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href="/posts/bd13fdcc.html">MQTT入门介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href="/posts/a169a1fd.html">PowerDesigner16.5汉化破解版安装教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/21</span><a class="archive-post-title" href="/posts/fbd35054.html">为什么说GraphQL可以取代REST API</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/f1766b5e.html">浅谈三种API设计风格RPC、REST、GraphQL</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/3d17837d.html">ADS RDS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/14</span><a class="archive-post-title" href="/posts/3f943cf8.html">Flume修改SQLSource以针对时间戳增量数据传输</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href="/posts/68ef0897.html">为什么不用原生Spring-Cloud-Config</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/posts/97614a38.html">Centos7配置阿里云yum镜像</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span><a class="archive-post-title" href="/posts/13874da1.html">Rust语言开发工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/posts/271b275c.html">Rust语言环境安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/85a085d9.html">CentOS7添加开机启动服务或脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/04</span><a class="archive-post-title" href="/posts/7774b55a.html">Https之postman请求失败</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/f78c14dc.html">Spring data Jpa自动更新实体创建时间和修改时间</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/7a45e1a3.html">什么是产品的痛点、爽点、痒点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/posts/c1ba8626.html">关于SpringJpa中getOne方法遇到延迟加载报错no Session的问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href="/posts/7e91ff56.html">Java中List,Set,数组的互相转换</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href="/posts/102d67a.html">TS型网页视频下载方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href="/posts/f82ccd38.html">git版本控制如何恢复误删除的本地文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span><a class="archive-post-title" href="/posts/92eadbe.html">Kudu设计原理初探</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span><a class="archive-post-title" href="/posts/8920857f.html">Kudu介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href="/posts/21e5a7a5.html">HBase对比HDFS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span><a class="archive-post-title" href="/posts/9db5de4.html">Java常见的线程安全的类</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/d3c9e3a3.html">Maven插件Jib配合Harbor生成Docker镜像参考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/posts/692c43b7.html">Google正式开源Jib,帮助Java 应用快速容器化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href="/posts/b02d4ba7.html">windows自启动脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href="/posts/10802a0a.html">Windows系统下.sh文件的运行</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span><a class="archive-post-title" href="/posts/9f424809.html">如何使用Lsyncd复制并实时同步到远程服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/a2a9a394.html">CentOS7配置Rsync数据文件同步服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span><a class="archive-post-title" href="/posts/3871497a.html">Rsync文件同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/776caf5a.html">Gogs灾备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/03</span><a class="archive-post-title" href="/posts/5db798e8.html">Centos RSync+Shell实现数据定时同步</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href="/posts/ff3ad289.html">CentOS7 MySQL自动备份shell脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/4874470d.html">Could not create connection to database server</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/205f180b.html">Dubbo和Spring Cloud微服务架构比较</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span><a class="archive-post-title" href="/posts/420296e9.html">apiDoc的maven插件自动生成apidoc.json</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/15</span><a class="archive-post-title" href="/posts/6cb9a624.html">apiDoc使用指南</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href="/posts/323926de.html">Mac使用技巧|iPic图床设置-Markdown写作必备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/f44f6d37.html">BaiduPCS-Go | 百度网盘命令行工具（基于 Go）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href="/posts/2ef33b20.html">MarkDown添加图片的三种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href="/posts/e94c3a32.html">拦截器（Interceptor）和过滤器（Filter）的执行顺序和区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/27ec56c.html">eclipse-idea</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href="/posts/24d6d861.html">nginx设置X-Frame-Options的两种方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href="/posts/a2547652.html">用IDEA反向生成javabean</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href="/posts/ef57a426.html">Seafile和Nextcloud相比较哪个好用</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/ef7a7f28.html">centos7仅安装mysql客户端</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/a9414c3.html">CentOS7.4使用yum源安装MySQL 5.7.20</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href="/posts/17657829.html">Shell在文本第一行和最后一行添加字符串</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href="/posts/6ca1c9fd.html">iPic-Markdown Mac图床、文件上传工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span><a class="archive-post-title" href="/posts/7fb66013.html">基于docker-compose搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href="/posts/4d1930e3.html">基于Docker搭建分布式消息队列Kafka</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/f66662b8.html">安装Python及环境变量配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href="/posts/6a3c93e4.html">支付宝红包码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href="/posts/7109808e.html">WebP在减少图片体积和流量上的效果如何？MIP技术实践分享</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href="/posts/f65d6fec.html">Centos7/Ubuntu初始化硬盘分区、挂载</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/posts/d2a1fddb.html">Mysql8.0&Mysql5.7&Mysql5.6&Mysql5.5特性对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/ff0a6fc5.html">Tomcat的Https设置及Http自动跳转Https</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/238477f1.html">Jenkins2插件Pipeline+BlueOcean实现持续交付的初次演练</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href="/posts/4f466ef0.html">Jenkins2实现持续交付初次演练(MultiJob，Pipeline，Blue Ocean)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href="/posts/65bb19af.html">Git问题Everything up-to-date解决</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/2fc0e0a3.html">解除360doc网页防复制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href="/posts/1c334725.html">git add -A 和 git add . 的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/12</span><a class="archive-post-title" href="/posts/b12943d1.html">IntelliJ使用pipeline文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/3d12f64a.html">数据库存时间戳的好处</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span><a class="archive-post-title" href="/posts/f62f0412.html">让putty支持标签tabs功能</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/87d9b46d.html">5W,5W1H,5W2H,5W2H1E</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/posts/aa7c6b3f.html">mysql启动时，提示/etc/my.cnf 被忽略的问题处理</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2013 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href="/posts/4a17b156.html">Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href="/posts/2379f3d9.html">shell脚本中的“请按任意键继续”</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2011 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/25</span><a class="archive-post-title" href="/posts/44771869.html">SOA、ERP、SAP和SaaS四者的区别</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2010 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/727549f.html">MySQL连接&备份&导入数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href="/posts/f02121e8.html">MySQL循环批量插入数据</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href="/posts/fd4a1da4.html">MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
+        <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jib"><span class="iconfont-archer">&#xe606;</span>Jib</span>
+    
+        <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
+    
+        <span class="sidebar-tag-name" data-tags="flume-ng-sql-source"><span class="iconfont-archer">&#xe606;</span>flume-ng-sql-source</span>
+    
+        <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
+    
+        <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
+    
+        <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
+    
+        <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
+    
+        <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
+    
+        <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
+    
+        <span class="sidebar-category-name" data-categories="图床"><span class="iconfont-archer">&#xe60a;</span>图床</span>
+    
+        <span class="sidebar-category-name" data-categories="图片格式"><span class="iconfont-archer">&#xe60a;</span>图片格式</span>
+    
+        <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Kevin"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

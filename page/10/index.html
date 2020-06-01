@@ -379,6 +379,295 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/f65d6fec.html">
+            
+                <span>Centos7/Ubuntu初始化硬盘分区、挂载</span>
+        </a>
+        <div class="abstract-content">
+            一、查看信息1、查看硬盘信息1fdisk -l
+可以看到有两块硬盘/dev/vda和/dev/vdb，启动vda是系统盘vdb是我们新增的数据盘。
+2、查看磁盘格式1df -T
+二、分区执行以下命令，进入fdisk模式，开始对新增数据盘执行分区操作。
+fdisk 新增数据盘
+以新挂载的数据盘“/dev/vdb”为例：1fdisk /dev/vdb
+提示：然后根据提示，依次输入：”n“、”p“、”1“、两次回车，”pw“，分区也就开始了并很快就可完成。
+回显类似如下信息：
+ 
+1、输入“n”，按“Enter”，开始新建分区。   回显类似如下信息： 
+  
+表示磁盘有两种分区类型：
+
+“p...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/09/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/d2a1fddb.html">
+            
+                <span>Mysql8.0&amp;Mysql5.7&amp;Mysql5.6&amp;Mysql5.5特性对比</span>
+        </a>
+        <div class="abstract-content">
+            Mysql5.5 特性，相对于Mysql5.1性能提升
+默认InnoDB plugin引擎。具有提交、回滚和crash恢复功能、ACID兼容。
+
+行级锁(一致性的非锁定读 MVCC)。
+
+表与索引存储在表空间、表大小无限制。
+
+支持dynamic(primary key缓存内存 避免主键查询引起的IO )与compressed(支持数据及索引压缩)行格式。
+
+InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内存命中率、truncate table速度更快。
+
+原InnoDB只有一个UndoSegment，最多支持1023的并发；现在有128个Segment...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/ff0a6fc5.html">
+            
+                <span>Tomcat的Https设置及Http自动跳转Https</span>
+        </a>
+        <div class="abstract-content">
+            1.场景还原​        近期项目中要对信息传输过程中进行安全加密，那么第一时间浮现笔者脑海的当然是https,接下来笔者将介绍如何在web服务器Tomcat中配置Https及Http自动跳转Https
+2.Https相关介绍​       Https是由NetScape公司设计的一个基于Http的加密传输协议，可以这样理解Https = Http +SSL(安全套接层),Https的端口为443，而且还需要申请CA数字证书认证。
+3.Https的设置①申明CA数字证书
+这里推荐一个免费的阿里平台的CA数字证书（阿里云、腾讯云）
+  
+点击免费型DV SSL 购买，跳转到阿里云主界面...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/238477f1.html">
+            
+                <span>Jenkins2插件Pipeline+BlueOcean实现持续交付的初次演练</span>
+        </a>
+        <div class="abstract-content">
+            需要完成的目标
+使用Pipeline完成项目的checkout，package、deploy、restart
+提取出公有部分封装为公有JOB
+实现pipeline对其他JOB的调用和逻辑的判断
+实现任务的指定调用
+实现多节点同时并发build
+结合插件Open Blue Ocean
+
+Pipeline的基础代码　　收集了一些代码案例，可以自行查阅，不在啰嗦。
+　　jenkins2 pipeline入门：http://www.cnblogs.com/itech/p/5633948.html
+　　jenkins2 pipeline高级：http://www.cnblogs.com/itech...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="jenkins">jenkins</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/4f466ef0.html">
+            
+                <span>Jenkins2实现持续交付初次演练(MultiJob，Pipeline，Blue Ocean)</span>
+        </a>
+        <div class="abstract-content">
+            背景
+　　项目需要用到自动部署，但可获取外网的节点机器只有一台，那只能同过主节点机器进行构建完成然后分发至对应服务器进行启动更新。
+　　目前已尝试过三种方式：
+　　　　　　1.Pipeline-Trigger parameterized build on other projects
+　　　　　　2.MultiJob
+　　　　　　3.PipelineJob +Blue Ocean
+　　三种方式最后的实现结果如下：
+　　　　　　Pipeline-Trigger parameterized build on other projects
+ 　　MultiJob
+
+　　PipelineJob+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/04/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="jenkins">jenkins</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/65bb19af.html">
+            
+                <span>Git问题Everything up-to-date解决</span>
+        </a>
+        <div class="abstract-content">
+            先说说出现这个问题的原因：git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。那么我们就需要新建分支提交改动然后合并分支。
+1.先创建一个新的分支提交改动
+$ git branch newbranch
+2.检查这条命令是否创建成功
+$ git branch
+这时终端会输出：
+newbranch
+*master
+这样就创建成功了，前面的*代表的是当前你所在的工作分支，接下来就要切换工作分支。
+3.git checkout newbranch
+4.然后将你的改动提交到新的分支上
+$ git add 网页换肤
+$ git commit -m”skin”
+此...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/2fc0e0a3.html">
+            
+                <span>解除360doc网页防复制</span>
+        </a>
+        <div class="abstract-content">
+            方法1chrome浏览器按F12（打开谷歌浏览器的开发者工具）
+然后按F5 刷新下网页，（根据测试必须刷新下网页等下插入代码才能生效）下面空白插入代码：1document.oncontextmenu=document.onselectstart=document.body.onselectstart=document.oncopy=document.body.oncopy=&quot;&quot;
+然后按回车键，ok！不会弹出那令人蛋疼的提示了，可以复制了。
+方法2先打开一个Word文件，然后直接选中要复制的内容，可以把复制的内容直接拖动到Word中就OK了。 发现这种方法也适合其他被保...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/1c334725.html">
+            
+                <span>git add -A 和 git add . 的区别</span>
+        </a>
+        <div class="abstract-content">
+            介绍git add -A和 git add .   git add -u在功能上看似很相近，但还是存在一点差别
+git add . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）
+git add -A ：是上面两个功能的合集（git add –all的缩写）
+示例下面是具体操...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/b12943d1.html">
             
                 <span>IntelliJ使用pipeline文件</span>
@@ -417,241 +706,6 @@ height:50vh;
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/05/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f62f0412.html">
-            
-                <span>让putty支持标签tabs功能</span>
-        </a>
-        <div class="abstract-content">
-            putty一个我们常用的管理和连接linux的工具，小而功能够用，使用下来不足的就是不支持像类似chrome浏览器一样的tabs标签。
-google了一把，找到了方法，下载一个ttyplus的工具安装后再启动就会让putty支持多标签方式浏览。
-官网下载地址：http://www.ttyplus.com/downloads.html其他下载地址：http://wangpant.cn/resource/view/hat9slegj0pa.html
-运行后如图：
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/04/18</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/87d9b46d.html">
-            
-                <span>5W,5W1H,5W2H,5W2H1E</span>
-        </a>
-        <div class="abstract-content">
-            5W理论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;美国学者H·拉斯维尔于1948年在《传播在社会中的结构与功能》一篇论文中，首次提出了构成传播过程的五种基本要素，并按照一定结构顺序将它们排列，形成了后来人们称之“五W模式”或“拉斯维尔程式”的过程模式。这五个W分别是英语中五个疑问代词的第一个字母，即：
-Who （谁）
-Says What （说了什么）
-In Which Channal （通过什么渠道）
-To Whom （向谁说）
-With What Effect （有什么效果）
-
-5W1H分析法也称六何分析法&nbsp;&nbsp;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2015/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/aa7c6b3f.html">
-            
-                <span>mysql启动时，提示/etc/my.cnf 被忽略的问题处理</span>
-        </a>
-        <div class="abstract-content">
-            今天在处理测试开发人员的问题是，发现一个MySQL实例启动故障，处理过程如下：发现mysql实例是关闭的，执行命令启动mysql实例时有警告：
-1service mysql.server start
-Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL SUCCESS! 
-观察mysql的启动日志，在日志中显示：
-12151014 11:39:24 mysqld_safe Starting mysqld daemon with databases from /data/mysql/dataWa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2015/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/4a17b156.html">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/12/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/2379f3d9.html">
-            
-                <span>shell脚本中的“请按任意键继续”</span>
-        </a>
-        <div class="abstract-content">
-            在Windows的bat脚本中，我们插入pause关键字就可以实现“请按任意键继续”的功能，下面我们来看看Linux下Shell脚本中怎么实现。
-脚本代码：any.sh
-1234567891011121314151617#!/bin/bashget_char()&#123;    SAVEDSTTY=`stty -g`    stty -echo    stty cbreak    dd if=/dev/tty bs=1 count=1 2&gt; /dev/null    stty -raw    stty echo    stty $SAVEDSTTY&#125;echo "Pres...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/44771869.html">
-            
-                <span>SOA、ERP、SAP和SaaS四者的区别</span>
-        </a>
-        <div class="abstract-content">
-            SOA、ERP、SAP和SaaS大家熟悉吗？秘奥收集相关资料整理如下：
-SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构模型和一套设计方法学，其目的是最大限度地重用应用程序中立型的服务以提高IT适应性和效率。它可以根据需求通过网络对松散耦合的粗粒度应用组件进行分布式部署、组合和使用。服务层是SOA的基础，可以直接被应用调用，从而有效控制系统中与软件代理交互的人为依赖性。SOA的关键是“服务”的概念，W3C将服务定义为：“服务提供者完成一组工作，为服务使用者交付所需的最终结果。最终结果通常会使使用者的状态发生变化，但也可能使提供者的状态改...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2011/03/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/727549f.html">
-            
-                <span>MySQL连接&amp;备份&amp;导入数据库</span>
-        </a>
-        <div class="abstract-content">
-            连接本地数据库语法：mysql -h 目标服务器(可选的，默认为localhost) -P 端口(可选) -u 用户名 -p密码
-1mysql -u root -p123456;
-注：-u与root可以不用加空格，其它也一样，除-p和123456不能有空格；
-连接远程数据库例如：MySQL 连接远程数据库（192.168.1.100），端口“3306”(默认3306可以忽略)，用户名为“demo”，密码“12345678”
-1mysql -h 192.168.1.100 -P 3306 -u demo -p12345678;
-备份本地数据库语法：mysqldump -h 目标服务器(可选...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f02121e8.html">
-            
-                <span>MySQL循环批量插入数据</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112TRUNCATE TABLE a; #清空表数据DROP PROCEDURE IF EXISTS proc_init_data; #如果存在此存储过程则删掉DELIMITER $ -- 使用delimiter后，将不把分号当做语句结束，会将该段整个提交CREATE PROCEDURE proc_init_data()BEGIN    DECLARE i INT DEFAULT 1;    WHILE i&lt;=10000 DO        INSERT INTO a (`name`) VALUES (i);        SET i = i+1;    ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/31</span>
             </div>
             <!-- tags  -->
             
@@ -2611,9 +2665,407 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2629,12 +3081,27 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/0.html">[Untitled Post]</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/posts/9ba6599e.html">SLB配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span><a class="archive-post-title" href="/posts/d649053f.html">Adobe Reader一打开就闪退</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href="/posts/6c396ed4.html">下载工具Motrix</a>
         </li>
     
     
@@ -2689,6 +3156,11 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
         <li class="archive-post-item">
             <span class="archive-post-date">07/01</span><a class="archive-post-title" href="/posts/78e760f3.html">微信未绑定企业号开发者</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href="/posts/484f15fa.html">Windows安装配置FFmpeg</a>
         </li>
     
     
@@ -2787,6 +3259,11 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/19</span><a class="archive-post-title" href="/posts/85a085d9.html">CentOS7添加开机启动服务或脚本</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href="/posts/ff34caee.html">springboot2.x整合spring-data-jpa的问题</a>
         </li>
     
@@ -2827,7 +3304,12 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href="/posts/102d67a.html">TS型网页视频下载方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -2837,12 +3319,12 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -2877,7 +3359,17 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/d3c9e3a3.html">Maven插件Jib配合Harbor生成Docker镜像参考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/12</span><a class="archive-post-title" href="/posts/c6cc21ed.html">选择Kong作为你的API网关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href="/posts/692c43b7.html">Google正式开源Jib,帮助Java 应用快速容器化</a>
         </li>
     
     
@@ -2982,12 +3474,12 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3213,9 +3705,19 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jib"><span class="iconfont-archer">&#xe606;</span>Jib</span>
+    
+        <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
@@ -3223,15 +3725,13 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
-        <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
-    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
-        <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
         <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
+    
+        <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
@@ -3278,6 +3778,8 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
@@ -3286,11 +3788,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
+    
+        <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
     
