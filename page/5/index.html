@@ -379,6 +379,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c1ba8626.html">
+            
+                <span>关于SpringJpa中getOne方法遇到延迟加载报错no Session的问题</span>
+        </a>
+        <div class="abstract-content">
+            报错如下：123org.hibernate.LazyInitializationException: could not initialize proxy - no Session...
+看到报错信息推测如下：遇到延迟加载，session关闭了，导致不能得到有效信息。网上搜集了下资料，有关解释说，T getOne(ID id)依赖于EntityManager.getReference()执行实体延迟加载。https://stackoverflow.com/questions/24482117/when-use-getone-and-findone-methods-spring-data-...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7e91ff56.html">
             
                 <span>Java中List,Set,数组的互相转换</span>
@@ -483,39 +507,6 @@ Windows10
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
-            
-                <span>Git远程仓库地址变更本地如何修改</span>
-        </a>
-        <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/5f9b9ec2.html">
             
                 <span>springboot部署测试环境和生产环境</span>
@@ -563,6 +554,39 @@ Apply即可
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
             </div>
             <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
+            
+                <span>Git远程仓库地址变更本地如何修改</span>
+        </a>
+        <div class="abstract-content">
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
             
         </div>
     </article>
@@ -661,38 +685,6 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Kudu">Kudu</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/21e5a7a5.html">
-            
-                <span>HBase对比HDFS</span>
-        </a>
-        <div class="abstract-content">
-            什么是HDFS(Hadoop分布式文件系统)HDFS允许以分布式和冗余方式存储大量数据。HDFS组件• NameNode• DataNodeNameNode：NameNode可以被视为系统的管理者。它维护系统文件树以及系统中存在的所有文件和目录的元数据。其中“命名空间镜像(Namespace image)”和“编辑日志”用于存储元数据信息。 Namenode包含所有数据节点的数据块信息，但是，它不会持久存储数据节点数据块位置信息。系统启动时，每次从数据节点重建此信息。DataNode:是集群中的从属者，提供实际存储。它主要负责为客户提供读写请求服务。
-什么是HbaseHbase是一个可以...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HBase">HBase</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="HDFS">HDFS</a>
     
 </div>
             
@@ -2893,160 +2885,9 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 109
+        Total : 110
         </div>
         <!-- search  -->
         
@@ -3162,6 +3003,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/posts/94480529.html">Windows下安装Docker的步骤</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href="/posts/c2c61a90.html">HTML网页中电子邮箱(Email)地址的加密和混淆防爬取</a>
         </li>
     
     
@@ -3686,11 +3532,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3698,11 +3544,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
-        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
         <span class="sidebar-tag-name" data-tags="flume-ng-sql-source"><span class="iconfont-archer">&#xe606;</span>flume-ng-sql-source</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
@@ -3759,9 +3605,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     

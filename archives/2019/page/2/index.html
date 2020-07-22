@@ -480,6 +480,32 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c2c61a90.html">
+            
+                <span>HTML网页中电子邮箱(Email)地址的加密和混淆防爬取</span>
+        </a>
+        <div class="abstract-content">
+            邮箱里垃圾邮件一直有很多，这让我不得不重新审视，发布在网页上的电子邮箱地址，为了避免垃圾邮件，我刻意将@更换成#，也许这在十年前是个不错的办法，但是随着神经网络和机器学习新算法的发展，这一类小手段也面临失效的风险，因为大部分都是通过修改电子邮箱地址的“@”符号，通过正则表达式筛选和特征值匹配，比如hotmail.com、gmail.com、163.com这一类疑似电子邮箱地址的特征，还是可以抓取到电子邮箱地址，所以在将Email发布到HTML网页之前我们要对其进行加密和混淆。
+下面我以john@example.com为例，介绍几种加密和混淆的反垃圾邮件手段。
+1. 生成图片
+利用传统的图...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/bd13fdcc.html">
             
                 <span>MQTT入门介绍</span>
@@ -637,31 +663,6 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         <a class="post-tag" href="javascript:void(0);" data-tags="flume-ng-sql-source">flume-ng-sql-source</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/fbd35054.html">
-            
-                <span>为什么说GraphQL可以取代REST API</span>
-        </a>
-        <div class="abstract-content">
-            作者：Azat Mardan
-几年前，我在 DocuSign 带领了一个开发团队，任务是重写一个有数千万个用户在使用的 Web 应用程序。当时还没有可以支持前端的 API，因为从一开始，Web 应用程序就是一个.NET 大单体。西雅图的 API 团队在将拆分单体，并逐步暴露出 RESTful API。这个 API 团队由两名工程师组成，发布周期为一个月，而我们在旧金山的前端团队每周都会发布新版本。
-API 团队的发布周期太长，因为很多（几乎所有）功能都必须进行手动测试，这是可以理解的。它毕竟是一个单体，而且没有适当的自动化测试——如果他们修改了一个地方，不知道在应用程序的其他地方会出现什...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/21</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2761,160 +2762,9 @@ API 团队的发布周期太长，因为很多（几乎所有）功能都必须�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 109
+        Total : 110
         </div>
         <!-- search  -->
         
@@ -3030,6 +2880,11 @@ API 团队的发布周期太长，因为很多（几乎所有）功能都必须�
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/10</span><a class="archive-post-title" href="/posts/94480529.html">Windows下安装Docker的步骤</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href="/posts/c2c61a90.html">HTML网页中电子邮箱(Email)地址的加密和混淆防爬取</a>
         </li>
     
     
@@ -3554,11 +3409,11 @@ API 团队的发布周期太长，因为很多（几乎所有）功能都必须�
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3566,11 +3421,11 @@ API 团队的发布周期太长，因为很多（几乎所有）功能都必须�
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
-        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
     
         <span class="sidebar-tag-name" data-tags="flume-ng-sql-source"><span class="iconfont-archer">&#xe606;</span>flume-ng-sql-source</span>
+    
+        <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
@@ -3627,9 +3482,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
