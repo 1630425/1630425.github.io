@@ -366,6 +366,124 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/2379f3d9.html">
+            
+                <span>shell脚本中的“请按任意键继续”</span>
+        </a>
+        <div class="abstract-content">
+            在Windows的bat脚本中，我们插入pause关键字就可以实现“请按任意键继续”的功能，下面我们来看看Linux下Shell脚本中怎么实现。
+脚本代码：any.sh
+1234567891011121314151617#!/bin/bashget_char()&#123;    SAVEDSTTY=`stty -g`    stty -echo    stty cbreak    dd if=/dev/tty bs=1 count=1 2&gt; /dev/null    stty -raw    stty echo    stty $SAVEDSTTY&#125;echo "Pres...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/44771869.html">
+            
+                <span>SOA、ERP、SAP和SaaS四者的区别</span>
+        </a>
+        <div class="abstract-content">
+            SOA、ERP、SAP和SaaS大家熟悉吗？秘奥收集相关资料整理如下：
+SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构模型和一套设计方法学，其目的是最大限度地重用应用程序中立型的服务以提高IT适应性和效率。它可以根据需求通过网络对松散耦合的粗粒度应用组件进行分布式部署、组合和使用。服务层是SOA的基础，可以直接被应用调用，从而有效控制系统中与软件代理交互的人为依赖性。SOA的关键是“服务”的概念，W3C将服务定义为：“服务提供者完成一组工作，为服务使用者交付所需的最终结果。最终结果通常会使使用者的状态发生变化，但也可能使提供者的状态改...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2011/03/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/727549f.html">
+            
+                <span>MySQL连接&amp;备份&amp;导入数据库</span>
+        </a>
+        <div class="abstract-content">
+            连接本地数据库语法：mysql -h 目标服务器(可选的，默认为localhost) -P 端口(可选) -u 用户名 -p密码
+1mysql -u root -p123456;
+注：-u与root可以不用加空格，其它也一样，除-p和123456不能有空格；
+连接远程数据库例如：MySQL 连接远程数据库（192.168.1.100），端口“3306”(默认3306可以忽略)，用户名为“demo”，密码“12345678”
+1mysql -h 192.168.1.100 -P 3306 -u demo -p12345678;
+备份本地数据库语法：mysqldump -h 目标服务器(可选...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/06/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f02121e8.html">
+            
+                <span>MySQL循环批量插入数据</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112TRUNCATE TABLE a; #清空表数据DROP PROCEDURE IF EXISTS proc_init_data; #如果存在此存储过程则删掉DELIMITER $ -- 使用delimiter后，将不把分号当做语句结束，会将该段整个提交CREATE PROCEDURE proc_init_data()BEGIN    DECLARE i INT DEFAULT 1;    WHILE i&lt;=10000 DO        INSERT INTO a (`name`) VALUES (i);        SET i = i+1;    ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/fd4a1da4.html">
             
                 <span>MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</span>
@@ -2643,9 +2761,39 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 111
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2658,6 +2806,21 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/28</span><a class="archive-post-title" href="/posts/3d6869e4.html">第三方直播SDK对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/3d419aac.html">视频直播技术</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/18811265.html">细数直播平台的六大分类</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2899,22 +3062,22 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3009,6 +3172,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/d521c8fb.html">解决保存的csdn网页自动跳转到首页问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
         </li>
     
@@ -3024,12 +3192,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3064,12 +3232,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3368,9 +3536,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
@@ -3379,6 +3547,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="直播"><span class="iconfont-archer">&#xe60a;</span>直播</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
     

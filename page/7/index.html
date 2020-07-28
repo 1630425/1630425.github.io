@@ -379,6 +379,100 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/b02d4ba7.html">
+            
+                <span>windows自启动脚本</span>
+        </a>
+        <div class="abstract-content">
+            方法一1、
+例如我们要开机自启动一个脚本：C:\script\script.bat。 
+如果直接开机启动该脚本会弹出一个黑框，我们希望能后台执行它。 
+此时我们需要建一个.vbs脚本来后台执行该脚本，脚本内容为：复制代码代码如下:
+set ws=WScript.CreateObject(“WScript.Shell”)ws.Run “C:\script\script.bat /start”,0 
+然后将该文件保存为start_list.vbs，放入“开始 –&gt; 所有程序 –&gt; 启动”内即可。
+2、
+打开运行对话框（win键+R），输入命令
+shell:startup
+会直接弹...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/10802a0a.html">
+            
+                <span>Windows系统下.sh文件的运行</span>
+        </a>
+        <div class="abstract-content">
+            好多的python/JAVA项目是用Linux系统下写的，为了省事就尝试了再Windows系统下运行，以下是运行的过程：1，Git的安装，下载Git并安装，我是在360软件管家中直接下载安装的，速度还不错，安装时一直点next就ok。安装成功后要对环境变量进行设置，如下图 
+
+2，在/Git/bin文件夹中，有三个exe文件 
+使用sh.exe出现窗口 
+
+3，文件运行使用cd 加文件名到需要运行的文件目录下（尽量文件名是英文，我有中文加英文的文件名一直显示无法识别，…\scripts我的是然后输入`./pathfinder.sh concept_athletehomestadium或s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a15e2069.html">
+            
+                <span>CentOS7下Rsync+sersync实现数据实时同步</span>
+        </a>
+        <div class="abstract-content">
+            一、为什么要用Rsync+sersync架构?
+sersync是基于Inotify开发的，类似于Inotify-tools的工具
+sersync可以记录下被监听目录中发生变化的（包括增加、删除、修改）具体某一个文件或某一个目录的名字，然后使用rsync同步的时候，只同步发生变化的这个文件或者这个目录。
+
+二、Rsync+Inotify-tools与Rsync+sersync这两种架构有什么区别？
+Rsync+Inotify-tools （1）Inotify-tools只能记录下被监听的目录发生了变化（包括增加、删除、修改），并没有把具体是哪个文件或者哪个目录发生了变化记录下来； （2）r...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/9f424809.html">
             
                 <span>如何使用Lsyncd复制并实时同步到远程服务器</span>
@@ -587,117 +681,20 @@ Gogs服务(A主机)：10.2.12.32
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/5e11aa60.html">
+        <a class="abstract-title" href="/posts/d521c8fb.html">
             
-                <span>CentOS7修改时区</span>
+                <span>解决保存的csdn网页自动跳转到首页问题</span>
         </a>
         <div class="abstract-content">
-            时钟概念
-（1）UTC 
-整个地球分为二十四时区，每个时区都有自己的本地时间。在国际无线电通信场合，为了统一起见，使用一个统一的时间，称为通用协调时(UTC,Universal Time Coordinated)。
-（2）GMT
-格林威治标准时间 (Greenwich Mean Time)指位于英国伦敦郊区的皇家格林尼治天文台的标准时间，因为本初子午线被定义在通过那里的经线。(UTC与GMT时间基本相同，本文中不做区分)
-（3）CST
-中国标准时间 (China Standard Time)【GMT + 8 = UTC + 8 = CST】
-（4）DST
-夏令时(Daylight Sav...
+            不知道csdn出于什么考虑，保存网页到本地打开会自动跳转到首页
+步骤搜索关键词onerror，找到对应代码。
+方法1(修改跳转时间)将跳转时间3000更改为更大数字即可。
+方法2(删除以下代码)12&lt;IMG onerror='setTimeout(function()&#123;if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname))&#123;w...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/4874470d.html">
-            
-                <span>Could not create connection to database server</span>
-        </a>
-        <div class="abstract-content">
-            MySQLNonTransientConnectionException: Could not create connection to database server.
-Spring整合mybatis并使用driud数据库连接池，启动测试类就报”MySQLNonTransientConnectionException: Could not create connection to database server.“，检查了一番配置文件没发现问题，而且我之前用过这些配置，按理说没问题。各种百度、谷歌没结果，想起来装了mysql 8.0，估计是这个问题。既然是这个问题，那么问题出在数据库连...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/205f180b.html">
-            
-                <span>Dubbo和Spring Cloud微服务架构比较</span>
-        </a>
-        <div class="abstract-content">
-            Dubbo 出生于阿里系，是阿里巴巴服务化治理的核心框架，并被广泛应用于中国各互联网公司；只需要通过 Spring 配置的方式即可完成服务化，对于应用无入侵，设计的目的还是服务于自身的业务为主。
-微服务架构是互联网很热门的话题，是互联网技术发展的必然结果。它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。
-虽然微服务架构没有公认的技术标准和规范或者草案，但业界已经有一些很有影响力的开源微服务架构框架提供了微服务的关键思路，例如 Dubbo 和 Spring Cloud。
-各大互联网公司也有自研的微服务框架，但其模式都与这二者相差不大。
-微服务主要的优...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/359a2f9d.html">
-            
-                <span>SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</span>
-        </a>
-        <div class="abstract-content">
-            1.证书生成如果对HTTPS不太了解，可以自行搜索资料，这里重点不在说https。
-使用SSL需要我们先生成一个证书，这个证书我们可以自己生成，也可以从SSL证书授权中心获得，自己生成的不被客户端认可，从授权中心获得的可以被客户端认可，提供SSL授权证书的服务商有很多，小伙伴们有兴趣可以自行查找，我这里以自己生成的证书为例。 
-生成方式也很简单，直接使用java自带的命令keytool来生成，生成命令如下：
-
--storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
-
-这里涉及到几...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
             </div>
             <!-- tags  -->
             
@@ -3053,9 +3050,39 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 111
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -3068,6 +3095,21 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/28</span><a class="archive-post-title" href="/posts/3d6869e4.html">第三方直播SDK对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/3d419aac.html">视频直播技术</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/18811265.html">细数直播平台的六大分类</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3309,22 +3351,22 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3419,6 +3461,11 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/d521c8fb.html">解决保存的csdn网页自动跳转到首页问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
         </li>
     
@@ -3434,12 +3481,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3474,12 +3521,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3778,9 +3825,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
@@ -3789,6 +3836,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="直播"><span class="iconfont-archer">&#xe60a;</span>直播</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
     

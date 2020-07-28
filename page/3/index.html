@@ -379,6 +379,93 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/e2686736.html">
+            
+                <span>openldap密码加密算法及原理</span>
+        </a>
+        <div class="abstract-content">
+            openldap 各大数据管理工具密码生成的原理及算法,只为那些需要手动的产生密码的人员提供点帮助。 注：这里说的密码加密不是说openldap管理工具登录的那个密码,是用户数据的userPassword属性从文本到密码的一个过程*
+问题：
+
+我们使用openldap管理工具时对ldap里面的数据（一个用户）设置密码时是直接set的
+那么这个密码是如何从用户设置的文本(123456)到{MD5}4QrcOUm6Wau+VuBX8g+IPg===
+加密原理
+代码示例
+String password= “123456”;
+MessageDigest md = MessageDigest.ge...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/e6c03d98.html">
+            
+                <span>安装Centos7.2详细教程</span>
+        </a>
+        <div class="abstract-content">
+            以下采用U盘方式安装CentOS 7.2，若采用其他方式安装，仅第一步不同。
+第1步：设置U盘为开机启动方式插上U盘，启动服务器，在启动画面时，按F12（机器不同时有所差异），进入设置界面，选择U盘。
+ 
+第2步：开始安装CentOS7 
+问题列表此处安装若出现问题
+进入这个界面后选择第一个。然后安装不会进到安装配置界面，而是会出如下错：
+Warning：/dev/root does not exist
+Generating: &quot;/run/initramfs/rdsosreport.txt&quot;
+1、关于修改u盘的位置也就是网上说的比较模糊的一个地方，就是可能第一次从u盘...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/94480529.html">
+            
+                <span>Windows下安装Docker的步骤</span>
+        </a>
+        <div class="abstract-content">
+            win7、win8 系统win7、win8 等需要利用 docker toolbox 来安装，国内可以使用阿里云的镜像来下载，下载地址：http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/
+docker toolbox 是一个工具集，它主要包含以下一些内容：
+123456Docker CLI 客户端，用来运行docker引擎创建镜像和容器Docker Machine. 可以让你在windows的命令行中运行docker引擎命令Docker Compose. 用来运行docker-compose命令Kitemati...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/c2c61a90.html">
             
                 <span>HTML网页中电子邮箱(Email)地址的加密和混淆防爬取</span>
@@ -587,107 +674,6 @@ API 团队的发布周期太长，因为很多（几乎所有）功能都必须�
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/21</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f1766b5e.html">
-            
-                <span>浅谈三种API设计风格RPC、REST、GraphQL</span>
-        </a>
-        <div class="abstract-content">
-            前言Web API设计其实是一个挺重要的设计话题，许多公司都会有公司层面的Web API设计规范，几乎所有的项目在详细设计阶段都会进行API设计，项目开发后都会有一份API文档供测试和联调。本文尝试根据自己的理解总结一下目前常见的四种API设计风格以及设计考虑点。
-
-正文
-RPC
-
-这是最常见的方式，RPC说的是本地调用远程的方法，面向的是过程。
-
-RPC形式的API组织形态是类和方法，或者说领域和行为。
-因此API的命名往往是一个动词，比如GetUserInfo和CreateUser。
-因为URI会非常多而且往往没有一些约定规范，所以需要有详细的文档。
-也是因为无拘无束，HTTP方法基...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/3d17837d.html">
-            
-                <span>ADS RDS</span>
-        </a>
-        <div class="abstract-content">
-            RDS 数据库的优点：高性能，高安全性，高可靠性。支持各种数据库引擎: Mysql, Sql Server, PostgresSQL, PPAS
-RDS：关系型数据库ADS:  分析型数据库
-
- 分析型数据库：
-
-批量导入
-实时写入
-
-
-网络类型：
-经典网络：不通过网络隔离，只能依赖实例自身的白名单阻止非法访问。
-专有网络：隔离的网络环境，安全性比较高。
-
-
- 云服务器ESC和RDS在同一个区域下，且网络类型相同，可以通过联网，无需申请外网地址。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/3f943cf8.html">
-            
-                <span>Flume修改SQLSource以针对时间戳增量数据传输</span>
-        </a>
-        <div class="abstract-content">
-            flume github关于增量数据传输的原理，是通过唯一id，递增，每次记录传输的数据量+current_index=last_index，只能识别新增数据，检测不到删除与更新。不符合没有增量id的情况。由于数据存在时间戳标志，因此改写flume sqlsource以应对实际需求：
-1. 每次增量传输先查询数据库中当前最大的时间戳，记录为maxtime2. 查询数据库：select * from table where time&gt;=current_index and time&lt;maxtime,此时不能取到time=maxtime的数据，不排除在数据查询之后会继续生成maxt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Flume">Flume</a>
-    
-</div>
             
         </div>
     </article>
@@ -3041,9 +3027,39 @@ RDS：关系型数据库ADS:  分析型数据库
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 111
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -3056,6 +3072,21 @@ RDS：关系型数据库ADS:  分析型数据库
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/28</span><a class="archive-post-title" href="/posts/3d6869e4.html">第三方直播SDK对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/3d419aac.html">视频直播技术</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/18811265.html">细数直播平台的六大分类</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3297,22 +3328,22 @@ RDS：关系型数据库ADS:  分析型数据库
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3407,6 +3438,11 @@ RDS：关系型数据库ADS:  分析型数据库
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/d521c8fb.html">解决保存的csdn网页自动跳转到首页问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
         </li>
     
@@ -3422,12 +3458,12 @@ RDS：关系型数据库ADS:  分析型数据库
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3462,12 +3498,12 @@ RDS：关系型数据库ADS:  分析型数据库
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3766,9 +3802,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
@@ -3777,6 +3813,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="直播"><span class="iconfont-archer">&#xe60a;</span>直播</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
     

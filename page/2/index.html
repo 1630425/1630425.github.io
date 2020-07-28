@@ -379,6 +379,98 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/ed397403.html">
+            
+                <span>小程序接口无法传递session校验验证码</span>
+        </a>
+        <div class="abstract-content">
+            今天在写接口的时候发现一个问题，我用apiaaz测试一切正常，但是从小程序接口请求验证码，一直验证失败。
+最开始用的图形验证码，查阅了不少资料，最后怀疑是cookie的问题，解决无果，换成了短信验证码
+换成短信验证码之后，我用apiaaz测试一切正常，小程序请求的时候还是不正常，确定了验证码无误之后
+我在控制器里把所有的参数都打印出来，以及session，然后发现session为Null，我又用apiaaz测试了一下
+可以登陆，那为什么我可以登陆，小程序不行呢？又查阅了资料，终于找到了答案
+普通的Web开发，都是把sessionid保存在cookie中传递的。
+不管是java还是php，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a5ca03ae.html">
+            
+                <span>Java后台获得微信小程序(getUnlimited)生成的二维码</span>
+        </a>
+        <div class="abstract-content">
+            为了直接扫描一个二维码就进入小程序并完成部分业务操作, 需要用到微信小程序提供的二维码接口 wxacode.getUnlimited
+官方文档点击此处
+说几个注意事项,节省时间.
+
+请求方式为POST  地址为:https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=ACCESS_TOKEN
+
+请求参数为JSON例如: 
+1234&#123;	"scene":"id=1",	"page":"pages/practice/practice"&#125;
+
+
+
+返回值有两种,错误时为JSON字符串 ,正确时为Buffer流.错...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/7a1938ca.html">
+            
+                <span>Docker CE 19.03正式发布,无需root权限</span>
+        </a>
+        <div class="abstract-content">
+            Docker CE 19.03 和 EE 3.0 都已经发布，19.03 主要内容包括无需 root 权限、支持 GPU 的增强功能和 CLI 插件更新等等，19.03 现在是允许非 root 用户运行守护程序，启用 Rootless 模式可以防止攻击者夺取主机的 root 权限，即使 Docker 存在漏洞或设置错误。
+更新内容如下：
+Builder
+增加了内联缓存支持 –cache-from docker/engine#215
+允许输出配置 moby/moby#38898
+固定的 GCR 变通令牌缓存 docker/engine#212
+下载错误时调用 stopprogress do...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/76169928.html">
             
                 <span>Linux根目录爆满解决方案</span>
@@ -589,93 +681,6 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/e2686736.html">
-            
-                <span>openldap密码加密算法及原理</span>
-        </a>
-        <div class="abstract-content">
-            openldap 各大数据管理工具密码生成的原理及算法,只为那些需要手动的产生密码的人员提供点帮助。 注：这里说的密码加密不是说openldap管理工具登录的那个密码,是用户数据的userPassword属性从文本到密码的一个过程*
-问题：
-
-我们使用openldap管理工具时对ldap里面的数据（一个用户）设置密码时是直接set的
-那么这个密码是如何从用户设置的文本(123456)到{MD5}4QrcOUm6Wau+VuBX8g+IPg===
-加密原理
-代码示例
-String password= “123456”;
-MessageDigest md = MessageDigest.ge...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/e6c03d98.html">
-            
-                <span>安装Centos7.2详细教程</span>
-        </a>
-        <div class="abstract-content">
-            以下采用U盘方式安装CentOS 7.2，若采用其他方式安装，仅第一步不同。
-第1步：设置U盘为开机启动方式插上U盘，启动服务器，在启动画面时，按F12（机器不同时有所差异），进入设置界面，选择U盘。
- 
-第2步：开始安装CentOS7 
-问题列表此处安装若出现问题
-进入这个界面后选择第一个。然后安装不会进到安装配置界面，而是会出如下错：
-Warning：/dev/root does not exist
-Generating: &quot;/run/initramfs/rdsosreport.txt&quot;
-1、关于修改u盘的位置也就是网上说的比较模糊的一个地方，就是可能第一次从u盘...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/94480529.html">
-            
-                <span>Windows下安装Docker的步骤</span>
-        </a>
-        <div class="abstract-content">
-            win7、win8 系统win7、win8 等需要利用 docker toolbox 来安装，国内可以使用阿里云的镜像来下载，下载地址：http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/
-docker toolbox 是一个工具集，它主要包含以下一些内容：
-123456Docker CLI 客户端，用来运行docker引擎创建镜像和容器Docker Machine. 可以让你在windows的命令行中运行docker引擎命令Docker Compose. 用来运行docker-compose命令Kitemati...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
             </div>
             <!-- tags  -->
             
@@ -3031,9 +3036,39 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 111
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -3046,6 +3081,21 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/28</span><a class="archive-post-title" href="/posts/3d6869e4.html">第三方直播SDK对比</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/3d419aac.html">视频直播技术</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href="/posts/18811265.html">细数直播平台的六大分类</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3287,22 +3337,22 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3397,6 +3447,11 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/d521c8fb.html">解决保存的csdn网页自动跳转到首页问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/5e11aa60.html">CentOS7修改时区</a>
         </li>
     
@@ -3412,12 +3467,12 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3452,12 +3507,12 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3756,9 +3811,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
@@ -3767,6 +3822,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
+    
+        <span class="sidebar-category-name" data-categories="直播"><span class="iconfont-archer">&#xe60a;</span>直播</span>
     
         <span class="sidebar-category-name" data-categories="Spring-Cloud"><span class="iconfont-archer">&#xe60a;</span>Spring-Cloud</span>
     
