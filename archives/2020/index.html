@@ -366,6 +366,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/91a9aa13.html">
+            
+                <span>java.lang.NoClassDefFoundError</span>
+        </a>
+        <div class="abstract-content">
+            今天使用jdk11，出现了这个错误，错误如下：
+java.lang.NoClassDefFoundError: javax/activation/DataSource
+故障原因：
+123JAXB API是java EE 的API，因此在java SE 9.0 中不再包含这个 Jar 包。java 9 中引入了模块的概念，默认情况下，Java SE中将不再包含java EE 的Jar包而在 java 6/7 / 8 时关于这个API 都是捆绑在一起的
+解决方案一降低JDK 版本到 JDK 8
+解决方案二（亲测可行）手动加入这些依赖Jar包
+1234567891011121314151617...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/6532b32c.html">
             
                 <span>【转】第三方直播SDK对比</span>
@@ -3063,9 +3092,11 @@ Q&amp;A
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 117
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -3078,6 +3109,11 @@ Q&amp;A
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href="/posts/91a9aa13.html">java.lang.NoClassDefFoundError</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3235,6 +3271,11 @@ Q&amp;A
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href="/posts/56813c64.html">win10本地打包maven程序为docker镜像报错</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
         </li>
     
@@ -3344,17 +3385,17 @@ Q&amp;A
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3469,12 +3510,12 @@ Q&amp;A
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3773,6 +3814,8 @@ Q&amp;A
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
@@ -3782,8 +3825,6 @@ Q&amp;A
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
-    
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -366,6 +366,32 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/5f695ca8.html">
+            
+                <span>Spring boot设置JWT CORS跨域请求的方式</span>
+        </a>
+        <div class="abstract-content">
+            前提：
+本文都是基于 spring boot 的解决方案。关于CORS的名词的解释等问题及流程
+
+123456789101112131415161718@Configurationpublic class WebConfig extends WebMvcConfigurationSupport &#123;@Override    public void addCorsMappings(CorsRegistry registry) &#123;        //设置允许跨域的路径        registry.addMapping("/api/**")                ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7c16aee4.html">
             
                 <span>harbor切换主机的ip地址</span>
@@ -622,52 +648,6 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/01</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/484f15fa.html">
-            
-                <span>Windows安装配置FFmpeg</span>
-        </a>
-        <div class="abstract-content">
-            ffmpeg是一个开源的音视频转码工具,它提供了录制、转换以及流化音视频的完整解决方案，可以转码、压制、提取、截取、合并、录屏等。
-一、下载FFmpeg
-下载地址：http://ffmpeg.zeranoe.com/builds/根据你的系统选择下载：
-
-解压到D:\Program Files
-将文件夹ffmpeg-20200315-c467328-win64-static重命名为ffmpeg
-配置环境变量
-此电脑-属性
-选择高级系统设置
-
-选择环境变量
-
-在用户环境变量双击path
-
-选择新建（注意不要更改其他环境变量）
-
-将刚才的bin路径粘贴进去
-记得点下方的确定，再关闭当前窗口再...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
-    
-</div>
             
         </div>
     </article>
@@ -2968,9 +2948,11 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 117
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -2983,6 +2965,11 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href="/posts/91a9aa13.html">java.lang.NoClassDefFoundError</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3140,6 +3127,11 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href="/posts/56813c64.html">win10本地打包maven程序为docker镜像报错</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
         </li>
     
@@ -3249,17 +3241,17 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3374,12 +3366,12 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3678,6 +3670,8 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
@@ -3687,8 +3681,6 @@ https://work.weixin.qq.com/wework_admin/loginpage_wx
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
-    
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -433,17 +433,16 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/c4bccc0e.html">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
             
-                <span>Docker配置私有仓库</span>
+                <span>Git远程仓库地址变更本地如何修改</span>
         </a>
         <div class="abstract-content">
-            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
-2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
-Window系统配置Docker
-Apply即可
-3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
-12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -451,6 +450,12 @@ Apply即可
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
             </div>
             <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
             
         </div>
     </article>
@@ -503,16 +508,17 @@ Windows10
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
             
-                <span>Git远程仓库地址变更本地如何修改</span>
+                <span>Docker配置私有仓库</span>
         </a>
         <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -520,12 +526,6 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
             </div>
             <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
             
         </div>
     </article>
@@ -2885,9 +2885,11 @@ IDEA Maven
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 117
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -2900,6 +2902,11 @@ IDEA Maven
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href="/posts/91a9aa13.html">java.lang.NoClassDefFoundError</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3057,6 +3064,11 @@ IDEA Maven
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href="/posts/56813c64.html">win10本地打包maven程序为docker镜像报错</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
         </li>
     
@@ -3166,17 +3178,17 @@ IDEA Maven
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3291,12 +3303,12 @@ IDEA Maven
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3595,6 +3607,8 @@ IDEA Maven
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
@@ -3604,8 +3618,6 @@ IDEA Maven
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
-    
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

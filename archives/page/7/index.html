@@ -366,6 +366,75 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/d3c9e3a3.html">
+            
+                <span>Maven插件Jib配合Harbor生成Docker镜像参考</span>
+        </a>
+        <div class="abstract-content">
+            1 说明
+Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式访问Harbor私有仓库
+以下基于SpringBoot2.x进行配置
+
+2 Maven配置2.1 pom.xml中配置项目的pom.xml中添加以下属性和插件内容：
+12345&lt;properties&gt;    &lt;app.main.class&gt;cc.anxminise.spblearn.Application&lt;/app.main.class&gt;    &lt;docker.image.prefix&gt;192.168.1.112/library&lt;/docker.im...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Jib">Jib</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Harbor">Harbor</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/c6cc21ed.html">
+            
+                <span>选择Kong作为你的API网关</span>
+        </a>
+        <div class="abstract-content">
+            Kong（https://github.com/Kong/kong）是一个云原生，高效，可扩展的分布式API 网关。 自 2015 年在 github 开源后，广泛受到关注，目前已收获 1.68w+ 的 star，其核心价值在于高性能和可扩展性。
+为什么需要 API 网关 img
+在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权，限流，日志，监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Kong">Kong</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/692c43b7.html">
             
                 <span>Google正式开源Jib,帮助Java 应用快速容器化</span>
@@ -621,73 +690,6 @@ Gogs服务(A主机)：10.2.12.32
         <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Gogs">Gogs</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5db798e8.html">
-            
-                <span>Centos RSync+Shell实现数据定时同步</span>
-        </a>
-        <div class="abstract-content">
-            我们前面介绍了几篇关于Centos相关服务安装及配置，今天我们主要介绍如何实现本地与远程计算机的数据目录同步，在我之前bolg中有一篇通过shell实现本地与远程计算机的数据同步的文章，通过shell同步实现指定目录的复制及覆盖操作不是那么的方便，因为复制目录及覆盖目录只会增量，不会减量，比如：原来的本地有一个目录下的abc.txt被同步到了远程计算机的指定目录后，当本地目录下的abc.txt文件删除后，远程计算机同步目录下的abc.txt依然存在，所以这样导致数据信息不准确，今天了我们为了解决这样的问题，我们准备使用rsync+shell脚本进行定期数据同步。说到Rsync相信大家已经...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/ff3ad289.html">
-            
-                <span>CentOS7 MySQL自动备份shell脚本</span>
-        </a>
-        <div class="abstract-content">
-            
- 　　在数据库的日常维护工作中，除了保证业务的正常运行以外，就是要对数据库进行备份，以免造成数据库的丢失，从而给企业带来重大经济损失。 　　通常备份可以按照备份时数据库状态分为热备和冷备，按照备份数据库文件的大小分为增量备份、差异备份和全量备份。 　　这里，我们讲解一种全量备份的方法，来实现定时备份数据到mysql脚本文件，并且支持过期删除。
-系统环境：CentOS7 64位 Minimal版（VMware）MySQL5.6
-原理与工具：shell脚本mysqldump程序crontab命令
-1、新建shell脚本1vi /opt/mysqlBackup.sh
-123456789101...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
     
 </div>
             
@@ -2990,9 +2992,11 @@ Gogs服务(A主机)：10.2.12.32
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 117
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -3005,6 +3009,11 @@ Gogs服务(A主机)：10.2.12.32
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href="/posts/91a9aa13.html">java.lang.NoClassDefFoundError</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3162,6 +3171,11 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href="/posts/56813c64.html">win10本地打包maven程序为docker镜像报错</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
         </li>
     
@@ -3271,17 +3285,17 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3396,12 +3410,12 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3700,6 +3714,8 @@ Gogs服务(A主机)：10.2.12.32
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
@@ -3709,8 +3725,6 @@ Gogs服务(A主机)：10.2.12.32
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
-    
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

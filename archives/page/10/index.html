@@ -366,6 +366,75 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/ef7a7f28.html">
+            
+                <span>centos7仅安装mysql客户端</span>
+        </a>
+        <div class="abstract-content">
+            
+安装 rpm源
+
+1rpm -ivh https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm
+
+安装
+
+1234#可以通过yum搜索yum search mysql-community#笔者安装的是64位yum install -y mysql-community-client.x86_64
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a9414c3.html">
+            
+                <span>CentOS7.4使用yum源安装MySQL 5.7.20</span>
+        </a>
+        <div class="abstract-content">
+            从CentOS 7.0发布以来，yum源中开始使用Mariadb来代替MySQL的安装。即使你输入的是yum install -y mysql , 显示的也是Mariadb的安装内容。使用源代码进行编译安装又太麻烦。因此，如果想使用yum安装MySQL的话，就需要去下载官方指定的yum源，网址为：https://dev.mysql.com/downloads/repo/yum/找到Red Hat Enterprise Linux 7 / Oracle Linux 7 (Architecture Independent), RPM Package，单击后面的Download，在新的页面中单...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/17657829.html">
             
                 <span>Shell在文本第一行和最后一行添加字符串</span>
@@ -626,74 +695,6 @@ fdisk 新增数据盘
         <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/d2a1fddb.html">
-            
-                <span>Mysql8.0&amp;Mysql5.7&amp;Mysql5.6&amp;Mysql5.5特性对比</span>
-        </a>
-        <div class="abstract-content">
-            Mysql5.5 特性，相对于Mysql5.1性能提升
-默认InnoDB plugin引擎。具有提交、回滚和crash恢复功能、ACID兼容。
-
-行级锁(一致性的非锁定读 MVCC)。
-
-表与索引存储在表空间、表大小无限制。
-
-支持dynamic(primary key缓存内存 避免主键查询引起的IO )与compressed(支持数据及索引压缩)行格式。
-
-InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内存命中率、truncate table速度更快。
-
-原InnoDB只有一个UndoSegment，最多支持1023的并发；现在有128个Segment...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/08/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/ff0a6fc5.html">
-            
-                <span>Tomcat的Https设置及Http自动跳转Https</span>
-        </a>
-        <div class="abstract-content">
-            1.场景还原​        近期项目中要对信息传输过程中进行安全加密，那么第一时间浮现笔者脑海的当然是https,接下来笔者将介绍如何在web服务器Tomcat中配置Https及Http自动跳转Https
-2.Https相关介绍​       Https是由NetScape公司设计的一个基于Http的加密传输协议，可以这样理解Https = Http +SSL(安全套接层),Https的端口为443，而且还需要申请CA数字证书认证。
-3.Https的设置①申明CA数字证书
-这里推荐一个免费的阿里平台的CA数字证书（阿里云、腾讯云）
-  
-点击免费型DV SSL 购买，跳转到阿里云主界面...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/01</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2994,9 +2995,11 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 117
+        Total : 119
         </div>
         <!-- search  -->
         
@@ -3009,6 +3012,11 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href="/posts/91a9aa13.html">java.lang.NoClassDefFoundError</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3166,6 +3174,11 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/26</span><a class="archive-post-title" href="/posts/56813c64.html">win10本地打包maven程序为docker镜像报错</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/posts/30026bfd.html">flume-ng-sql-source编译jar</a>
         </li>
     
@@ -3275,17 +3288,17 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3400,12 +3413,12 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3704,6 +3717,8 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
+    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
@@ -3713,8 +3728,6 @@ InnoDB plugin文件格式Barracuda、支持表压缩、节约存储、提供内�
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
-    
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
