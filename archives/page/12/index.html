@@ -366,6 +366,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/3d12f64a.html">
+            
+                <span>数据库存时间戳的好处</span>
+        </a>
+        <div class="abstract-content">
+            不管做什么项目，必须都得接触的东西就是时间类型。现在用时间戳存储日期数据（整型存储）已经是业界很平常的的事情，网上各大游戏公司，各大开源都是采取整型时间戳存储。整数存日期好处很多，程序判断直读，扩展性好，随意可转换xml,json等格式。不过有一个最大的缺点就是查数据库不直观，也就是说我们用管理工具打开数据库的时候，看到的是一堆数字，维护数据不方便。为了解决这一缺陷，我找到一方法，先上代码：
+1SELECT *,FROM_UNIXTIME(created_time, &apos;%Y-%m-%d %H:%i:%s&apos;) as created_time_ref FROM `user...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/f62f0412.html">
             
                 <span>让putty支持标签tabs功能</span>
@@ -618,43 +648,10 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/fd4a1da4.html">
-            
-                <span>MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</span>
-        </a>
-        <div class="abstract-content">
-            程度从强到弱drop table tbdrop将表格直接删除，没有办法找回
-truncate (table) tb删除表中的所有数据，不能与where一起使用
-delete from tb (where)删除表中的数据(可制定某一行)
-区别：truncate和delete的区别1、事务：truncate是不可以rollback的，但是delete是可以rollback的；
-   原因：truncate删除整表数据(ddl语句,隐式提交)，delete是一行一行的删除，可以rollback，效率上truncate比delete快，但truncate删除后不记录mysql日志，不可以恢复数据...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/11/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span>
+        <a class="extend prev" rel="prev" href="/archives/page/11/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/13/">NEXT ></a>
     </nav>
     
 </main>
@@ -2903,246 +2900,9 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -3188,7 +2948,7 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">【转】Moodle、Sakai、Blackboard对比</a>
         </li>
     
     
@@ -3406,6 +3166,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
         </li>
     
@@ -3431,7 +3196,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3441,12 +3211,7 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3561,12 +3326,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3601,12 +3366,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3910,9 +3675,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     

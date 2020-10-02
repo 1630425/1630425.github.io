@@ -366,6 +366,32 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/420296e9.html">
+            
+                <span>apiDoc的maven插件自动生成apidoc.json</span>
+        </a>
+        <div class="abstract-content">
+            插件是用apidoc插件生成文档的，具体使用方式可查看官网：http://apidocjs.com/
+该插件不会直接生成APIDOC文档，只会自动生成apidoc.json文件，需要执行apidoc命令才可以生成apidoc.json文件会生成在项目根目录apidoc文件夹下
+下载依赖包可配置MAVEN仓库https://oss.sonatype.org/content/groups/public或者下载源码包进行编译打包:https://gitee.com/qianxunclub/qianxunclub-maven-plugin
+12345git clone https://gitee...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/6cb9a624.html">
             
                 <span>apiDoc使用指南</span>
@@ -509,15 +535,18 @@ Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/88d2b72a.html">
+        <a class="abstract-title" href="/posts/74a917bd.html">
             
-                <span>拦截器和过滤器的区别</span>
+                <span>IDEA编辑器提升效率的操作</span>
         </a>
         <div class="abstract-content">
-            1.过滤器：
-依赖于servlet容器。在实现上基于函数回调，可以对几乎所有请求进行过滤，但是缺点是一个过滤器实例只能在容器初始化时调用一次。使用过滤器的目的是用来做一些过滤操作，获取我们想要获取的数据，比如：在过滤器中修改字符编码；在过滤器中修改HttpServletRequest的一些参数，包括：过滤低俗文字、危险字符等
-2.拦截器：
-依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。在实现上基于Java的反射机制，属于面向切面编程（AOP）的一种运用。由于拦截器是基于web框架的调用，因此可以使用Spring的依赖注入（DI）进行一些业务操作，同时一个拦截器...
+            阅读本文大概需要 3 分钟。
+IDEA 有个很牛逼的功能，那就是后缀补全（不是自动补全），很多人竟然不知道这个操作，还在手动敲代码。
+这个功能可以使用代码补全来模板式地补全语句，如遍历循环语句（for、foreach）、使用 String.format() 包裹一个字符串、使用类型转化包裹一个表达式、根据判（非）空或者其它判别语句生成 if 语句、用 instanceOf 生成分支判断语句等。
+使用的方式也很简单，就是在一个表达式后按下点号 . ，然后输入一些提示或者在列表中选择一个候选项，常见的候选项下面会给出 GIF 演示。
+1. var 声明
+ 2. null 判空
+ 3. not...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -535,18 +564,15 @@ Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74a917bd.html">
+        <a class="abstract-title" href="/posts/88d2b72a.html">
             
-                <span>IDEA编辑器提升效率的操作</span>
+                <span>拦截器和过滤器的区别</span>
         </a>
         <div class="abstract-content">
-            阅读本文大概需要 3 分钟。
-IDEA 有个很牛逼的功能，那就是后缀补全（不是自动补全），很多人竟然不知道这个操作，还在手动敲代码。
-这个功能可以使用代码补全来模板式地补全语句，如遍历循环语句（for、foreach）、使用 String.format() 包裹一个字符串、使用类型转化包裹一个表达式、根据判（非）空或者其它判别语句生成 if 语句、用 instanceOf 生成分支判断语句等。
-使用的方式也很简单，就是在一个表达式后按下点号 . ，然后输入一些提示或者在列表中选择一个候选项，常见的候选项下面会给出 GIF 演示。
-1. var 声明
- 2. null 判空
- 3. not...
+            1.过滤器：
+依赖于servlet容器。在实现上基于函数回调，可以对几乎所有请求进行过滤，但是缺点是一个过滤器实例只能在容器初始化时调用一次。使用过滤器的目的是用来做一些过滤操作，获取我们想要获取的数据，比如：在过滤器中修改字符编码；在过滤器中修改HttpServletRequest的一些参数，包括：过滤低俗文字、危险字符等
+2.拦截器：
+依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。在实现上基于Java的反射机制，属于面向切面编程（AOP）的一种运用。由于拦截器是基于web框架的调用，因此可以使用Spring的依赖注入（DI）进行一些业务操作，同时一个拦截器...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -621,43 +647,10 @@ add_header X-Frame-Options SAM...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a2547652.html">
-            
-                <span>用IDEA反向生成javabean</span>
-        </a>
-        <div class="abstract-content">
-            1.首先用idea创建一个新项目，选择java=》java EE Persistence
- 
-2.创建完成后，点击IDEA右边Database,点击+，新建Data source
- 
-3.选择要建立的数据库，填写连接信息，点击测试按钮，如果变绿色则测试通过。
- 
-4.然后点击左下角Persistence标签，右键项目选择Generate Persistence Mapping=\&gt;By Data Scheme
- 
-5.然后选择刚刚新建的数据源，选中要生产的数据库表，下面有两个不同选项，一个生成xml形式，另一个生成注解形式。
- 
-6.点击确定javabean就生成了，需要注意的是，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/8/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/10/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/archives/page/8/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/10/">NEXT ></a>
     </nav>
     
 </main>
@@ -2906,246 +2899,9 @@ add_header X-Frame-Options SAM...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 120
+        Total : 121
         </div>
         <!-- search  -->
         
@@ -3191,7 +2947,7 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">Moodle、Sakai、Blackboard对比</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href="/posts/b84480a5.html">【转】Moodle、Sakai、Blackboard对比</a>
         </li>
     
     
@@ -3409,6 +3165,11 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
         </li>
     
@@ -3434,7 +3195,12 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3444,12 +3210,7 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3564,12 +3325,12 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3604,12 +3365,12 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3913,9 +3674,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
