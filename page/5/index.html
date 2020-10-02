@@ -379,6 +379,47 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/271b275c.html">
+            
+                <span>Rust语言环境安装</span>
+        </a>
+        <div class="abstract-content">
+            Windows 开发环境说明本文示范的操作系统为 Windows 10 操作系统。
+在 Windows 操作系统下可以点击此处进入下载页面，然后按照以下步骤进行安装。
+安装步骤
+进入下载页面后，点击 RUSTUP-INIT.EXE 按钮进行下载 Rust 安装包：
+
+
+
+下载完成后打开安装包进入安装页面，输入 1 选择 1) Proceed with installation (default) 后回车进行默认安装：
+
+
+
+安装成功会显示 stable installed：
+
+
+
+安装完成后，打开命令行工具查看 Rust 版本：
+
+
+Windows 注意事项在 Windows 上， Ru...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/85a085d9.html">
             
                 <span>CentOS7添加开机启动服务或脚本</span>
@@ -641,47 +682,6 @@ height:50vh;
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/102d67a.html">
-            
-                <span>TS型网页视频下载方法</span>
-        </a>
-        <div class="abstract-content">
-            
-首先使用Chrome打开网页，单击F12打开开发者工具 开始视频播放，在F12出来的界面中单击Network 在Network中有文件列表，检查当中是否存在m3u8结尾的文件
-
-如果有m3u8结尾的文件，把它的源地址复制下来
-
-源地址复制下来可能分两段（两个http），一段是跳转地址，一段是目标地址，将目标地址保留下来即可。
-
-正确的m3u8文件地址大概的样子在下面的命令示例中
-
-
-
-使用以下命令一键下载并自动合成、转码为mp4
-1ffmpeg -i http://xxx.com:8891/1231/index.m3u8 -c copy -bsf:a aac_adtstoasc out...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
-    
-</div>
             
         </div>
     </article>
@@ -3083,9 +3083,200 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 119
+        Total : 120
         </div>
         <!-- search  -->
         
@@ -3098,6 +3289,11 @@ height:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/posts/1e7ccb7b.html">CentOS8安装Docker出现package docker-ce-319.03.13-3.el7.x86_64 requires containerd.io = 1.2.2-3</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3374,12 +3570,12 @@ height:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     

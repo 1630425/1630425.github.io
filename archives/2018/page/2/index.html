@@ -457,16 +457,17 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
             
-                <span>Git远程仓库地址变更本地如何修改</span>
+                <span>Docker配置私有仓库</span>
         </a>
         <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -475,11 +476,34 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
             </div>
             <!-- tags  -->
             
-            <div class="abstract-tags">
+        </div>
+    </article>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
     
-</div>
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+            
+                <span>springboot部署测试环境和生产环境</span>
+        </a>
+        <div class="abstract-content">
+            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
+开发环境
+IDEA Maven
+
+配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
+123spring  profiles    active: dev
+这段配置代码的意思是，spingboot会加载...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
             
         </div>
     </article>
@@ -532,17 +556,16 @@ Windows10
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/c4bccc0e.html">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
             
-                <span>Docker配置私有仓库</span>
+                <span>Git远程仓库地址变更本地如何修改</span>
         </a>
         <div class="abstract-content">
-            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
-2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
-Window系统配置Docker
-Apply即可
-3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
-12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -551,34 +574,11 @@ Apply即可
             </div>
             <!-- tags  -->
             
-        </div>
-    </article>
+            <div class="abstract-tags">
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
     
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5f9b9ec2.html">
-            
-                <span>springboot部署测试环境和生产环境</span>
-        </a>
-        <div class="abstract-content">
-            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
-开发环境
-IDEA Maven
-
-配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
-123spring  profiles    active: dev
-这段配置代码的意思是，spingboot会加载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
+</div>
             
         </div>
     </article>
@@ -2981,9 +2981,200 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 119
+        Total : 120
         </div>
         <!-- search  -->
         
@@ -2996,6 +3187,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/posts/1e7ccb7b.html">CentOS8安装Docker出现package docker-ce-319.03.13-3.el7.x86_64 requires containerd.io = 1.2.2-3</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3272,12 +3468,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     

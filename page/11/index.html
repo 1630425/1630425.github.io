@@ -379,6 +379,48 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/f65d6fec.html">
+            
+                <span>Centos7/Ubuntu初始化硬盘分区、挂载</span>
+        </a>
+        <div class="abstract-content">
+            一、查看信息1、查看硬盘信息1fdisk -l
+可以看到有两块硬盘/dev/vda和/dev/vdb，启动vda是系统盘vdb是我们新增的数据盘。
+2、查看磁盘格式1df -T
+二、分区执行以下命令，进入fdisk模式，开始对新增数据盘执行分区操作。
+fdisk 新增数据盘
+以新挂载的数据盘“/dev/vdb”为例：1fdisk /dev/vdb
+提示：然后根据提示，依次输入：”n“、”p“、”1“、两次回车，”pw“，分区也就开始了并很快就可完成。
+回显类似如下信息：
+ 
+1、输入“n”，按“Enter”，开始新建分区。   回显类似如下信息： 
+  
+表示磁盘有两种分区类型：
+
+“p...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/09/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/d2a1fddb.html">
             
                 <span>Mysql8.0&amp;Mysql5.7&amp;Mysql5.6&amp;Mysql5.5特性对比</span>
@@ -672,33 +714,6 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
         <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f62f0412.html">
-            
-                <span>让putty支持标签tabs功能</span>
-        </a>
-        <div class="abstract-content">
-            putty一个我们常用的管理和连接linux的工具，小而功能够用，使用下来不足的就是不支持像类似chrome浏览器一样的tabs标签。
-google了一把，找到了方法，下载一个ttyplus的工具安装后再启动就会让putty支持多标签方式浏览。
-官网下载地址：http://www.ttyplus.com/downloads.html其他下载地址：http://wangpant.cn/resource/view/hat9slegj0pa.html
-运行后如图：
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/04/18</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3100,9 +3115,200 @@ google了一把，找到了方法，下载一个ttyplus的工具安装后再启�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 119
+        Total : 120
         </div>
         <!-- search  -->
         
@@ -3115,6 +3321,11 @@ google了一把，找到了方法，下载一个ttyplus的工具安装后再启�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/02</span><a class="archive-post-title" href="/posts/1e7ccb7b.html">CentOS8安装Docker出现package docker-ce-319.03.13-3.el7.x86_64 requires containerd.io = 1.2.2-3</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3391,12 +3602,12 @@ google了一把，找到了方法，下载一个ttyplus的工具安装后再启�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
