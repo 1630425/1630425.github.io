@@ -379,6 +379,93 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/44771869.html">
+            
+                <span>SOA、ERP、SAP和SaaS四者的区别</span>
+        </a>
+        <div class="abstract-content">
+            SOA、ERP、SAP和SaaS大家熟悉吗？秘奥收集相关资料整理如下：
+SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构模型和一套设计方法学，其目的是最大限度地重用应用程序中立型的服务以提高IT适应性和效率。它可以根据需求通过网络对松散耦合的粗粒度应用组件进行分布式部署、组合和使用。服务层是SOA的基础，可以直接被应用调用，从而有效控制系统中与软件代理交互的人为依赖性。SOA的关键是“服务”的概念，W3C将服务定义为：“服务提供者完成一组工作，为服务使用者交付所需的最终结果。最终结果通常会使使用者的状态发生变化，但也可能使提供者的状态改...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2011/03/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/727549f.html">
+            
+                <span>MySQL连接&amp;备份&amp;导入数据库</span>
+        </a>
+        <div class="abstract-content">
+            连接本地数据库语法：mysql -h 目标服务器(可选的，默认为localhost) -P 端口(可选) -u 用户名 -p密码
+1mysql -u root -p123456;
+注：-u与root可以不用加空格，其它也一样，除-p和123456不能有空格；
+连接远程数据库例如：MySQL 连接远程数据库（192.168.1.100），端口“3306”(默认3306可以忽略)，用户名为“demo”，密码“12345678”
+1mysql -h 192.168.1.100 -P 3306 -u demo -p12345678;
+备份本地数据库语法：mysqldump -h 目标服务器(可选...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/06/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f02121e8.html">
+            
+                <span>MySQL循环批量插入数据</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112TRUNCATE TABLE a; #清空表数据DROP PROCEDURE IF EXISTS proc_init_data; #如果存在此存储过程则删掉DELIMITER $ -- 使用delimiter后，将不把分号当做语句结束，会将该段整个提交CREATE PROCEDURE proc_init_data()BEGIN    DECLARE i INT DEFAULT 1;    WHILE i&lt;=10000 DO        INSERT INTO a (`name`) VALUES (i);        SET i = i+1;    ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/fd4a1da4.html">
             
                 <span>MySQL删除表数据DROP、TRUNCATE和DELETE的用法和区别</span>
@@ -2751,9 +2838,68 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -2766,6 +2912,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/3dfd485f.html">Lombok注解实现final属性的构造注入</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2795,6 +2946,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/posts/76355b4a.html">vue与html5关系</a>
         </li>
     
     
@@ -3047,17 +3203,17 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3122,6 +3278,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/72ac853a.html">Win10设置右键以管理员方式打开cmd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
         </li>
     
@@ -3177,12 +3338,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3217,12 +3378,12 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3453,11 +3614,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3473,7 +3634,11 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
+        <span class="sidebar-tag-name" data-tags="VUE"><span class="iconfont-archer">&#xe606;</span>VUE</span>
+    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
@@ -3481,11 +3646,13 @@ delete from tb (where)删除表中的数据(可制定某一行)
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
-    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
     
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
@@ -3528,13 +3695,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
@@ -3545,6 +3714,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     

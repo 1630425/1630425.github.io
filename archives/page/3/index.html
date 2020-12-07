@@ -366,6 +366,61 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c65b3c3e.html">
+            
+                <span>java.lang.NoSuchMethodError</span>
+        </a>
+        <div class="abstract-content">
+            java.lang.NoSuchMethodError: javax.persistence.spi.PersistenceUnitInfo.getValidationMode()的解决方法
+今天在搭建springboot（2.1.0.RELEASE）+spring data+jpa+maven时按照书上的说法进行配置，结果就报了这个错误。后来经过网上查询资料和自己一步一步尝试，发现原来是我在pom.xml文件中配置了tk.mybatis造成的（我先是搭建了springboot+mybatis+maven的项目，后来在此基础上进行修改，故pom.xml文件中的依赖没有删除掉），因为tk....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/b9173e5f.html">
+            
+                <span>OpenProject 9 发布了</span>
+        </a>
+        <div class="abstract-content">
+            
+OpenProject 是一个开源项目协作管理软件。它是 Trello 和 Jira 等专有方案的替代品。
+如果个人使用，你可以免费使用它，并在你自己的服务器上进行设置（并托管它）。这样，你就可以控制数据。
+当然，如果你是企业云版的用户，那么你可以使用高级功能和更优先的帮助。
+OpenProject 9 的重点是新的面板视图，包列表视图和工作模板。
+如果你对此不了解，可以尝试一下。但是，如果你是已有用户 —— 在迁移到 OpenProject 9 之前，你应该知道这些新功能。
+OpenProject 9 有什么新功能？
+以下是最新版 OpenProject 的一些主要更改。
+Scrum...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/78e760f3.html">
             
                 <span>微信未绑定企业号开发者</span>
@@ -598,69 +653,6 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/85af5292.html">
-            
-                <span>springboot jpa注解自动生成表及注释</span>
-        </a>
-        <div class="abstract-content">
-            springboot jpa注解自动生成修改表，添加索引、字段注释、字段长度、引擎等
-
-用jpa自动生成表，只用@Entity、@Table这两个注解生成的表：引擎是MyISAM、字段长度全是默认最大、字段没注释、没有添加索引
-
-
-先设置InnoDB引擎
-生成表注解，并制定唯一索引（索引名、字段、类型）
-
-1234@Entity@Table(name = "pmi_t_user_version",       indexes = &#123;@Index(name = "my_index_name",  columnList="user_id", unique = true)&#125;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/655a5d4b.html">
-            
-                <span>springboot jpa自动生成表指定引擎</span>
-        </a>
-        <div class="abstract-content">
-            
-springboot jpa自动生成表的引擎是MyISAM，这不是我们需要的，需要更换，在配置文件中进行配置
-
-   配置默认引擎InnoDB
-application.properties
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
-application.yml
-spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-示例：
-123456789101112131415161718sprin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
             </div>
             <!-- tags  -->
             
@@ -2913,9 +2905,68 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -2928,6 +2979,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/3dfd485f.html">Lombok注解实现final属性的构造注入</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2957,6 +3013,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/posts/76355b4a.html">vue与html5关系</a>
         </li>
     
     
@@ -3209,17 +3270,17 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3284,6 +3345,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/72ac853a.html">Win10设置右键以管理员方式打开cmd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
         </li>
     
@@ -3339,12 +3405,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3379,12 +3445,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3615,11 +3681,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3635,7 +3701,11 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
+        <span class="sidebar-tag-name" data-tags="VUE"><span class="iconfont-archer">&#xe606;</span>VUE</span>
+    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
@@ -3643,11 +3713,13 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
-    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
     
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
@@ -3690,13 +3762,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
@@ -3707,6 +3781,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     

@@ -366,6 +366,70 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/9ba6599e.html">
+            
+                <span>SLB配置</span>
+        </a>
+        <div class="abstract-content">
+            
+TCP设置
+
+
+HTTPS配置
+
+
+注意：健康检查配置-域名，设置访问域名即可。
+nginx配置
+12345server &#123;    listen      443;    server_name      localhost;    return      301 https://$server_name$request_uri;&#125;
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="SLB">SLB</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/d649053f.html">
+            
+                <span>Adobe Reader一打开就闪退</span>
+        </a>
+        <div class="abstract-content">
+            Adobe Reader/Adobe Acrobat Reader DC一打开就闪退解决方案1、断网有用2、阻止连接(推荐)2.1开始-控制面板-系统和安全-Windows防火墙-高级设置-出站规则-新建规则-程序度-下一步-此程序路径-下一步-阻止连接问-何时应用该规则 ？（全选）-下一步-自定义一个名称答-完成；
+2.2控制面板\所有控制面板项\Windows Defender 防火墙-更改通知设置-公网网络设置-关闭windows defender防火墙。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/6c396ed4.html">
             
                 <span>下载工具Motrix</span>
@@ -586,61 +650,6 @@ CentOS 7 调整 home分区扩大root分区
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c65b3c3e.html">
-            
-                <span>java.lang.NoSuchMethodError</span>
-        </a>
-        <div class="abstract-content">
-            java.lang.NoSuchMethodError: javax.persistence.spi.PersistenceUnitInfo.getValidationMode()的解决方法
-今天在搭建springboot（2.1.0.RELEASE）+spring data+jpa+maven时按照书上的说法进行配置，结果就报了这个错误。后来经过网上查询资料和自己一步一步尝试，发现原来是我在pom.xml文件中配置了tk.mybatis造成的（我先是搭建了springboot+mybatis+maven的项目，后来在此基础上进行修改，故pom.xml文件中的依赖没有删除掉），因为tk....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/b9173e5f.html">
-            
-                <span>OpenProject 9 发布了</span>
-        </a>
-        <div class="abstract-content">
-            
-OpenProject 是一个开源项目协作管理软件。它是 Trello 和 Jira 等专有方案的替代品。
-如果个人使用，你可以免费使用它，并在你自己的服务器上进行设置（并托管它）。这样，你就可以控制数据。
-当然，如果你是企业云版的用户，那么你可以使用高级功能和更优先的帮助。
-OpenProject 9 的重点是新的面板视图，包列表视图和工作模板。
-如果你对此不了解，可以尝试一下。但是，如果你是已有用户 —— 在迁移到 OpenProject 9 之前，你应该知道这些新功能。
-OpenProject 9 有什么新功能？
-以下是最新版 OpenProject 的一些主要更改。
-Scrum...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
             </div>
             <!-- tags  -->
             
@@ -2893,9 +2902,68 @@ Scrum...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -2908,6 +2976,11 @@ Scrum...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/3dfd485f.html">Lombok注解实现final属性的构造注入</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2937,6 +3010,11 @@ Scrum...
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/posts/76355b4a.html">vue与html5关系</a>
         </li>
     
     
@@ -3189,17 +3267,17 @@ Scrum...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3264,6 +3342,11 @@ Scrum...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/72ac853a.html">Win10设置右键以管理员方式打开cmd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
         </li>
     
@@ -3319,12 +3402,12 @@ Scrum...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3359,12 +3442,12 @@ Scrum...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3595,11 +3678,11 @@ Scrum...
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3615,7 +3698,11 @@ Scrum...
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
+        <span class="sidebar-tag-name" data-tags="VUE"><span class="iconfont-archer">&#xe606;</span>VUE</span>
+    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
@@ -3623,11 +3710,13 @@ Scrum...
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
-    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
     
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
@@ -3670,13 +3759,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
@@ -3687,6 +3778,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     

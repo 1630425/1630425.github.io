@@ -366,6 +366,101 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/4d1930e3.html">
+            
+                <span>基于Docker搭建分布式消息队列Kafka</span>
+        </a>
+        <div class="abstract-content">
+            本文基于Docker搭建一套单节点的Kafka消息队列，Kafka依赖Zookeeper为其管理集群信息，虽然本例不涉及集群，但是该有的组件都还是会有，典型的kafka分布式架构如下图所示。本例搭建的示例包含Zookeeper + Kafka + Kafka-manger
+Kafka官网：
+http://kafka.apache.org/
+重要概念
+生产者(Producer)
+消费者(Consumer)
+消费消息。每个consumer属于一个特定的consumer group。使用consumer high level API时，同一个topic的一条消息只能被同一个consumer g...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Kafka">Kafka</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f66662b8.html">
+            
+                <span>安装Python及环境变量配置</span>
+        </a>
+        <div class="abstract-content">
+            一、Windows系统很多童鞋问之前的教程怎么没有介绍安装python3.5的，现予以补充更新一下。
+
+（一）安装python3.51、下载进入Python官网www.python.org，在“Downloads”下拉菜单中的右半部分直接点击python3.5.2版本即可下载，它会自动下载32位的。
+
+
+如果需要64位，点击左半部分“Windows”，选择第二项“Latest Python 3 Release - Python 3.5.2”。
+
+
+在“Files”里选择倒数第五个“Windows x86-64 executable installer”下载。
+
+
+2、安装安装刚才已经下载...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/6a3c93e4.html">
+            
+                <span>支付宝红包码</span>
+        </a>
+        <div class="abstract-content">
+            发红包、领红包、支付宝红包码
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7109808e.html">
             
                 <span>WebP在减少图片体积和流量上的效果如何？MIP技术实践分享</span>
@@ -619,91 +714,6 @@ $ git commit -m”skin”
         <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/2fc0e0a3.html">
-            
-                <span>解除360doc网页防复制</span>
-        </a>
-        <div class="abstract-content">
-            方法1chrome浏览器按F12（打开谷歌浏览器的开发者工具）
-然后按F5 刷新下网页，（根据测试必须刷新下网页等下插入代码才能生效）下面空白插入代码：1document.oncontextmenu=document.onselectstart=document.body.onselectstart=document.oncopy=document.body.oncopy=&quot;&quot;
-然后按回车键，ok！不会弹出那令人蛋疼的提示了，可以复制了。
-方法2先打开一个Word文件，然后直接选中要复制的内容，可以把复制的内容直接拖动到Word中就OK了。 发现这种方法也适合其他被保...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/1c334725.html">
-            
-                <span>git add -A 和 git add . 的区别</span>
-        </a>
-        <div class="abstract-content">
-            介绍git add -A和 git add .   git add -u在功能上看似很相近，但还是存在一点差别
-git add . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
-git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）
-git add -A ：是上面两个功能的合集（git add –all的缩写）
-示例下面是具体操...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/09/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/b12943d1.html">
-            
-                <span>IntelliJ使用pipeline文件</span>
-        </a>
-        <div class="abstract-content">
-            使用idea格式化pipeline文件
-新建项目Groovy项目新建.gdsl 文件
-在当前项目中/src/main/groovy新建.gdsl 文件
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/08/12</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2954,9 +2964,68 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -2969,6 +3038,11 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/3dfd485f.html">Lombok注解实现final属性的构造注入</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2998,6 +3072,11 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/posts/76355b4a.html">vue与html5关系</a>
         </li>
     
     
@@ -3250,17 +3329,17 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3325,6 +3404,11 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/72ac853a.html">Win10设置右键以管理员方式打开cmd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
         </li>
     
@@ -3380,12 +3464,12 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3420,12 +3504,12 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3656,11 +3740,11 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3676,7 +3760,11 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
+        <span class="sidebar-tag-name" data-tags="VUE"><span class="iconfont-archer">&#xe606;</span>VUE</span>
+    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
@@ -3684,11 +3772,13 @@ git add -A ：是上面两个功能的合集（git add –all的缩写）
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
-    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
     
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
@@ -3731,13 +3821,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
@@ -3748,6 +3840,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     

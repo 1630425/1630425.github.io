@@ -366,6 +366,98 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/74a917bd.html">
+            
+                <span>IDEA编辑器提升效率的操作</span>
+        </a>
+        <div class="abstract-content">
+            阅读本文大概需要 3 分钟。
+IDEA 有个很牛逼的功能，那就是后缀补全（不是自动补全），很多人竟然不知道这个操作，还在手动敲代码。
+这个功能可以使用代码补全来模板式地补全语句，如遍历循环语句（for、foreach）、使用 String.format() 包裹一个字符串、使用类型转化包裹一个表达式、根据判（非）空或者其它判别语句生成 if 语句、用 instanceOf 生成分支判断语句等。
+使用的方式也很简单，就是在一个表达式后按下点号 . ，然后输入一些提示或者在列表中选择一个候选项，常见的候选项下面会给出 GIF 演示。
+1. var 声明
+ 2. null 判空
+ 3. not...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/19</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/27ec56c.html">
+            
+                <span>eclipse-idea</span>
+        </a>
+        <div class="abstract-content">
+            激活http://idea.lanyus.com/
+配置
+sudo vim /etc/hosts
+0.0.0.0 account.jetbrains.com
+0.0.0.0 www.jetbrains.com
+2019.1.2以后版本
+第一步将：0.0.0.0 https://account.jetbrains.com:443 加入hosts，不需要0.0.0.0 www.jetbrains.com，不然会影响idea的某些功能
+第二步打开cmd终端，输入ipconfig /flushdns，然后回车刷新dns缓存
+Eclipse风格修改使用Eclipse风格的快捷键
+目的是习惯了使用e...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/24d6d861.html">
+            
+                <span>nginx设置X-Frame-Options的两种方法</span>
+        </a>
+        <div class="abstract-content">
+            本文介绍nginx分别通过http和server设置 X-Frame-Options ，防止网站被别人用iframe嵌入使用。需要说明的是，只需用其中一个方法即可，在http配置代码块或server配置代码块里设置。
+
+在http配置里设置X-Frame-Options
+在server配置里设置X-Frame-Options
+
+在http配置里设置X-Frame-Options打开nginx.conf，文件位置一般在安装目录 /usr/local/nginx/conf 里。
+然后在http配置代码块里某一行添加如下语句即可：
+
+add_header X-Frame-Options SAM...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/a2547652.html">
             
                 <span>用IDEA反向生成javabean</span>
@@ -587,101 +679,6 @@ http://kafka.apache.org/
         <a class="post-tag" href="javascript:void(0);" data-tags="Kafka">Kafka</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/4d1930e3.html">
-            
-                <span>基于Docker搭建分布式消息队列Kafka</span>
-        </a>
-        <div class="abstract-content">
-            本文基于Docker搭建一套单节点的Kafka消息队列，Kafka依赖Zookeeper为其管理集群信息，虽然本例不涉及集群，但是该有的组件都还是会有，典型的kafka分布式架构如下图所示。本例搭建的示例包含Zookeeper + Kafka + Kafka-manger
-Kafka官网：
-http://kafka.apache.org/
-重要概念
-生产者(Producer)
-消费者(Consumer)
-消费消息。每个consumer属于一个特定的consumer group。使用consumer high level API时，同一个topic的一条消息只能被同一个consumer g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Kafka">Kafka</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f66662b8.html">
-            
-                <span>安装Python及环境变量配置</span>
-        </a>
-        <div class="abstract-content">
-            一、Windows系统很多童鞋问之前的教程怎么没有介绍安装python3.5的，现予以补充更新一下。
-
-（一）安装python3.51、下载进入Python官网www.python.org，在“Downloads”下拉菜单中的右半部分直接点击python3.5.2版本即可下载，它会自动下载32位的。
-
-
-如果需要64位，点击左半部分“Windows”，选择第二项“Latest Python 3 Release - Python 3.5.2”。
-
-
-在“Files”里选择倒数第五个“Windows x86-64 executable installer”下载。
-
-
-2、安装安装刚才已经下载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/6a3c93e4.html">
-            
-                <span>支付宝红包码</span>
-        </a>
-        <div class="abstract-content">
-            发红包、领红包、支付宝红包码
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/01</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -2932,9 +2929,68 @@ http://kafka.apache.org/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 121
+        Total : 124
         </div>
         <!-- search  -->
         
@@ -2947,6 +3003,11 @@ http://kafka.apache.org/
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/3dfd485f.html">Lombok注解实现final属性的构造注入</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2976,6 +3037,11 @@ http://kafka.apache.org/
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/01</span><a class="archive-post-title" href="/posts/f2a408f6.html">Docker-Compose安装Wordpress博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href="/posts/76355b4a.html">vue与html5关系</a>
         </li>
     
     
@@ -3228,17 +3294,17 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3303,6 +3369,11 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/72ac853a.html">Win10设置右键以管理员方式打开cmd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">06/08</span><a class="archive-post-title" href="/posts/a15e2069.html">CentOS7下Rsync+sersync实现数据实时同步</a>
         </li>
     
@@ -3358,12 +3429,12 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3398,12 +3469,12 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
@@ -3634,11 +3705,11 @@ http://kafka.apache.org/
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
-    
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3654,7 +3725,11 @@ http://kafka.apache.org/
     
         <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
+        <span class="sidebar-tag-name" data-tags="VUE"><span class="iconfont-archer">&#xe606;</span>VUE</span>
+    
         <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
+    
+        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
         <span class="sidebar-tag-name" data-tags="HBase"><span class="iconfont-archer">&#xe606;</span>HBase</span>
     
@@ -3662,11 +3737,13 @@ http://kafka.apache.org/
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
     
-        <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
-    
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
     
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
@@ -3709,13 +3786,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="数据采集"><span class="iconfont-archer">&#xe60a;</span>数据采集</span>
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
         <span class="sidebar-category-name" data-categories="消息队列"><span class="iconfont-archer">&#xe60a;</span>消息队列</span>
     
@@ -3726,6 +3805,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="后端"><span class="iconfont-archer">&#xe60a;</span>后端</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     
