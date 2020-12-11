@@ -433,39 +433,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
-            
-                <span>Git远程仓库地址变更本地如何修改</span>
-        </a>
-        <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/1c4fca.html">
             
                 <span>Windows10自动更新无法关闭的解决方法</span>
@@ -508,18 +475,17 @@ Windows10
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
             
-                <span>springboot部署测试环境和生产环境</span>
+                <span>Docker配置私有仓库</span>
         </a>
         <div class="abstract-content">
-            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
-开发环境
-IDEA Maven
-
-配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
-123spring  profiles    active: dev
-这段配置代码的意思是，spingboot会加载...
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -537,17 +503,51 @@ IDEA Maven
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/c4bccc0e.html">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
             
-                <span>Docker配置私有仓库</span>
+                <span>Git远程仓库地址变更本地如何修改</span>
         </a>
         <div class="abstract-content">
-            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
-2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
-Window系统配置Docker
-Apply即可
-3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
-12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+            
+                <span>springboot部署测试环境和生产环境</span>
+        </a>
+        <div class="abstract-content">
+            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
+开发环境
+IDEA Maven
+
+配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
+123spring  profiles    active: dev
+这段配置代码的意思是，spingboot会加载...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -688,6 +688,46 @@ Apply即可
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3280,6 +3320,11 @@ Apply即可
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
@@ -3291,11 +3336,6 @@ Apply即可
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3415,12 +3455,12 @@ Apply即可
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3701,11 +3741,11 @@ Apply即可
     
         <span class="sidebar-tag-name" data-tags="MySQL"><span class="iconfont-archer">&#xe606;</span>MySQL</span>
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -3725,9 +3765,9 @@ Apply即可
     
         <span class="sidebar-tag-name" data-tags="HTML5"><span class="iconfont-archer">&#xe606;</span>HTML5</span>
     
-        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
         <span class="sidebar-tag-name" data-tags="Lombok"><span class="iconfont-archer">&#xe606;</span>Lombok</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
     
         <span class="sidebar-tag-name" data-tags="Windows10"><span class="iconfont-archer">&#xe606;</span>Windows10</span>
     
@@ -3736,6 +3776,8 @@ Apply即可
         <span class="sidebar-tag-name" data-tags="HDFS"><span class="iconfont-archer">&#xe606;</span>HDFS</span>
     
         <span class="sidebar-tag-name" data-tags="SLB"><span class="iconfont-archer">&#xe606;</span>SLB</span>
+    
+        <span class="sidebar-tag-name" data-tags="Jenkins"><span class="iconfont-archer">&#xe606;</span>Jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="jenkins"><span class="iconfont-archer">&#xe606;</span>jenkins</span>
     
@@ -3780,9 +3822,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
