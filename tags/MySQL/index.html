@@ -398,38 +398,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/c398b326.html">
-            
-                <span>创建时间和修改时间(更新时间)</span>
-        </a>
-        <div class="abstract-content">
-            123ALTER TABLE xxx ADD created_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;创建时间&apos;;ALTER TABLE xxx ADD modified_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;更新时间&apos;;
-而在界面的mysql工具里,创建时间仅设置为:而修改时间(更新时间)需要设置为:
-实体类：
-1234567891011/** * 创...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/ff3ad289.html">
             
                 <span>CentOS7 MySQL自动备份shell脚本</span>
@@ -684,6 +652,35 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/06/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/f02121e8.html">
+            
+                <span>MySQL循环批量插入数据</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112TRUNCATE TABLE a; #清空表数据DROP PROCEDURE IF EXISTS proc_init_data; #如果存在此存储过程则删掉DELIMITER $ -- 使用delimiter后，将不把分号当做语句结束，会将该段整个提交CREATE PROCEDURE proc_init_data()BEGIN    DECLARE i INT DEFAULT 1;    WHILE i&lt;=10000 DO        INSERT INTO a (`name`) VALUES (i);        SET i = i+1;    ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/05/31</span>
             </div>
             <!-- tags  -->
             
@@ -3030,100 +3027,9 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 126
+        Total : 127
         </div>
         <!-- search  -->
         
@@ -3136,6 +3042,11 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3298,12 +3209,17 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href="/posts/ab76c535.html">MAC下使用ngrok实现内网穿透</a>
         </li>
     
     
@@ -3397,11 +3313,6 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
         </li>
     
@@ -3427,12 +3338,12 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3442,7 +3353,7 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -3602,12 +3513,12 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3890,11 +3801,15 @@ Warning: World-writable config file ‘/etc/my.cnf’ is ignoredStarting MySQL S
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
     
+        <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
+    
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -3929,11 +3844,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
@@ -3950,6 +3865,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="MAC"><span class="iconfont-archer">&#xe60a;</span>MAC</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     

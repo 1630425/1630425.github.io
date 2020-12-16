@@ -379,6 +379,67 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/3f943cf8.html">
+            
+                <span>Flume修改SQLSource以针对时间戳增量数据传输</span>
+        </a>
+        <div class="abstract-content">
+            flume github关于增量数据传输的原理，是通过唯一id，递增，每次记录传输的数据量+current_index=last_index，只能识别新增数据，检测不到删除与更新。不符合没有增量id的情况。由于数据存在时间戳标志，因此改写flume sqlsource以应对实际需求：
+1. 每次增量传输先查询数据库中当前最大的时间戳，记录为maxtime2. 查询数据库：select * from table where time&gt;=current_index and time&lt;maxtime,此时不能取到time=maxtime的数据，不排除在数据查询之后会继续生成maxt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Flume">Flume</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/68ef0897.html">
+            
+                <span>为什么不用原生Spring-Cloud-Config</span>
+        </a>
+        <div class="abstract-content">
+            引言近几年传统应用架构已经逐渐朝着微服务架构演进。那么随着业务的发展，微服务越来越庞大，此时服务配置的管理变得会复杂起来。为了方便服务配置文件统一管理，实时更新，配置中心应运而生。其实，所谓配置中心，就是将配置的数据放在某种存储介质中，该介质可以是
+
+File(例如Git、Svn)
+Database(例如mysql、oracle)
+nosql Database(例如Redis、Memacache、MongoDb)
+其他第三方中间件(例如Zookeeper)
+
+那么配置中心可以简单理解为是封装了对这些介质进行操作的接口，供客户端拉取使用。
+由于我们采用的是Spring-Boot的架构，因此...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/12</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/97614a38.html">
             
                 <span>Centos7配置阿里云yum镜像</span>
@@ -622,74 +683,6 @@ Windows 注意事项在 Windows 上， Ru...
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c398b326.html">
-            
-                <span>创建时间和修改时间(更新时间)</span>
-        </a>
-        <div class="abstract-content">
-            123ALTER TABLE xxx ADD created_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;创建时间&apos;;ALTER TABLE xxx ADD modified_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;更新时间&apos;;
-而在界面的mysql工具里,创建时间仅设置为:而修改时间(更新时间)需要设置为:
-实体类：
-1234567891011/** * 创...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/61334b74.html">
-            
-                <span>Git修改已提交的commit注释</span>
-        </a>
-        <div class="abstract-content">
-            两种情况： 1.已经将代码push到远程仓库 2.还没将代码push到远程仓库，还在本地的仓库中
-这两种情况下的修改大体相同，只是第一种情况最后会多一步 下面来说怎么修改
-先搞清楚你要修改哪次的提交注释或者哪几次的提交注释
-修改最后一次注释如果你只想修改最后一次注释（就是最新的一次提交），那好办： git commit --amend 出现有注释的界面（你的注释应该显示在第一行）， 输入i进入修改模式，修改好注释后，按Esc键 退出编辑模式，输入:wq保存并退出。ok，修改完成。 例如修改时编辑界面的图：
-
-编辑commit注释.png
-修改之前的注释修改之前的某次注释
-输入： git ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
     
 </div>
             
@@ -3129,100 +3122,9 @@ Windows 注意事项在 Windows 上， Ru...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 126
+        Total : 127
         </div>
         <!-- search  -->
         
@@ -3235,6 +3137,11 @@ Windows 注意事项在 Windows 上， Ru...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3397,12 +3304,17 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/22</span><a class="archive-post-title" href="/posts/ab76c535.html">MAC下使用ngrok实现内网穿透</a>
         </li>
     
     
@@ -3496,11 +3408,6 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/01</span><a class="archive-post-title" href="/posts/c398b326.html">创建时间和修改时间(更新时间)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/30</span><a class="archive-post-title" href="/posts/61334b74.html">Git修改已提交的commit注释</a>
         </li>
     
@@ -3526,12 +3433,12 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3541,7 +3448,7 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -3701,12 +3608,12 @@ Windows 注意事项在 Windows 上， Ru...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3989,11 +3896,15 @@ Windows 注意事项在 Windows 上， Ru...
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
     
+        <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
+    
         <span class="sidebar-tag-name" data-tags="iPic"><span class="iconfont-archer">&#xe606;</span>iPic</span>
     
         <span class="sidebar-tag-name" data-tags="WebP"><span class="iconfont-archer">&#xe606;</span>WebP</span>
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -4028,11 +3939,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
@@ -4049,6 +3960,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="负载均衡"><span class="iconfont-archer">&#xe60a;</span>负载均衡</span>
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
+    
+        <span class="sidebar-category-name" data-categories="MAC"><span class="iconfont-archer">&#xe60a;</span>MAC</span>
     
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
     
