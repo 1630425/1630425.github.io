@@ -379,6 +379,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/b02d4ba7.html">
+            
+                <span>windows自启动脚本</span>
+        </a>
+        <div class="abstract-content">
+            方法一1、
+例如我们要开机自启动一个脚本：C:\script\script.bat。 
+如果直接开机启动该脚本会弹出一个黑框，我们希望能后台执行它。 
+此时我们需要建一个.vbs脚本来后台执行该脚本，脚本内容为：复制代码代码如下:
+set ws=WScript.CreateObject(“WScript.Shell”)ws.Run “C:\script\script.bat /start”,0 
+然后将该文件保存为start_list.vbs，放入“开始 –&gt; 所有程序 –&gt; 启动”内即可。
+2、
+打开运行对话框（win键+R），输入命令
+shell:startup
+会直接弹...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/03</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/10802a0a.html">
             
                 <span>Windows系统下.sh文件的运行</span>
@@ -678,32 +710,6 @@ Gogs服务(A主机)：10.2.12.32
         <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/d521c8fb.html">
-            
-                <span>解决保存的csdn网页自动跳转到首页问题</span>
-        </a>
-        <div class="abstract-content">
-            不知道csdn出于什么考虑，保存网页到本地打开会自动跳转到首页
-步骤搜索关键词onerror，找到对应代码。
-方法1(修改跳转时间)将跳转时间3000更改为更大数字即可。
-方法2(删除以下代码)12&lt;IMG onerror='setTimeout(function()&#123;if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname))&#123;w...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3196,9 +3202,72 @@ Gogs服务(A主机)：10.2.12.32
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 128
+        Total : 129
         </div>
         <!-- search  -->
         
@@ -3298,6 +3367,11 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/posts/7be0ffc3.html">Windows10双开微信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">08/22</span><a class="archive-post-title" href="/posts/5f695ca8.html">Spring boot设置JWT CORS跨域请求的方式</a>
         </li>
     
@@ -3383,12 +3457,12 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
@@ -3512,22 +3586,22 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3647,12 +3721,12 @@ Gogs服务(A主机)：10.2.12.32
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4018,9 +4092,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
