@@ -366,6 +366,48 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/85a085d9.html">
+            
+                <span>CentOS7添加开机启动服务或脚本</span>
+        </a>
+        <div class="abstract-content">
+            方法一(rc.local)
+由于在centos7中/etc/rc.d/rc.local的权限被降低了，所以需要赋予其可执行权
+1chmod +x /etc/rc.d/rc.local
+
+赋予脚本可执行权限假设/opt/script/autostart.sh是你的脚本路径，给予执行权限
+1chmod +x /opt/script/autostart.sh
+
+打开
+1/etc/rc.d/rc/local
+文件，在末尾增加如下内容
+1/opt/script/autostart.sh
+
+
+方法二(chkconfig)说明/etc/init.d是/etc/rc.d/init.d的软链接，可以通过l...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/19</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/ff34caee.html">
             
                 <span>springboot2.x整合spring-data-jpa的问题</span>
@@ -627,35 +669,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5f9b9ec2.html">
-            
-                <span>springboot部署测试环境和生产环境</span>
-        </a>
-        <div class="abstract-content">
-            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
-开发环境
-IDEA Maven
-
-配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
-123spring  profiles    active: dev
-这段配置代码的意思是，spingboot会加载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3114,9 +3127,20 @@ IDEA Maven
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 132
         </div>
         <!-- search  -->
         
@@ -3143,6 +3167,11 @@ IDEA Maven
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href="/posts/538c8c9a.html">Hexo打包，内存溢出</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3325,12 +3354,12 @@ IDEA Maven
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
@@ -3459,17 +3488,17 @@ IDEA Maven
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3589,12 +3618,12 @@ IDEA Maven
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
@@ -3629,12 +3658,12 @@ IDEA Maven
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -3964,11 +3993,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
-    
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
