@@ -379,6 +379,30 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/ff34caee.html">
+            
+                <span>springboot2.x整合spring-data-jpa的问题</span>
+        </a>
+        <div class="abstract-content">
+            今天使用springboot整合spring-data-jpa遇到一些问题，直接使用JpaRepository的getOne()方法是会报错的。报错信息为：org.hibernate.LazyInitializationException: could not initialize proxy - no Session。在SpringBoot1.xx版本应该使用findOne()方法根据主键来查找对象。
+这里是findOne和getOne的区别getOne API：返回对具有给定标识符的实体的引用。当我查询一个不存在的id数据时，直接抛出异常，因为它返回的是一个引用，简单点说就是一个代理...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7774b55a.html">
             
                 <span>Https之postman请求失败</span>
@@ -645,36 +669,9 @@ Apply即可
             </div>
             <!-- tags  -->
             
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/74d2c17b.html">
-            
-                <span>Git远程仓库地址变更本地如何修改</span>
-        </a>
-        <div class="abstract-content">
-            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
-方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
-方法一  通过命令直接修改远程地址
-进入git_test根目录
-git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
     
 </div>
             
@@ -684,7 +681,7 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/5/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/page/5/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/">NEXT ></a>
     </nav>
     
 </main>
@@ -3331,9 +3328,40 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3369,6 +3397,11 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/06</span><a class="archive-post-title" href="/posts/cd0d1ec5.html">Dockerfile MAINTAINER和LABEL指令 语法解析</a>
         </li>
     
     
@@ -3666,7 +3699,7 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3676,12 +3709,12 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -4091,6 +4124,8 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
+        <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
@@ -4126,6 +4161,8 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
         <span class="sidebar-tag-name" data-tags="Jenkins"><span class="iconfont-archer">&#xe606;</span>Jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dockerfile"><span class="iconfont-archer">&#xe606;</span>Dockerfile</span>
     
         <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
     
@@ -4174,9 +4211,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     

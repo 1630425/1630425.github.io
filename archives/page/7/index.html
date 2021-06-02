@@ -366,6 +366,68 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/74d2c17b.html">
+            
+                <span>Git远程仓库地址变更本地如何修改</span>
+        </a>
+        <div class="abstract-content">
+            公司搬移， 作为git仓库的服务器IP地址变了。 本地代码挺多，重新检出太占时间，可以修改一个什么配置让我本地仓库和新的远程仓库建立关联吗， 答案是肯定的！
+方法有很多，这里简单介绍几种：以下均以项目git_test为例： 老地址：http://192.168.1.12:9797/john/git_test.git新地址：http://192.168.100.235:9797/john/git_test.git远程仓库名称： origin
+方法一  通过命令直接修改远程地址
+进入git_test根目录
+git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+            
+                <span>springboot部署测试环境和生产环境</span>
+        </a>
+        <div class="abstract-content">
+            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
+开发环境
+IDEA Maven
+
+配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
+123spring  profiles    active: dev
+这段配置代码的意思是，spingboot会加载...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/1c4fca.html">
             
                 <span>Windows10自动更新无法关闭的解决方法</span>
@@ -398,35 +460,6 @@ Windows10
         <a class="post-tag" href="javascript:void(0);" data-tags="Windows10">Windows10</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5f9b9ec2.html">
-            
-                <span>springboot部署测试环境和生产环境</span>
-        </a>
-        <div class="abstract-content">
-            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
-开发环境
-IDEA Maven
-
-配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
-123spring  profiles    active: dev
-这段配置代码的意思是，spingboot会加载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -655,41 +688,10 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c6cc21ed.html">
-            
-                <span>选择Kong作为你的API网关</span>
-        </a>
-        <div class="abstract-content">
-            Kong（https://github.com/Kong/kong）是一个云原生，高效，可扩展的分布式API 网关。 自 2015 年在 github 开源后，广泛受到关注，目前已收获 1.68w+ 的 star，其核心价值在于高性能和可扩展性。
-为什么需要 API 网关 img
-在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权，限流，日志，监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Kong">Kong</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/6/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/13/">13</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/archives/page/6/">< PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT ></a>
     </nav>
     
 </main>
@@ -3237,9 +3239,40 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3275,6 +3308,11 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/06</span><a class="archive-post-title" href="/posts/cd0d1ec5.html">Dockerfile MAINTAINER和LABEL指令 语法解析</a>
         </li>
     
     
@@ -3572,7 +3610,7 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3582,12 +3620,12 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3997,6 +4035,8 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
+        <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
@@ -4032,6 +4072,8 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
         <span class="sidebar-tag-name" data-tags="Jenkins"><span class="iconfont-archer">&#xe606;</span>Jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dockerfile"><span class="iconfont-archer">&#xe606;</span>Dockerfile</span>
     
         <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
     
@@ -4080,9 +4122,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     

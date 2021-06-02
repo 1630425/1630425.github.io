@@ -366,6 +366,72 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/cd0d1ec5.html">
+            
+                <span>Dockerfile MAINTAINER和LABEL指令 语法解析</span>
+        </a>
+        <div class="abstract-content">
+              任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者等等。Docker提供了MAINTAINER和LABEL用于处理镜像的元数据。
+MAINTAINER 指令MAINTAINER 语法1MAINTAINER &lt;name&gt;
+MAINTAINER 语义  指定镜像作者信息，即镜像的Author属性。LABEL是一个更灵活的版本，可以替代MAINTAINER，LABEL可以设置任何需要设置的元数据，并且可以轻松查看，例如docker inspect。使用LABEL设置MAINTAINER可以使用...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Dockerfile">Dockerfile</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/1e7ccb7b.html">
+            
+                <span>CentOS8安装Docker出现package docker-ce-319.03.13-3.el7.x86_64 requires containerd.io = 1.2.2-3</span>
+        </a>
+        <div class="abstract-content">
+            CentOS8安装Docker出现package docker-ce-319.03.13-3.el7.x86_64 requires containerd.io = 1.2.2-3, but none of the providers can be installed
+背景简介最近在阿里云上重置系统后，使用了CentOS8，正好尝尝鲜，尝试安装Docker时出现了错误，故及时记录一下，方面其他同学。
+错误提示123456789101112Error:Problem: package docker-ce-3:19.03.13-3.el7.x86_64 requires containerd...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/f2a408f6.html">
             
                 <span>Docker-Compose安装Wordpress博客</span>
@@ -392,6 +458,42 @@ b.安装 docker-compose
         <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Docker Compose">Docker Compose</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Wordpress">Wordpress</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/c4bccc0e.html">
+            
+                <span>Docker配置私有仓库</span>
+        </a>
+        <div class="abstract-content">
+            Mac系统配置DockerMac系统中配置Docker的Preferences -&gt; Daemon，Insecure registies中添加192.168.1.112，即：Harbor私服的ip地址，如下：
+2.1.2 登录私有仓库进行验证1docker login 192.168.1.112
+Window系统配置Docker
+Apply即可
+3 Linux系统3.1.1 配置Docker在/etc/docker新建daemon.json文件:
+12mkdir -p /etc/docker #新建docker目录vim /etc/docker/daemon.json #新建dae...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
     
 </div>
             
@@ -430,6 +532,40 @@ Maven插件Jib暂不支持https的自签名，因此只能配置以Http的方式
         <a class="post-tag" href="javascript:void(0);" data-tags="Jib">Jib</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Harbor">Harbor</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/692c43b7.html">
+            
+                <span>Google正式开源Jib,帮助Java 应用快速容器化</span>
+        </a>
+        <div class="abstract-content">
+            一、简介Google 宣布开源一款新的 Java 工具 Jib ，旨在让开发者使用他们熟悉的工具更轻松地将 Java 应用程序容器化。
+
+Google 软件工程师 Appu Goundan 和 Qingyang Chen 将 Jib 描述为一个容器镜像构建器，旨在处理将 Java 应用打包到容器中所涉及的所有步骤。
+容器的出现让Java开发人员比以往任何时候都更接近“编写一次，到处运行”的工作流程，但要对Java应用程序进行容器化并非易事：你必须编写Dockerfile，以root身份运行Docker守护进程，等待构建完成，最后将镜像推送到远程注册中心。但并非所有的Java开发人员都是容...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Jib">Jib</a>
     
 </div>
             
@@ -3056,9 +3192,40 @@ http://kafka.apache.org/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3094,6 +3261,11 @@ http://kafka.apache.org/
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/06</span><a class="archive-post-title" href="/posts/cd0d1ec5.html">Dockerfile MAINTAINER和LABEL指令 语法解析</a>
         </li>
     
     
@@ -3391,7 +3563,7 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3401,12 +3573,12 @@ http://kafka.apache.org/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3816,6 +3988,8 @@ http://kafka.apache.org/
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
+        <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
@@ -3851,6 +4025,8 @@ http://kafka.apache.org/
         <span class="sidebar-tag-name" data-tags="Jenkins"><span class="iconfont-archer">&#xe606;</span>Jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dockerfile"><span class="iconfont-archer">&#xe606;</span>Dockerfile</span>
     
         <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
     
@@ -3899,9 +4075,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     

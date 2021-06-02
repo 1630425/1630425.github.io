@@ -379,6 +379,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/5db798e8.html">
+            
+                <span>Centos RSync+Shell实现数据定时同步</span>
+        </a>
+        <div class="abstract-content">
+            我们前面介绍了几篇关于Centos相关服务安装及配置，今天我们主要介绍如何实现本地与远程计算机的数据目录同步，在我之前bolg中有一篇通过shell实现本地与远程计算机的数据同步的文章，通过shell同步实现指定目录的复制及覆盖操作不是那么的方便，因为复制目录及覆盖目录只会增量，不会减量，比如：原来的本地有一个目录下的abc.txt被同步到了远程计算机的指定目录后，当本地目录下的abc.txt文件删除后，远程计算机同步目录下的abc.txt依然存在，所以这样导致数据信息不准确，今天了我们为了解决这样的问题，我们准备使用rsync+shell脚本进行定期数据同步。说到Rsync相信大家已经...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/ff3ad289.html">
             
                 <span>CentOS7 MySQL自动备份shell脚本</span>
@@ -639,46 +670,10 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/323926de.html">
-            
-                <span>Mac使用技巧|iPic图床设置-Markdown写作必备</span>
-        </a>
-        <div class="abstract-content">
-            年少时，常闲逛于1024，看美图时，时常会碰到红××或？，着实扫兴啊。楼下就常有人喊道：图床挂啦，楼主换图床啦。虽游荡网络很多年，一直不知道图床是啥东东，真是那个啥……
- 
-前不久，跟着易仁永澄老师搭建知识主题网站，在MarkEditor插入图片同步Bitcron后分享，时常看不到图片，着实郁闷啊。只能通过简书的私密文件夹上传复制出链接才得以解决，着实麻烦，繁琐累人！
-为了便利性和储存的相对安全性，就考虑设置自己的图床了。图床是什么？
-折腾图床期间入了一些坑，下面做简单安装说明，给有需要的朋友
-环境说明
-系统：Mac OS
-软件：iPic（注：仅苹果OS系统可用）+ 阿里云 OSS（阿里...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="iPic">iPic</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/8/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/">NEXT ></a>
+        <a class="extend prev" rel="prev" href="/page/8/">< PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/10/">NEXT ></a>
     </nav>
     
 </main>
@@ -3325,9 +3320,40 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 130
+        Total : 131
         </div>
         <!-- search  -->
         
@@ -3363,6 +3389,11 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/22</span><a class="archive-post-title" href="/posts/f3154141.html">Spring Boot 2.4 新特性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/06</span><a class="archive-post-title" href="/posts/cd0d1ec5.html">Dockerfile MAINTAINER和LABEL指令 语法解析</a>
         </li>
     
     
@@ -3660,7 +3691,7 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3670,12 +3701,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -4085,6 +4116,8 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
+        <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
@@ -4120,6 +4153,8 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
         <span class="sidebar-tag-name" data-tags="Jenkins"><span class="iconfont-archer">&#xe606;</span>Jenkins</span>
     
         <span class="sidebar-tag-name" data-tags="Kudu"><span class="iconfont-archer">&#xe606;</span>Kudu</span>
+    
+        <span class="sidebar-tag-name" data-tags="Dockerfile"><span class="iconfont-archer">&#xe606;</span>Dockerfile</span>
     
         <span class="sidebar-tag-name" data-tags="ngrok"><span class="iconfont-archer">&#xe606;</span>ngrok</span>
     
@@ -4168,9 +4203,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
+        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+        <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
         <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
