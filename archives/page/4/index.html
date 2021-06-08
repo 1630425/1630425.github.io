@@ -366,6 +366,117 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/b9173e5f.html">
+            
+                <span>OpenProject 9 发布了</span>
+        </a>
+        <div class="abstract-content">
+            
+OpenProject 是一个开源项目协作管理软件。它是 Trello 和 Jira 等专有方案的替代品。
+如果个人使用，你可以免费使用它，并在你自己的服务器上进行设置（并托管它）。这样，你就可以控制数据。
+当然，如果你是企业云版的用户，那么你可以使用高级功能和更优先的帮助。
+OpenProject 9 的重点是新的面板视图，包列表视图和工作模板。
+如果你对此不了解，可以尝试一下。但是，如果你是已有用户 —— 在迁移到 OpenProject 9 之前，你应该知道这些新功能。
+OpenProject 9 有什么新功能？
+以下是最新版 OpenProject 的一些主要更改。
+Scrum...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/07</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/78e760f3.html">
+            
+                <span>微信未绑定企业号开发者</span>
+        </a>
+        <div class="abstract-content">
+            微信开发者工具调试企业微信页面遇到未绑定企业号开发者的问题，如图提示。
+
+自己已经是企业微信的管理员，确还是有这个问题。网上竟然也找不到答案。
+解决方法：
+登录企业微信后台，在连接微信——微工作台，在页面底部，把开发者工具勾选上。
+
+
+注意事项：
+设置仅对自己账号有效，如果有多个管理员，谁需要用开发者工具，谁登录设置即可。
+企业微信后台登录地址：
+https://work.weixin.qq.com/wework_admin/loginpage_wx
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/484f15fa.html">
+            
+                <span>Windows安装配置FFmpeg</span>
+        </a>
+        <div class="abstract-content">
+            ffmpeg是一个开源的音视频转码工具,它提供了录制、转换以及流化音视频的完整解决方案，可以转码、压制、提取、截取、合并、录屏等。
+一、下载FFmpeg
+下载地址：http://ffmpeg.zeranoe.com/builds/根据你的系统选择下载：
+
+解压到D:\Program Files
+将文件夹ffmpeg-20200315-c467328-win64-static重命名为ffmpeg
+配置环境变量
+此电脑-属性
+选择高级系统设置
+
+选择环境变量
+
+在用户环境变量双击path
+
+选择新建（注意不要更改其他环境变量）
+
+将刚才的bin路径粘贴进去
+记得点下方的确定，再关闭当前窗口再...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="FFmpeg">FFmpeg</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/80dd260f.html">
             
                 <span>配置Spring-boot的main方法</span>
@@ -552,124 +663,11 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
             </div>
             <!-- tags  -->
             
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/655a5d4b.html">
-            
-                <span>springboot jpa自动生成表指定引擎</span>
-        </a>
-        <div class="abstract-content">
-            
-springboot jpa自动生成表的引擎是MyISAM，这不是我们需要的，需要更换，在配置文件中进行配置
-
-   配置默认引擎InnoDB
-application.properties
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
-application.yml
-spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-示例：
-123456789101112131415161718sprin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/ab76c535.html">
-            
-                <span>MAC下使用ngrok实现内网穿透</span>
-        </a>
-        <div class="abstract-content">
-            ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放
-为什么要使用ngrok？作为一个Web开发者，我们有时候会需要临时地将一个本地的Web网站部署到外网，以供他人体验评价或协助调试等等，通常我们会这么做：
-
-找到一台运行于外网的Web服务器
-服务器上有网站所需要的环境，否则自行搭建
-将网站部署到服务器上
-调试结束后，再将网站从服务器上删除
-
-只是想在公网上访问一下网站，要不要这么麻烦，累觉不爱……
-如何在Mac上使用ngrok？
-下载Mac版ngrok：https://ngrok.c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/22</span>
-            </div>
-            <!-- tags  -->
-            
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ngrok">ngrok</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a169a1fd.html">
-            
-                <span>PowerDesigner16.5汉化破解版安装教程</span>
-        </a>
-        <div class="abstract-content">
-            一、软件下载1.下载地址http://wangpant.cn/resource/view/w64ae25r4fzq.html
-2.失效请留言，会及时补上
-二、软件安装1.下载安装包（包含安装文件、汉化包、破解文件）
-2.下载后文件内容如下
-
-3.进入安装文件中双击安装文件等待初始化完成后选择next
-
-4.继续下一步
-
-5.选择People R…China(PRC)，然后选择我同意协议
-
-6.更改安装路径
-
-7.根据自己需要选择，也可以全选
-
-8.根据自己需要选择，这里选择全选
-
-9.直接下一步
-
-10.继续下一步
-
-11.等待安装结束
-
-12.安装完成选择finish
-
-三、软件破解1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/09</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -3139,9 +3137,80 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3154,6 +3223,21 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/277a750e.html">Spring Boot 2.5.0 正式发布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/cf57e2b0.html">ios的app后缀是ipa，安卓是apk，那兼容安卓app的鸿蒙呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/fbb24e80.html">这个牛逼哄哄的数据库开源了,300万行核心代码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3484,12 +3568,7 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3499,7 +3578,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3619,12 +3703,12 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3919,6 +4003,8 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
@@ -3957,8 +4043,6 @@ spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
     </div>
@@ -3996,9 +4080,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     

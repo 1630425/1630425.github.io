@@ -366,6 +366,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/277a750e.html">
+            
+                <span>Spring Boot 2.5.0 正式发布</span>
+        </a>
+        <div class="abstract-content">
+            Spring Boot 2.5.0 正式发布
+123456&lt;parent&gt;	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;	&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;	&lt;version&gt;2.5.0&lt;/version&gt;	&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;&lt;/parent&gt;
+主要更新内容
+支持 Java...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/06/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/f3154141.html">
             
                 <span>Spring Boot 2.4 新特性</span>
@@ -384,6 +416,215 @@ https://github.com/javastacks/spring-boot-best-practice
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/5f695ca8.html">
+            
+                <span>Spring boot设置JWT CORS跨域请求的方式</span>
+        </a>
+        <div class="abstract-content">
+            前提：
+本文都是基于 spring boot 的解决方案。关于CORS的名词的解释等问题及流程
+
+123456789101112131415161718@Configurationpublic class WebConfig extends WebMvcConfigurationSupport &#123;@Override    public void addCorsMappings(CorsRegistry registry) &#123;        //设置允许跨域的路径        registry.addMapping("/api/**")                ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/85af5292.html">
+            
+                <span>springboot jpa注解自动生成表及注释</span>
+        </a>
+        <div class="abstract-content">
+            springboot jpa注解自动生成修改表，添加索引、字段注释、字段长度、引擎等
+
+用jpa自动生成表，只用@Entity、@Table这两个注解生成的表：引擎是MyISAM、字段长度全是默认最大、字段没注释、没有添加索引
+
+
+先设置InnoDB引擎
+生成表注解，并制定唯一索引（索引名、字段、类型）
+
+1234@Entity@Table(name = "pmi_t_user_version",       indexes = &#123;@Index(name = "my_index_name",  columnList="user_id", unique = true)&#125;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/655a5d4b.html">
+            
+                <span>springboot jpa自动生成表指定引擎</span>
+        </a>
+        <div class="abstract-content">
+            
+springboot jpa自动生成表的引擎是MyISAM，这不是我们需要的，需要更换，在配置文件中进行配置
+
+   配置默认引擎InnoDB
+application.properties
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+application.yml
+spring:  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+示例：
+123456789101112131415161718sprin...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+            
+                <span>springboot部署测试环境和生产环境</span>
+        </a>
+        <div class="abstract-content">
+            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
+开发环境
+IDEA Maven
+
+配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
+123spring  profiles    active: dev
+这段配置代码的意思是，spingboot会加载...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a44ad48d.html">
+            
+                <span>springboot过滤器禁止ip频繁访问</span>
+        </a>
+        <div class="abstract-content">
+            在 Web 中最经常发生的就是利用恶性 URL 访问刷爆服务器之类的攻击，建议对高频ip做限制，防止不法ip攻击，去网上看了很多方法，最多的就是自定义注解，然后定义一个注解的实现类利用aop去验证该限制接口的请求ip是否符合，但是缺点就是我们不可能每一个接口都要去加注解。还有一种方法就是利用过滤器去验证每一个请求的ip
+过滤器：统计用户访问次数，记录访问时间、封禁时间监听器：工程运行时初始化IP存储器（此处用的Map）
+编写一个过滤器：
+1234567891011121314151617181920212223242526272829303132333435363738394041424...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/359a2f9d.html">
+            
+                <span>SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</span>
+        </a>
+        <div class="abstract-content">
+            1.证书生成如果对HTTPS不太了解，可以自行搜索资料，这里重点不在说https。
+使用SSL需要我们先生成一个证书，这个证书我们可以自己生成，也可以从SSL证书授权中心获得，自己生成的不被客户端认可，从授权中心获得的可以被客户端认可，提供SSL授权证书的服务商有很多，小伙伴们有兴趣可以自行查找，我这里以自己生成的证书为例。 
+生成方式也很简单，直接使用java自带的命令keytool来生成，生成命令如下：
+
+-storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
+
+这里涉及到几...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
             </div>
             <!-- tags  -->
             
@@ -2857,9 +3098,80 @@ https://github.com/javastacks/spring-boot-best-practice
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -2872,6 +3184,21 @@ https://github.com/javastacks/spring-boot-best-practice
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/277a750e.html">Spring Boot 2.5.0 正式发布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/cf57e2b0.html">ios的app后缀是ipa，安卓是apk，那兼容安卓app的鸿蒙呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/fbb24e80.html">这个牛逼哄哄的数据库开源了,300万行核心代码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3202,12 +3529,7 @@ https://github.com/javastacks/spring-boot-best-practice
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3217,7 +3539,12 @@ https://github.com/javastacks/spring-boot-best-practice
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3337,12 +3664,12 @@ https://github.com/javastacks/spring-boot-best-practice
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3637,6 +3964,8 @@ https://github.com/javastacks/spring-boot-best-practice
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
@@ -3675,8 +4004,6 @@ https://github.com/javastacks/spring-boot-best-practice
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
     </div>
@@ -3714,9 +4041,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     

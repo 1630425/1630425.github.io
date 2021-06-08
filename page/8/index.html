@@ -379,6 +379,98 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/21e5a7a5.html">
+            
+                <span>HBase对比HDFS</span>
+        </a>
+        <div class="abstract-content">
+            什么是HDFS(Hadoop分布式文件系统)HDFS允许以分布式和冗余方式存储大量数据。HDFS组件• NameNode• DataNodeNameNode：NameNode可以被视为系统的管理者。它维护系统文件树以及系统中存在的所有文件和目录的元数据。其中“命名空间镜像(Namespace image)”和“编辑日志”用于存储元数据信息。 Namenode包含所有数据节点的数据块信息，但是，它不会持久存储数据节点数据块位置信息。系统启动时，每次从数据节点重建此信息。DataNode:是集群中的从属者，提供实际存储。它主要负责为客户提供读写请求服务。
+什么是HbaseHbase是一个可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="HBase">HBase</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="HDFS">HDFS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/a44ad48d.html">
+            
+                <span>springboot过滤器禁止ip频繁访问</span>
+        </a>
+        <div class="abstract-content">
+            在 Web 中最经常发生的就是利用恶性 URL 访问刷爆服务器之类的攻击，建议对高频ip做限制，防止不法ip攻击，去网上看了很多方法，最多的就是自定义注解，然后定义一个注解的实现类利用aop去验证该限制接口的请求ip是否符合，但是缺点就是我们不可能每一个接口都要去加注解。还有一种方法就是利用过滤器去验证每一个请求的ip
+过滤器：统计用户访问次数，记录访问时间、封禁时间监听器：工程运行时初始化IP存储器（此处用的Map）
+编写一个过滤器：
+1234567891011121314151617181920212223242526272829303132333435363738394041424...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/9db5de4.html">
+            
+                <span>Java常见的线程安全的类</span>
+        </a>
+        <div class="abstract-content">
+            
+通过synchronized 关键字给方法加上内置锁来实现线程安全Timer，TimerTask，Vector，Stack，HashTable，StringBuffer
+
+原子类Atomicxxx—包装类的线程安全类如AtomicLong，AtomicInteger等等Atomicxxx 是通过Unsafe 类的native方法实现线程安全的
+
+BlockingQueue 和BlockingDequeBlockingDeque接口继承了BlockingQueue接口，BlockingQueue 接口的实现类有ArrayBlockingQueue ，LinkedBlockingQueue...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/d3c9e3a3.html">
             
                 <span>Maven插件Jib配合Harbor生成Docker镜像参考</span>
@@ -597,105 +689,6 @@ Rsync+Inotify-tools （1）Inotify-tools只能记录下被监听的目录发生�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/9f424809.html">
-            
-                <span>如何使用Lsyncd复制并实时同步到远程服务器</span>
-        </a>
-        <div class="abstract-content">
-            何为Lsyncd？
-Lsyncd 官网 https://axkibe.github.io/
-Lsyncd监视本地目录树事件监视器接口(inotify或fsevents)。它聚合并将事件组合在一起几秒钟，然后生成一个(或多个)进程来同步这些更改。默认情况下，由rsync实现同步。因此，Lsyncd是一种轻量级的实时镜像解决方案，相对容易安装，不需要新的文件系统或块设备，也不会妨碍本地文件系统的性能。
-Rsync+ssh是一种高级操作配置，它使用ssh来执行文件和目录直接在目标上移动，而不是在线路上重新传输移动目标。细粒度的定制可以通过配置文件实现。自定义动作configs甚至可以从头编写，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a2a9a394.html">
-            
-                <span>CentOS7配置Rsync数据文件同步服务器</span>
-        </a>
-        <div class="abstract-content">
-            何为Rsync？
-Rsync是一个非常灵活的命令行网络同步工具，由于它在Linux和类unix系统上的普及，使它被默认包含在大多数Linux发行版中。它在同步文件或文件夹的同时，可以保持原来文件的权限、时间、软硬链接等附加信息, 它可以快速安全的传输数据，并且支持增量更新，传输数据的过程中可以实行压缩及解压缩操作，因此可以使用更少的带宽，不仅如此它还是开源软件。
-环境：
-
-RenwoleServer：10.28.204.65 服务端RenwoleClient：10.28.204.66 客户端OS：CentOS Linux release 7.4.1708 (Core) x64
-
-1.分别...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/3871497a.html">
-            
-                <span>Rsync文件同步</span>
-        </a>
-        <div class="abstract-content">
-            一、本章结构
-二、关于rsync1、介绍一款增量备份工具，remote sync,远程同步，支持本地复制或者与其他SSH、rsync主机同步，官方网站:http://rsync.samba.org/。
-Rsync（remote synchronize）是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件，也可以使用rsync同步本地硬盘中的不同目录。
-Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快，可以参考How Rsync A P...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/05</span>
             </div>
             <!-- tags  -->
             
@@ -3272,9 +3265,80 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3287,6 +3351,21 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/277a750e.html">Spring Boot 2.5.0 正式发布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/cf57e2b0.html">ios的app后缀是ipa，安卓是apk，那兼容安卓app的鸿蒙呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/fbb24e80.html">这个牛逼哄哄的数据库开源了,300万行核心代码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3617,12 +3696,7 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3632,7 +3706,12 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3752,12 +3831,12 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4052,6 +4131,8 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
@@ -4090,8 +4171,6 @@ Rsync是用户取代rcp的一个工具，Rsync使用所谓的”Rsync算法”�
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
     </div>
@@ -4129,9 +4208,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     

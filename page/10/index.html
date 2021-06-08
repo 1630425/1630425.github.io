@@ -379,6 +379,92 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/359a2f9d.html">
+            
+                <span>SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</span>
+        </a>
+        <div class="abstract-content">
+            1.证书生成如果对HTTPS不太了解，可以自行搜索资料，这里重点不在说https。
+使用SSL需要我们先生成一个证书，这个证书我们可以自己生成，也可以从SSL证书授权中心获得，自己生成的不被客户端认可，从授权中心获得的可以被客户端认可，提供SSL授权证书的服务商有很多，小伙伴们有兴趣可以自行查找，我这里以自己生成的证书为例。 
+生成方式也很简单，直接使用java自带的命令keytool来生成，生成命令如下：
+
+-storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
+
+这里涉及到几...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/3584df24.html">
+            
+                <span>请求https报java.io.IOException Invalid keystore format</span>
+        </a>
+        <div class="abstract-content">
+            spring boot配置https，访问报错
+报错日志如下：
+1234567891011121314151617181920212223242526java.io.IOException: Invalid keystore format	at sun.security.provider.JavaKeyStore.engineLoad(JavaKeyStore.java:650)	at sun.security.provider.JavaKeyStore$JKS.engineLoad(JavaKeyStore.java:55)	at java.security.KeyStore.load...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/420296e9.html">
+            
+                <span>apiDoc的maven插件自动生成apidoc.json</span>
+        </a>
+        <div class="abstract-content">
+            插件是用apidoc插件生成文档的，具体使用方式可查看官网：http://apidocjs.com/
+该插件不会直接生成APIDOC文档，只会自动生成apidoc.json文件，需要执行apidoc命令才可以生成apidoc.json文件会生成在项目根目录apidoc文件夹下
+下载依赖包可配置MAVEN仓库https://oss.sonatype.org/content/groups/public或者下载源码包进行编译打包:https://gitee.com/qianxunclub/qianxunclub-maven-plugin
+12345git clone https://gitee...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/6cb9a624.html">
             
                 <span>apiDoc使用指南</span>
@@ -522,32 +608,6 @@ Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/88d2b72a.html">
-            
-                <span>拦截器和过滤器的区别</span>
-        </a>
-        <div class="abstract-content">
-            1.过滤器：
-依赖于servlet容器。在实现上基于函数回调，可以对几乎所有请求进行过滤，但是缺点是一个过滤器实例只能在容器初始化时调用一次。使用过滤器的目的是用来做一些过滤操作，获取我们想要获取的数据，比如：在过滤器中修改字符编码；在过滤器中修改HttpServletRequest的一些参数，包括：过滤低俗文字、危险字符等
-2.拦截器：
-依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。在实现上基于Java的反射机制，属于面向切面编程（AOP）的一种运用。由于拦截器是基于web框架的调用，因此可以使用Spring的依赖注入（DI）进行一些业务操作，同时一个拦截器...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/74a917bd.html">
             
                 <span>IDEA编辑器提升效率的操作</span>
@@ -577,90 +637,20 @@ IDEA 有个很牛逼的功能，那就是后缀补全（不是自动补全），
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/27ec56c.html">
+        <a class="abstract-title" href="/posts/88d2b72a.html">
             
-                <span>eclipse-idea</span>
+                <span>拦截器和过滤器的区别</span>
         </a>
         <div class="abstract-content">
-            激活http://idea.lanyus.com/
-配置
-sudo vim /etc/hosts
-0.0.0.0 account.jetbrains.com
-0.0.0.0 www.jetbrains.com
-2019.1.2以后版本
-第一步将：0.0.0.0 https://account.jetbrains.com:443 加入hosts，不需要0.0.0.0 www.jetbrains.com，不然会影响idea的某些功能
-第二步打开cmd终端，输入ipconfig /flushdns，然后回车刷新dns缓存
-Eclipse风格修改使用Eclipse风格的快捷键
-目的是习惯了使用e...
+            1.过滤器：
+依赖于servlet容器。在实现上基于函数回调，可以对几乎所有请求进行过滤，但是缺点是一个过滤器实例只能在容器初始化时调用一次。使用过滤器的目的是用来做一些过滤操作，获取我们想要获取的数据，比如：在过滤器中修改字符编码；在过滤器中修改HttpServletRequest的一些参数，包括：过滤低俗文字、危险字符等
+2.拦截器：
+依赖于web框架，在SpringMVC中就是依赖于SpringMVC框架。在实现上基于Java的反射机制，属于面向切面编程（AOP）的一种运用。由于拦截器是基于web框架的调用，因此可以使用Spring的依赖注入（DI）进行一些业务操作，同时一个拦截器...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/24d6d861.html">
-            
-                <span>nginx设置X-Frame-Options的两种方法</span>
-        </a>
-        <div class="abstract-content">
-            本文介绍nginx分别通过http和server设置 X-Frame-Options ，防止网站被别人用iframe嵌入使用。需要说明的是，只需用其中一个方法即可，在http配置代码块或server配置代码块里设置。
-
-在http配置里设置X-Frame-Options
-在server配置里设置X-Frame-Options
-
-在http配置里设置X-Frame-Options打开nginx.conf，文件位置一般在安装目录 /usr/local/nginx/conf 里。
-然后在http配置代码块里某一行添加如下语句即可：
-
-add_header X-Frame-Options SAM...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/a2547652.html">
-            
-                <span>用IDEA反向生成javabean</span>
-        </a>
-        <div class="abstract-content">
-            1.首先用idea创建一个新项目，选择java=》java EE Persistence
- 
-2.创建完成后，点击IDEA右边Database,点击+，新建Data source
- 
-3.选择要建立的数据库，填写连接信息，点击测试按钮，如果变绿色则测试通过。
- 
-4.然后点击左下角Persistence标签，右键项目选择Generate Persistence Mapping=\&gt;By Data Scheme
- 
-5.然后选择刚刚新建的数据源，选中要生产的数据库表，下面有两个不同选项，一个生成xml形式，另一个生成注解形式。
- 
-6.点击确定javabean就生成了，需要注意的是，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/17</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/19</span>
             </div>
             <!-- tags  -->
             
@@ -3231,9 +3221,80 @@ add_header X-Frame-Options SAM...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3246,6 +3307,21 @@ add_header X-Frame-Options SAM...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/277a750e.html">Spring Boot 2.5.0 正式发布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/cf57e2b0.html">ios的app后缀是ipa，安卓是apk，那兼容安卓app的鸿蒙呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/fbb24e80.html">这个牛逼哄哄的数据库开源了,300万行核心代码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3576,12 +3652,7 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3591,7 +3662,12 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3711,12 +3787,12 @@ add_header X-Frame-Options SAM...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4011,6 +4087,8 @@ add_header X-Frame-Options SAM...
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
@@ -4049,8 +4127,6 @@ add_header X-Frame-Options SAM...
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
     </div>
@@ -4088,9 +4164,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     

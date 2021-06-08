@@ -366,6 +366,107 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/65bb19af.html">
+            
+                <span>Git问题Everything up-to-date解决</span>
+        </a>
+        <div class="abstract-content">
+            先说说出现这个问题的原因：git提交改动到缓存，要push的时候不会将本地所有的分支都push掉，所以出现这个问题。那么我们就需要新建分支提交改动然后合并分支。
+1.先创建一个新的分支提交改动
+$ git branch newbranch
+2.检查这条命令是否创建成功
+$ git branch
+这时终端会输出：
+newbranch
+*master
+这样就创建成功了，前面的*代表的是当前你所在的工作分支，接下来就要切换工作分支。
+3.git checkout newbranch
+4.然后将你的改动提交到新的分支上
+$ git add 网页换肤
+$ git commit -m”skin”
+此...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/03/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/2fc0e0a3.html">
+            
+                <span>解除360doc网页防复制</span>
+        </a>
+        <div class="abstract-content">
+            方法1chrome浏览器按F12（打开谷歌浏览器的开发者工具）
+然后按F5 刷新下网页，（根据测试必须刷新下网页等下插入代码才能生效）下面空白插入代码：1document.oncontextmenu=document.onselectstart=document.body.onselectstart=document.oncopy=document.body.oncopy=&quot;&quot;
+然后按回车键，ok！不会弹出那令人蛋疼的提示了，可以复制了。
+方法2先打开一个Word文件，然后直接选中要复制的内容，可以把复制的内容直接拖动到Word中就OK了。 发现这种方法也适合其他被保...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/1c334725.html">
+            
+                <span>git add -A 和 git add . 的区别</span>
+        </a>
+        <div class="abstract-content">
+            介绍git add -A和 git add .   git add -u在功能上看似很相近，但还是存在一点差别
+git add . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）
+git add -A ：是上面两个功能的合集（git add –all的缩写）
+示例下面是具体操...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/09/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/b12943d1.html">
             
                 <span>IntelliJ使用pipeline文件</span>
@@ -552,95 +653,6 @@ More...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/12/24</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/2379f3d9.html">
-            
-                <span>shell脚本中的“请按任意键继续”</span>
-        </a>
-        <div class="abstract-content">
-            在Windows的bat脚本中，我们插入pause关键字就可以实现“请按任意键继续”的功能，下面我们来看看Linux下Shell脚本中怎么实现。
-脚本代码：any.sh
-1234567891011121314151617#!/bin/bashget_char()&#123;    SAVEDSTTY=`stty -g`    stty -echo    stty cbreak    dd if=/dev/tty bs=1 count=1 2&gt; /dev/null    stty -raw    stty echo    stty $SAVEDSTTY&#125;echo "Pres...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2013/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/44771869.html">
-            
-                <span>SOA、ERP、SAP和SaaS四者的区别</span>
-        </a>
-        <div class="abstract-content">
-            SOA、ERP、SAP和SaaS大家熟悉吗？秘奥收集相关资料整理如下：
-SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构模型和一套设计方法学，其目的是最大限度地重用应用程序中立型的服务以提高IT适应性和效率。它可以根据需求通过网络对松散耦合的粗粒度应用组件进行分布式部署、组合和使用。服务层是SOA的基础，可以直接被应用调用，从而有效控制系统中与软件代理交互的人为依赖性。SOA的关键是“服务”的概念，W3C将服务定义为：“服务提供者完成一组工作，为服务使用者交付所需的最终结果。最终结果通常会使使用者的状态发生变化，但也可能使提供者的状态改...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2011/03/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/727549f.html">
-            
-                <span>MySQL连接&amp;备份&amp;导入数据库</span>
-        </a>
-        <div class="abstract-content">
-            连接本地数据库语法：mysql -h 目标服务器(可选的，默认为localhost) -P 端口(可选) -u 用户名 -p密码
-1mysql -u root -p123456;
-注：-u与root可以不用加空格，其它也一样，除-p和123456不能有空格；
-连接远程数据库例如：MySQL 连接远程数据库（192.168.1.100），端口“3306”(默认3306可以忽略)，用户名为“demo”，密码“12345678”
-1mysql -h 192.168.1.100 -P 3306 -u demo -p12345678;
-备份本地数据库语法：mysqldump -h 目标服务器(可选...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2010/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
             
         </div>
     </article>
@@ -3110,9 +3122,80 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -3125,6 +3208,21 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href="/posts/277a750e.html">Spring Boot 2.5.0 正式发布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/posts/cf57e2b0.html">ios的app后缀是ipa，安卓是apk，那兼容安卓app的鸿蒙呢？</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href="/posts/fbb24e80.html">这个牛逼哄哄的数据库开源了,300万行核心代码</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3455,12 +3553,7 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
         </li>
     
     
@@ -3470,7 +3563,12 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/1c4fca.html">Windows10自动更新无法关闭的解决方法</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3590,12 +3688,12 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -3890,6 +3988,8 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
         <span class="sidebar-tag-name" data-tags="Harbor"><span class="iconfont-archer">&#xe606;</span>Harbor</span>
     
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+    
         <span class="sidebar-tag-name" data-tags="FFmpeg"><span class="iconfont-archer">&#xe606;</span>FFmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="Flume"><span class="iconfont-archer">&#xe606;</span>Flume</span>
@@ -3928,8 +4028,6 @@ SOA　　面向服务架构SOA（Service-Oriented Architecture）是一种架构
     
         <span class="sidebar-tag-name" data-tags="Kong"><span class="iconfont-archer">&#xe606;</span>Kong</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
-    
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
     </div>
@@ -3967,9 +4065,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
-        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
     
