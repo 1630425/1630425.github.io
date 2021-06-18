@@ -366,6 +366,73 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/10802a0a.html">
+            
+                <span>Windows系统下.sh文件的运行</span>
+        </a>
+        <div class="abstract-content">
+            好多的python/JAVA项目是用Linux系统下写的，为了省事就尝试了再Windows系统下运行，以下是运行的过程：1，Git的安装，下载Git并安装，我是在360软件管家中直接下载安装的，速度还不错，安装时一直点next就ok。安装成功后要对环境变量进行设置，如下图 
+
+2，在/Git/bin文件夹中，有三个exe文件 
+使用sh.exe出现窗口 
+
+3，文件运行使用cd 加文件名到需要运行的文件目录下（尽量文件名是英文，我有中文加英文的文件名一直显示无法识别，…\scripts我的是然后输入`./pathfinder.sh concept_athletehomestadium或s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/02</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/72ac853a.html">
+            
+                <span>Win10设置右键以管理员方式打开cmd</span>
+        </a>
+        <div class="abstract-content">
+            需求每次都要win+r-&gt;cmd然后cd到各种目录下执行命令，真是麻烦。shift+右键的powershell还没有默认管理员权限，真是够麻烦的。
+这里直接想办法让右键出现以管理员方式打开的cmd窗口
+效果右键效果打开后
+设置步骤打开注册表12按win+r输入regedit打开注册表12
+找到下面路径1HKEY_CLASSES_ROOT\Directory\Background\shell\1
+我这边可以在上面快速输入这串路径，你可以试一试，不行你就一个个按目录点进去
+新建项1在shell目录右键新建一个叫runas的项1
+
+1在runas目录右键新建一个叫command的项1
+
+...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Windows10">Windows10</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/a15e2069.html">
             
                 <span>CentOS7下Rsync+sersync实现数据实时同步</span>
@@ -624,73 +691,6 @@ Gogs服务(A主机)：10.2.12.32
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/5e11aa60.html">
-            
-                <span>CentOS7修改时区</span>
-        </a>
-        <div class="abstract-content">
-            时钟概念
-（1）UTC 
-整个地球分为二十四时区，每个时区都有自己的本地时间。在国际无线电通信场合，为了统一起见，使用一个统一的时间，称为通用协调时(UTC,Universal Time Coordinated)。
-（2）GMT
-格林威治标准时间 (Greenwich Mean Time)指位于英国伦敦郊区的皇家格林尼治天文台的标准时间，因为本初子午线被定义在通过那里的经线。(UTC与GMT时间基本相同，本文中不做区分)
-（3）CST
-中国标准时间 (China Standard Time)【GMT + 8 = UTC + 8 = CST】
-（4）DST
-夏令时(Daylight Sav...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/4874470d.html">
-            
-                <span>Could not create connection to database server</span>
-        </a>
-        <div class="abstract-content">
-            MySQLNonTransientConnectionException: Could not create connection to database server.
-Spring整合mybatis并使用driud数据库连接池，启动测试类就报”MySQLNonTransientConnectionException: Could not create connection to database server.“，检查了一番配置文件没发现问题，而且我之前用过这些配置，按理说没问题。各种百度、谷歌没结果，想起来装了mysql 8.0，估计是这个问题。既然是这个问题，那么问题出在数据库连...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
-    
-</div>
             
         </div>
     </article>
@@ -3350,9 +3350,23 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 136
+        Total : 138
         </div>
         <!-- search  -->
         
@@ -3365,6 +3379,16 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/303e4126.html">系统架构演变及微服务架构介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/e8c2a180.html">为什么Spring Cloud Alibaba会替代Spring Cloud</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3383,7 +3407,7 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
         </li>
     
     
@@ -3586,12 +3610,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
@@ -3715,7 +3739,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">Spring Boot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3725,12 +3754,7 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3755,7 +3779,7 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">Spring Boot过滤器禁止ip频繁访问</a>
         </li>
     
     
@@ -3850,12 +3874,12 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4138,11 +4162,11 @@ Spring整合mybatis并使用driud数据库连接池，启动测试类就报”My
     
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -4225,15 +4249,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
-    
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="JAVA"><span class="iconfont-archer">&#xe60a;</span>JAVA</span>
     
@@ -4259,9 +4283,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
         <span class="sidebar-category-name" data-categories="录屏软件"><span class="iconfont-archer">&#xe60a;</span>录屏软件</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

@@ -379,6 +379,74 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/c398b326.html">
+            
+                <span>创建时间和修改时间(更新时间)</span>
+        </a>
+        <div class="abstract-content">
+            123ALTER TABLE xxx ADD created_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;创建时间&apos;;ALTER TABLE xxx ADD modified_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT &apos;更新时间&apos;;
+而在界面的mysql工具里,创建时间仅设置为:而修改时间(更新时间)需要设置为:
+实体类：
+1234567891011/** * 创...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/61334b74.html">
+            
+                <span>Git修改已提交的commit注释</span>
+        </a>
+        <div class="abstract-content">
+            两种情况： 1.已经将代码push到远程仓库 2.还没将代码push到远程仓库，还在本地的仓库中
+这两种情况下的修改大体相同，只是第一种情况最后会多一步 下面来说怎么修改
+先搞清楚你要修改哪次的提交注释或者哪几次的提交注释
+修改最后一次注释如果你只想修改最后一次注释（就是最新的一次提交），那好办： git commit --amend 出现有注释的界面（你的注释应该显示在第一行）， 输入i进入修改模式，修改好注释后，按Esc键 退出编辑模式，输入:wq保存并退出。ok，修改完成。 例如修改时编辑界面的图：
+
+编辑commit注释.png
+修改之前的注释修改之前的某次注释
+输入： git ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/7a45e1a3.html">
             
                 <span>什么是产品的痛点、爽点、痒点</span>
@@ -535,41 +603,6 @@ git remote 查看所有远程仓库，  git remote xxx 查看指定远程...
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/posts/5f9b9ec2.html">
-            
-                <span>springboot部署测试环境和生产环境</span>
-        </a>
-        <div class="abstract-content">
-            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
-开发环境
-IDEA Maven
-
-配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
-123spring  profiles    active: dev
-这段配置代码的意思是，spingboot会加载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/posts/1c4fca.html">
             
                 <span>Windows10自动更新无法关闭的解决方法</span>
@@ -612,6 +645,41 @@ Windows10
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/5f9b9ec2.html">
+            
+                <span>Spring Boot部署测试环境和生产环境</span>
+        </a>
+        <div class="abstract-content">
+            我们在日常开发工作经常会根据不同的项目运行环境，添加不同的配置文件，例如: 开发环境，测试环境，生产环境等。 配置springboot的application.properties或aoolication.yml配置文件的spring.profiles.active属性
+开发环境
+IDEA Maven
+
+配置文件由于springboot会默认加载application配置文件，所以我们需要在application修改配置参数。 以下为application.yml文件格式
+123spring  profiles    active: dev
+这段配置代码的意思是，spingboot会加载...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Spring Boot">Spring Boot</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/c4bccc0e.html">
             
                 <span>Docker配置私有仓库</span>
@@ -634,72 +702,6 @@ Apply即可
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Docker">Docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/f82ccd38.html">
-            
-                <span>git版本控制如何恢复误删除的本地文件</span>
-        </a>
-        <div class="abstract-content">
-            
-使用git status查看，是否已删除
-使用命令git reset HEAD 文件名 找回来此文件
-最后使用git checkout 文件名，文件就重新找回来了！
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/92eadbe.html">
-            
-                <span>Kudu设计原理初探</span>
-        </a>
-        <div class="abstract-content">
-            如何在一个系统中融合OLTP型随机读写能力与OLAP型分析能力，Kudu提供了优秀的设计思路。本文主要从Kudu的设计论文着手，结合与HBase的对比分析，来初步揭示Kudu的设计原理，部分设计在最新的Kudu版本中可能已经过时，但最初的设计思想依然值得借鉴。
-Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现存系统针对结构化数据存储与查询的一些痛点问题，结构化数据的存储，通常包含如下两种方式：
-
-静态数据通常以Parquet/Carbon/Avro形式直接存放在HDFS中，对于分析场景，这种存储通常是更加适合的。但无论以哪种方式存在于HDFS中，都难以支持单条记录级别的更...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Kudu">Kudu</a>
     
 </div>
             
@@ -3460,9 +3462,23 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 136
+        Total : 138
         </div>
         <!-- search  -->
         
@@ -3475,6 +3491,16 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/303e4126.html">系统架构演变及微服务架构介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/e8c2a180.html">为什么Spring Cloud Alibaba会替代Spring Cloud</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3493,7 +3519,7 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
         </li>
     
     
@@ -3696,12 +3722,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
@@ -3825,7 +3851,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">Spring Boot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3835,12 +3866,7 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3865,7 +3891,7 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">Spring Boot过滤器禁止ip频繁访问</a>
         </li>
     
     
@@ -3960,12 +3986,12 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4248,11 +4274,11 @@ Kudu的设计初衷在介绍Kudu是什么之前，还是先简单的说一下现
     
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -4335,15 +4361,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
-    
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="JAVA"><span class="iconfont-archer">&#xe60a;</span>JAVA</span>
     
@@ -4369,9 +4395,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
         <span class="sidebar-category-name" data-categories="录屏软件"><span class="iconfont-archer">&#xe60a;</span>录屏软件</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

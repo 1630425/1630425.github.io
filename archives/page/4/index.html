@@ -366,6 +366,66 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/posts/76169928.html">
+            
+                <span>Linux根目录爆满解决方案</span>
+        </a>
+        <div class="abstract-content">
+            Linux根目录爆满 解决(/dev/mapper/centos-root 100%问题)
+使用df -h命令查看,查看详情
+使用du -h -x –max-depth=1  查看哪个目录占用过高，对于过高目录中的内容适当删减腾出一些空间
+CentOS 7 调整 home分区扩大root分区
+总体过程：
+把/home内容备份，然后将/home文件系统所在的逻辑卷删除，扩大/root文件系统，新建/home ，恢复/home内容。
+ 将/home的硬盘空间根据实际需求分配即可；如果/home为600G
+重新分配，根路径为450G，实际在以前基础上进行叠加，150G分给/home
+1.查看分...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CentOS">CentOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/posts/ef0397e9.html">
+            
+                <span>git忽略文件配置.gitignore</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/posts/c65b3c3e.html">
             
                 <span>java.lang.NoSuchMethodError</span>
@@ -603,56 +663,6 @@ docker toolbox 是一个工具集，它主要包含以下一些内容：
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/c2c61a90.html">
-            
-                <span>HTML网页中电子邮箱(Email)地址的加密和混淆防爬取</span>
-        </a>
-        <div class="abstract-content">
-            邮箱里垃圾邮件一直有很多，这让我不得不重新审视，发布在网页上的电子邮箱地址，为了避免垃圾邮件，我刻意将@更换成#，也许这在十年前是个不错的办法，但是随着神经网络和机器学习新算法的发展，这一类小手段也面临失效的风险，因为大部分都是通过修改电子邮箱地址的“@”符号，通过正则表达式筛选和特征值匹配，比如hotmail.com、gmail.com、163.com这一类疑似电子邮箱地址的特征，还是可以抓取到电子邮箱地址，所以在将Email发布到HTML网页之前我们要对其进行加密和混淆。
-下面我以john@example.com为例，介绍几种加密和混淆的反垃圾邮件手段。
-1. 生成图片
-利用传统的图...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/posts/bd13fdcc.html">
-            
-                <span>MQTT入门介绍</span>
-        </a>
-        <div class="abstract-content">
-            一、简述MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的”轻量级”通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。作为一种低开销、低带宽占用的即时通讯协议，使其在物联网、小型设备、移动应用等方面有较广泛的应用。
-MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。在很多情况下，包括...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/30</span>
             </div>
             <!-- tags  -->
             
@@ -3314,9 +3324,23 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 136
+        Total : 138
         </div>
         <!-- search  -->
         
@@ -3329,6 +3353,16 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/303e4126.html">系统架构演变及微服务架构介绍</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href="/posts/e8c2a180.html">为什么Spring Cloud Alibaba会替代Spring Cloud</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3347,7 +3381,7 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/26</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/posts/247db835.html">录屏软件推荐</a>
         </li>
     
     
@@ -3550,12 +3584,12 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
@@ -3679,7 +3713,12 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">Spring Boot部署测试环境和生产环境</a>
         </li>
     
     
@@ -3689,12 +3728,7 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">springboot部署测试环境和生产环境</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/74d2c17b.html">Git远程仓库地址变更本地如何修改</a>
         </li>
     
     
@@ -3719,7 +3753,7 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">springboot过滤器禁止ip频繁访问</a>
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/posts/a44ad48d.html">Spring Boot过滤器禁止ip频繁访问</a>
         </li>
     
     
@@ -3814,12 +3848,12 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/3584df24.html">请求https报java.io.IOException Invalid keystore format</a>
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href="/posts/359a2f9d.html">SpringBoot2.x配置HTTPS,并实现HTTP访问自动转向HTTPS</a>
         </li>
     
     
@@ -4102,11 +4136,11 @@ MQTT是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT�
     
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="Docker Compose"><span class="iconfont-archer">&#xe606;</span>Docker Compose</span>
     
         <span class="sidebar-tag-name" data-tags="Wordpress"><span class="iconfont-archer">&#xe606;</span>Wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
         <span class="sidebar-tag-name" data-tags="Gogs"><span class="iconfont-archer">&#xe606;</span>Gogs</span>
     
@@ -4189,15 +4223,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
-    
         <span class="sidebar-category-name" data-categories="Windows"><span class="iconfont-archer">&#xe60a;</span>Windows</span>
+    
+        <span class="sidebar-category-name" data-categories="数据库"><span class="iconfont-archer">&#xe60a;</span>数据库</span>
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
-    
         <span class="sidebar-category-name" data-categories="容器"><span class="iconfont-archer">&#xe60a;</span>容器</span>
+    
+        <span class="sidebar-category-name" data-categories="源代码版本管理工具"><span class="iconfont-archer">&#xe60a;</span>源代码版本管理工具</span>
     
         <span class="sidebar-category-name" data-categories="JAVA"><span class="iconfont-archer">&#xe60a;</span>JAVA</span>
     
@@ -4223,9 +4257,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="API网关"><span class="iconfont-archer">&#xe60a;</span>API网关</span>
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
         <span class="sidebar-category-name" data-categories="录屏软件"><span class="iconfont-archer">&#xe60a;</span>录屏软件</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
