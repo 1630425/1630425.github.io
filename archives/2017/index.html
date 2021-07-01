@@ -507,7 +507,8 @@ iPic 带给你从未有过的插图体验。
             本文基于Docker Compose搭建一套单节点的Kafka消息队列，Kafka依赖Zookeeper为其管理集群信息，虽然本例不涉及集群，但是该有的组件都还是会有，典型的kafka分布式架构如下图所示。本例搭建的示例包含Zookeeper + Kafka + Kafka-manger
 Kafka官网：
 http://kafka.apache.org/
-重要概念生产者(Producer)消费者(Consumer)消费消息。每个consumer属于一个特定的consumer group。使用consumer high level API时，同一个topic的一条消息只能被同一个consu...
+重要概念生产者(Producer)生产者，也就是发送消息的一方。生产者负责创建消息，然后将其发送到 Kafka 中。
+消费者(Consumer)消费消息。每个consumer属于一个特定的consumer group。使用consume...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -545,8 +546,9 @@ Kafka官网：
 http://kafka.apache.org/
 重要概念
 生产者(Producer)
+生产者，也就是发送消息的一方。生产者负责创建消息，然后将其发送到 Kafka 中。
 消费者(Consumer)
-消费消息。每个consumer属于一个特定的consumer group。使用consumer high level API时，同一个topic的一条消息只能被同一个consumer g...
+消费消息。每个consumer属于一个特定的consumer group。使用consumer hig...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -3368,9 +3370,18 @@ fdisk 新增数据盘
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 138
+        Total : 139
         </div>
         <!-- search  -->
         
@@ -3383,6 +3394,11 @@ fdisk 新增数据盘
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/30</span><a class="archive-post-title" href="/posts/56b9f9a8.html">Win11首个预览版来了！微软已向Win10 Dev通道推送(附更新内容)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3614,12 +3630,12 @@ fdisk 新增数据盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/655a5d4b.html">springboot jpa自动生成表指定引擎</a>
+            <span class="archive-post-date">04/27</span><a class="archive-post-title" href="/posts/85af5292.html">springboot jpa注解自动生成表及注释</a>
         </li>
     
     
@@ -3743,12 +3759,12 @@ fdisk 新增数据盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">Spring Boot部署测试环境和生产环境</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/5f9b9ec2.html">Spring Boot部署测试环境和生产环境</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href="/posts/c4bccc0e.html">Docker配置私有仓库</a>
         </li>
     
     
@@ -3918,12 +3934,12 @@ fdisk 新增数据盘
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/88d2b72a.html">拦截器和过滤器的区别</a>
+            <span class="archive-post-date">01/19</span><a class="archive-post-title" href="/posts/74a917bd.html">IDEA编辑器提升效率的操作</a>
         </li>
     
     
@@ -4220,6 +4236,8 @@ fdisk 新增数据盘
     
         <span class="sidebar-tag-name" data-tags="macOS"><span class="iconfont-archer">&#xe606;</span>macOS</span>
     
+        <span class="sidebar-tag-name" data-tags="Windows11"><span class="iconfont-archer">&#xe606;</span>Windows11</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -4277,9 +4295,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="DevOps"><span class="iconfont-archer">&#xe60a;</span>DevOps</span>
     
-        <span class="sidebar-category-name" data-categories="MAC"><span class="iconfont-archer">&#xe60a;</span>MAC</span>
-    
         <span class="sidebar-category-name" data-categories="Rust"><span class="iconfont-archer">&#xe60a;</span>Rust</span>
+    
+        <span class="sidebar-category-name" data-categories="MAC"><span class="iconfont-archer">&#xe60a;</span>MAC</span>
     
         <span class="sidebar-category-name" data-categories="图床"><span class="iconfont-archer">&#xe60a;</span>图床</span>
     
